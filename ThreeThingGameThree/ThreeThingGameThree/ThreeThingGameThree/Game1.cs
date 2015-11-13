@@ -28,14 +28,14 @@ namespace ThreeThingGameThree
         private Texture2D testTexture;   
 
         private Boolean selectPlay = true;
-
+        private int selector = 0;
         enum gameState{menu, options, inGame, gameOver};
         gameState gameStateNow = gameState.menu;
 
         private Sprite Title, MenuPlanet, Option_Play, Option_Options, Background, Foreground, Omoon; //Menu sprites
         private Texture2D blankSprite, testBall, testSBall, jupiter, player;
 
-        private Sprite music, sfx; //Options sprites
+        private Sprite music, sfx, back; //Options sprites
 
         private Game currentGame;
 
@@ -77,6 +77,10 @@ namespace ThreeThingGameThree
             Option_Play = new Sprite(testSBall, new Vector2(scrW / 6 - scrW / 16, 3 * scrH / 5), scrW / 8, scrW / 8);
             Option_Options = new Sprite(testSBall, new Vector2(scrW / 2 + scrW / 4, 3 * scrH / 7), scrW / 8, scrW / 8);
             Omoon = new Sprite(testSBall, new Vector2((scrW / 4), scrH / 32), scrH - scrH / 4, scrH - scrH / 4);
+
+            music = new Sprite(blankSprite, new Vector2(scrW/2 - scrW/16, scrH/8), scrW/8, scrH/16);
+            sfx = new Sprite(blankSprite, new Vector2(scrW / 2 - scrW / 16, scrH / 4), scrW / 8, scrH / 16);
+            back = new Sprite(blankSprite, new Vector2(scrW / 2 - scrW / 16, 3 * scrH / 4), scrW / 8, scrH / 16);
 
             //Background = new Sprite(blankSprite, new Vector2(0, 0), 30, 30);
             //Foreground = new Sprite(blankSprite, new Vector2(0, 0), 30, 30);
@@ -132,8 +136,32 @@ namespace ThreeThingGameThree
                     break;
 
                 case gameState.options: //Controls while in game
-                    if (currentGame != null)
-                        currentGame.Update(gameTime);
+                    if (/*GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.Y > 0.15 ||*/ Keyboard.GetState().IsKeyDown(Keys.W) == true || Keyboard.GetState().IsKeyDown(Keys.Up) == true)
+                    { //Thumb stick directed right
+                        if (selector != 2) {
+                            selector += 1;
+                        }
+                    }
+                    if (/*GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.Y < 0.15 ||*/ Keyboard.GetState().IsKeyDown(Keys.S) == true || Keyboard.GetState().IsKeyDown(Keys.Down) == true)
+                    { //Thumb stick directed left
+                        if (selector != 0)
+                        {
+                            selector -= 1;
+                        }
+                    }
+                    if (/*GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X < 0.15 ||*/ Keyboard.GetState().IsKeyDown(Keys.Space) == true || Keyboard.GetState().IsKeyDown(Keys.Enter) == true) 
+                    { //Select button pressed
+                        if (selector == 0) { //music on/off
+
+                        }
+                        if (selector == 1) //sfx on/off
+                        {
+                        }
+                        if (selector == 2) //return to menu
+                        {
+                            gameStateNow = gameState.menu;
+                        }
+                    }
                     break;
                     
                 case gameState.inGame: //Controls while in game
