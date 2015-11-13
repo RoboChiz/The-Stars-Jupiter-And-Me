@@ -145,12 +145,12 @@ namespace ThreeThingGameThree
                     Title.Draw(spriteBatch);
                     if (selectPlay)
                     {
-                        MenuPlanet.setDrawColour(Color.Blue);
-                        Option_Play.setDrawColour(Color.White);
+                        MenuPlanet.Colour = Color.Blue;
+                        Option_Play.Colour = Color.White;
                     }
                     else {
-                        MenuPlanet.setDrawColour(Color.White);
-                        Option_Play.setDrawColour(Color.Blue);
+                        MenuPlanet.Colour = Color.White;
+                        Option_Play.Colour = Color.Blue;
                     }
                     MenuPlanet.Draw(spriteBatch);
                     Option_Play.Draw(spriteBatch);
