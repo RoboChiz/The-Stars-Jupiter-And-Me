@@ -63,18 +63,13 @@ namespace RobsPhysics
             public bool checkCollision(RigidBody other)
             {
 
-                Vector2 normal = other.Position - Position;
-                float myRadius = ((width/2) + (height/2))/2;
-                float thereRadius = ((other.width / 2) + (other.height / 2)) / 2;
-                float radius = myRadius + thereRadius;
-                radius *= radius;
+                Vector2 myCente = GetCentre();
+                Vector2 thereCente = other.GetCentre();
 
-                if (normal.LengthSquared() > radius)
-                    return false;
+                if(Vector2.Distance(myCente,thereCente) < (Width/2f))
+                    return true;
 
-                return true;
-               
-
+                return false;
             }
 
         }

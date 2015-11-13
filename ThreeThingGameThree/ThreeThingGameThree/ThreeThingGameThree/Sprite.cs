@@ -84,6 +84,11 @@ namespace RobsSprite
             }
         }
 
+        public Vector2 GetCentre()
+         {
+             return Position + new Vector2(Width / 2f, Height / 2f);
+         }
+
          public Color Colour
          {
              get { return colour; }

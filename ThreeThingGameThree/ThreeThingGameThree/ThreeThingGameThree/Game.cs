@@ -43,10 +43,10 @@ namespace ThreeThingGameThree
 
         public void StartGame()
         {
-            Moon nMoon = new Moon(Moon.moonTexture, new Vector2(-Moon.radius, -Moon.radius), Moon.radius * 2, Moon.radius * 2, 0, 0);
+            Moon nMoon = new Moon(Moon.moonTexture, new Vector2(0,0), Moon.radius * 2, Moon.radius * 2, 0, 0);
             moons.Add(nMoon);
 
-            Player player = new Player(Player.playerTexture, new Vector2(-Moon.radius, -(Moon.radius + 30)), 5, 5, 70, 25);
+            Player player = new Player(Player.playerTexture, new Vector2(0, -(Moon.radius + 30)), 5, 5, 70, 25);
             players.Add(player);
 
         }
@@ -89,7 +89,7 @@ namespace ThreeThingGameThree
             //Add Gravity
             for (int i = 0; i < players.Count; i++)
             {
-                players[i].AddForce(Vector2.Normalize(moons[0].Position - players[i].Position) * 981f);             
+                players[i].AddForce(Vector2.Normalize(moons[0].GetCentre() - players[i].GetCentre()) * 981f);             
             }
 
 
