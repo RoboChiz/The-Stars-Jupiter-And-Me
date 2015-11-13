@@ -16,6 +16,10 @@ namespace ThreeThingGameThree
     class Enemy : Sprite
     {
 
+        static Random random = new Random();
+
+        private float speed;
+
         enum State
         {
             Idling,
@@ -23,13 +27,21 @@ namespace ThreeThingGameThree
         }
 
         public Enemy(Texture2D textureVal, Vector2 pos, int widthVal, int heightVal)
-            : base(textureVal, pos, widthVal, heightVal) {}
+            : base(textureVal, pos, widthVal, heightVal) 
+        {
+            speed = randomSpeed(0.5, 2.0);
+        }
 
         public void Update(GameTime gameTime, RobsPhysics.Physics.RigidBody moonObj)
         {
             //Move towards moon position
             Direction = Vector2.Normalize(moonObj.Position - this.Position);
-            Position += Direction * 2f;
+            Position += Direction * speed;
+        }
+
+        public float randomSpeed(double minimum, double maximum)
+        {
+            return (float)(random.Next() * (maximum - minimum) + minimum);
         }
 
 
