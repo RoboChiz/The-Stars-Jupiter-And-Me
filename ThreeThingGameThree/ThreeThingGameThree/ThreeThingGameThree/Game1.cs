@@ -31,9 +31,6 @@ namespace ThreeThingGameThree
         enum gameState{menu, inGame, gameOver};
         gameState gameStateNow = gameState.menu;
 
-        private Physics.RigidBody testRbody;
-        private Physics.RigidBody testGround;
-
         private Sprite Title, MenuPlanet, Option_Play, Option_Options, Background, Foreground; //Menu textures
         private Texture2D blankSprite;
 
@@ -75,11 +72,6 @@ namespace ThreeThingGameThree
             Background = new Sprite(blankSprite, new Vector2(0, 0), 30, 30);
             Foreground = new Sprite(blankSprite, new Vector2(0, 0), 30, 30);
             //Menu assets - end
-
-
-            testTexture = Content.Load<Texture2D>("OrangeBall");
-            testRbody = new Physics.RigidBody(testTexture, new Vector2(0, 0), 30, 30, 5, 140);
-            testGround = new Physics.RigidBody(testTexture, new Vector2(0, 150), 30, 30, 0, 140);
         }
 
         /// <summary>
@@ -124,10 +116,7 @@ namespace ThreeThingGameThree
                 
                 this.Exit();
             }
-                
-
-            
-            testRbody.AddForce(new Vector2(0, 981f));
+                    
             physics.Step(gameTime);
 
             base.Update(gameTime);
@@ -154,8 +143,6 @@ namespace ThreeThingGameThree
                 case gameState.gameOver: //Draw while in gameOver
                     break;
             }
-            testRbody.Draw(spriteBatch);
-            testGround.Draw(spriteBatch);
 
             spriteBatch.End();
 
