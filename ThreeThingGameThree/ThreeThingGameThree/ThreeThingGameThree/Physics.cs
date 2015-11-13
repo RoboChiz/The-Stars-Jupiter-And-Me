@@ -63,14 +63,14 @@ namespace RobsPhysics
             public bool checkCollision(RigidBody other)
             {
 
-                float Awidth = (width / 2f);
-                float AHeight = (height / 2f);
+                float Awidth = (Width / 2f);
+                float AHeight = (Height / 2f);
 
-                float Bwidth = (other.width / 2f);
-                float BHeight = (other.height / 2f);
+                float Bwidth = (other.Width / 2f);
+                float BHeight = (other.Height / 2f);
 
-                if ((position.X + Awidth >= other.position.X - Bwidth && position.X - Awidth <= other.position.X + Bwidth)
-                   && (position.Y + AHeight >= other.position.Y - BHeight && position.Y - AHeight <= other.position.Y + BHeight))
+                if ((Position.X + Awidth >= other.Position.X - Bwidth && Position.X - Awidth <= other.Position.X + Bwidth)
+                   && (Position.Y + AHeight >= other.Position.Y - BHeight && Position.Y - AHeight <= other.Position.Y + BHeight))
                     return true;
 
                 return false;
@@ -87,7 +87,7 @@ namespace RobsPhysics
 
             // Calculate relative velocity
             Vector2 rv = B.Velocity - A.Velocity;
-            Vector2 normal = B.position - A.position;
+            Vector2 normal = B.Position - A.Position;
 
             // Calculate relative velocity in terms of the normal direction
             float velAlongNormal = Vector2.Dot(rv, normal);
@@ -130,7 +130,7 @@ namespace RobsPhysics
 
                     rb.Force = new Vector2(0, 0);
 
-                    rb.position += rb.Velocity * deltaTime;
+                    rb.Position += rb.Velocity * deltaTime;
 
                     rb.colliding = false;
 

@@ -14,22 +14,73 @@ namespace RobsSprite
 {
     public class Sprite
     {
+        // Asset name of Sprite texture
+        public string assetName;
 
-        public Vector2 position;
+        // Texture of the sprite
+        public Texture2D spriteTexture;
+
+        //The size of the Sprite (with scale applied)
+        public Rectangle Size;
+
+        public static float X = 0.0f;
+        public static float Y = 0.0f;
+
         public int width;
         public int height;
 
+        //The position of the Sprite
+        private Vector2 position = new Vector2(X, Y);
+
+        //The amount to increase/decrease the size of the original sprite. 
+        private float mScale = 0.5f;
+
+        // Rotation of sprite
         public float rotation = 0f;
 
-        public Texture2D texture;
-        public Color colour;
+        private Color colour;
+
+        public Vector2 Position
+        {
+            get { return position; }
+            set { position = value; }
+        }
+
+        public float Rotation
+        {
+            get { return rotation; }
+            set { rotation = value; }
+        }
+
+        public int Width
+        {
+            get { return width; }
+            set { width = value; }
+        }
+
+        public int Height
+        {
+            get { return height; }
+            set { height = value; }
+        }
+
+         public float Scale
+        {
+            get { return mScale; }
+            set
+            {
+                mScale = value;
+                //Recalculate the Size of the Sprite with the new scale
+                Size = new Rectangle(0, 0, (int)(spriteTexture.Width * Scale), (int)(spriteTexture.Height * Scale));
+            }
+        }
 
         public Sprite(Texture2D textureVal, Vector2 pos, int widthVal, int heightVal)
         {
-            texture = textureVal;
-            position = pos;
-            width = widthVal;
-            height = heightVal;
+            spriteTexture = textureVal;
+            Position = pos;
+            Width = widthVal;
+            Height = heightVal;
             colour = Color.White;
         }
 
@@ -41,7 +92,9 @@ namespace RobsSprite
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(texture,new Rectangle((int)position.X,(int)position.Y,width,height), null, colour, rotation, Vector2.Zero, SpriteEffects.None, 0);
+            spriteBatch.Draw(spriteTexture, Position,
+                           new Rectangle(0, 0, spriteTexture.Width, spriteTexture.Height),
+                           Color.White, Rotation, Vector2.Zero, Scale, SpriteEffects.None, 0);
         }
 
     }
