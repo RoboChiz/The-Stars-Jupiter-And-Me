@@ -37,7 +37,7 @@ namespace ThreeThingGameThree
         gameState gameStateNow = gameState.menu;
 
         private Sprite Title, MenuPlanet, Option_Play, Option_Options, Background, Foreground; //Menu textures
-        private Texture2D blankSprite, testBall, jupiter;
+        private Texture2D blankSprite, testBall, testSBall, jupiter;
 
         public Game1()
         {
@@ -71,11 +71,12 @@ namespace ThreeThingGameThree
             blankSprite = Content.Load<Texture2D>("BlankSprite");
             jupiter = Content.Load<Texture2D>("Jupiter");
             testBall = Content.Load<Texture2D>("testBall");
+            testSBall = Content.Load<Texture2D>("testSBall");
             //----
             Title = new Sprite(blankSprite, new Vector2(scrW / 12, scrH / 24), scrW - 2 * (scrW / 12), scrH / 6);
             MenuPlanet = new Sprite(jupiter, new Vector2(scrW / 2 - (scrW / 5), scrH / 4), scrH / 2, scrH / 2);
-            Option_Play = new Sprite(testBall, new Vector2(scrW / 6 - scrW / 16, 3 * scrH / 5), scrW / 8, scrW / 8);
-            Option_Options = new Sprite(blankSprite, new Vector2(3 * (scrW / 4) - scrW / 6, scrH / 5), scrW / 6, scrH / 12);
+            Option_Play = new Sprite(testSBall, new Vector2(scrW / 6 - scrW / 16, 3 * scrH / 5), scrW / 8, scrW / 8);
+            Option_Options = new Sprite(testSBall, new Vector2(scrW / 2 + scrW / 4, 3 * scrH / 7), scrW / 8, scrW / 8);
             Background = new Sprite(blankSprite, new Vector2(0, 0), 30, 30);
             Foreground = new Sprite(blankSprite, new Vector2(0, 0), 30, 30);
             //Menu assets - end
@@ -100,11 +101,11 @@ namespace ThreeThingGameThree
             switch (gameStateNow)
             {
                 case gameState.menu: //Controls while in menu
-                    if (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X > 0.2 || Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.D) == true || Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Left) == true)
+                    if (/*GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X > 0.15 ||*/ Keyboard.GetState().IsKeyDown(Keys.A) == true || Keyboard.GetState().IsKeyDown(Keys.Left) == true)
                     { //Thumb stick directed right
                         selectPlay = true;
                     }
-                    if (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X < 0.2 || Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.A) == true || Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Right) == true)
+                    if (/*GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X < 0.15 ||*/ Keyboard.GetState().IsKeyDown(Keys.D) == true || Keyboard.GetState().IsKeyDown(Keys.Right) == true)
                     { //Thumb stick directed left
                         selectPlay = false;
                     }
@@ -145,15 +146,16 @@ namespace ThreeThingGameThree
                     Title.Draw(spriteBatch);
                     if (selectPlay)
                     {
-                        MenuPlanet.Colour = Color.Blue;
-                        Option_Play.Colour = Color.White;
+                        Option_Play.Colour = Color.Blue;
+                        Option_Options.Colour = Color.White;
                     }
                     else {
-                        MenuPlanet.Colour = Color.White;
-                        Option_Play.Colour = Color.Blue;
+                        Option_Play.Colour = Color.White;
+                        Option_Options.Colour = Color.Blue;
                     }
                     MenuPlanet.Draw(spriteBatch);
                     Option_Play.Draw(spriteBatch);
+                    Option_Options.Draw(spriteBatch);
                     break;
 
                 case gameState.inGame: //Draw while in game
