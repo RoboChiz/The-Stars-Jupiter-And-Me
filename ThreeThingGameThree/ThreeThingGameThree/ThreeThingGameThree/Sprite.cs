@@ -38,6 +38,10 @@ namespace RobsSprite
         // Rotation of sprite
         public float rotation = 0f;
 
+        // Direction of sprite
+        private Vector2 direction;
+
+
         private Color colour;
 
         public Vector2 Position
@@ -50,6 +54,11 @@ namespace RobsSprite
         {
             get { return rotation; }
             set { rotation = value; }
+        }
+        public Vector2 Direction
+        {
+            get { return direction; }
+            set { direction = value; }
         }
 
         public int Width
