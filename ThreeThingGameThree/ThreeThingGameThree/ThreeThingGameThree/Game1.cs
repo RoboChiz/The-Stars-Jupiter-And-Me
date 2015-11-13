@@ -127,7 +127,7 @@ namespace ThreeThingGameThree
                 
 
             
-            testRbody.AddForce(new Vector2(0, 9.81f));
+            testRbody.AddForce(new Vector2(0, 981f));
             physics.Step(gameTime);
 
             base.Update(gameTime);

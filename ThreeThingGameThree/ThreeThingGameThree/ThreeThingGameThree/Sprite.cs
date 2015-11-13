@@ -33,7 +33,7 @@ namespace RobsSprite
         private Vector2 position = new Vector2(X, Y);
 
         //The amount to increase/decrease the size of the original sprite. 
-        private float mScale = 0.5f;
+        private float mScale = 1f;
 
         // Rotation of sprite
         public float rotation = 0f;
@@ -92,9 +92,7 @@ namespace RobsSprite
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(spriteTexture, Position,
-                           new Rectangle(0, 0, spriteTexture.Width, spriteTexture.Height),
-                           Color.White, Rotation, Vector2.Zero, Scale, SpriteEffects.None, 0);
+            spriteBatch.Draw(spriteTexture, new Rectangle((int)position.X, (int)position.Y, width, height), null, colour, rotation, Vector2.Zero, SpriteEffects.None, 0);
         }
 
     }

@@ -63,11 +63,11 @@ namespace RobsPhysics
             public bool checkCollision(RigidBody other)
             {
 
-                float Awidth = (Width / 2f);
-                float AHeight = (Height / 2f);
+                float Awidth = (width / 2f);
+                float AHeight = (height / 2f);
 
-                float Bwidth = (other.Width / 2f);
-                float BHeight = (other.Height / 2f);
+                float Bwidth = (other.width / 2f);
+                float BHeight = (other.height / 2f);
 
                 if ((Position.X + Awidth >= other.Position.X - Bwidth && Position.X - Awidth <= other.Position.X + Bwidth)
                    && (Position.Y + AHeight >= other.Position.Y - BHeight && Position.Y - AHeight <= other.Position.Y + BHeight))
@@ -82,12 +82,16 @@ namespace RobsPhysics
         void ResolveCollision(RigidBody A, RigidBody B)
         {
 
-            A.Force = new Vector2(0, 0);
-            B.Force = new Vector2(0, 0);
+            A.Force = Vector2.Zero;
+            B.Force = Vector2.Zero;
+
+            A.Velocity = Vector2.Zero;
+            B.Velocity = Vector2.Zero;
 
             // Calculate relative velocity
             Vector2 rv = B.Velocity - A.Velocity;
             Vector2 normal = B.Position - A.Position;
+            //normal.Normalize();
 
             // Calculate relative velocity in terms of the normal direction
             float velAlongNormal = Vector2.Dot(rv, normal);
@@ -105,9 +109,11 @@ namespace RobsPhysics
 
             // Apply impulse
             Vector2 impulse = j * normal;
-            A.Velocity -= A.inv_mass * impulse;
-            B.Velocity += B.inv_mass * impulse;
+            A.AddForce(-impulse);
+            B.AddForce(impulse);
 
+            normal.Normalize();
+            normal *= 2.5f;
 
         }
 
@@ -121,16 +127,6 @@ namespace RobsPhysics
 
                 if (rb.Mass != 0)
                 {
-                    Vector2 currentVelocity = rb.Velocity;
-
-                    rb.Velocity += (rb.Force / rb.Mass) * deltaTime;
-
-                    if (rb.Velocity.Length() > rb.terminalVelocity)
-                        rb.Velocity = currentVelocity;
-
-                    rb.Force = new Vector2(0, 0);
-
-                    rb.Position += rb.Velocity * deltaTime;
 
                     rb.colliding = false;
 
@@ -143,6 +139,17 @@ namespace RobsPhysics
                             ResolveCollision(rb, rbo);
                         }
                     }
+
+                    Vector2 currentVelocity = rb.Velocity;
+
+                    rb.Velocity += (rb.Force / rb.Mass) * deltaTime;
+
+                    if (rb.Velocity.Length() > rb.terminalVelocity)
+                        rb.Velocity = currentVelocity;
+
+                    rb.Force = new Vector2(0, 0);
+
+                    rb.Position += rb.Velocity * deltaTime;
 
                 }
 
