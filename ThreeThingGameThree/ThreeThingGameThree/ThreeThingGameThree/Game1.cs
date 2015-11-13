@@ -109,6 +109,13 @@ namespace ThreeThingGameThree
                     { //Thumb stick directed left
                         selectPlay = false;
                     }
+                    if (/*GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X < 0.15 ||*/ Keyboard.GetState().IsKeyDown(Keys.Space) == true || Keyboard.GetState().IsKeyDown(Keys.Enter) == true) 
+                    { //Select button pressed
+                        if (selectPlay)
+                            gameStateNow = gameState.inGame;
+                        else //TODO - options menu
+                            ;
+                    }
                     break;
                     
                 case gameState.inGame: //Controls while in game
