@@ -21,12 +21,21 @@ namespace ThreeThingGameThree
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        private int scrW = 1920; //TODO - set to screen resolution
+        private int scrH = 1080;
+
         //Saved Sprite Variables
         private Texture2D testTexture;
         private Physics physics;
 
+        enum gameState{menu, inGame, gameOver};
+        gameState gameStateNow = gameState.menu;
+
         private Physics.RigidBody testRbody;
         private Physics.RigidBody testGround;
+
+        private Sprite Title, MenuPlanet, Option_Play, Option_Options, Background, Foreground; //Menu textures
+        private Texture2D blankSprite;
 
         public Game1()
         {
@@ -56,6 +65,17 @@ namespace ThreeThingGameThree
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            //Menu assets - start
+            blankSprite = Content.Load<Texture2D>("BlankSprite");
+            //----
+            Title = new Sprite(blankSprite, new Vector2(scrW/13, scrH/22), scrW - 2*(scrW/13), scrH - scrH/10);
+            MenuPlanet = new Sprite(blankSprite, new Vector2(, 190), 30, 30);
+            Option_Play = new Sprite(blankSprite, new Vector2(0, 0), 30, 30);
+            Option_Options = new Sprite(blankSprite, new Vector2(0, 0), 30, 30);
+            Background = new Sprite(blankSprite, new Vector2(0, 0), 30, 30);
+            Foreground = new Sprite(blankSprite, new Vector2(0, 0), 30, 30);
+            //Menu assets - end
+
 
             testTexture = Content.Load<Texture2D>("OrangeBall");
             testRbody = new Physics.RigidBody(testTexture, new Vector2(0, 0), 30, 30, 5, 140);
@@ -78,11 +98,35 @@ namespace ThreeThingGameThree
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            // Allows the game to exit
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
-                this.Exit();
+            switch (gameStateNow)
+            {
+                case gameState.menu: //Controls while in menu
+                    if (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X > 0.1)
+                    { //Thumb stick directed right
 
-            // TODO: Add your update logic here
+                    }
+                    if (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X < 0.1)
+                    { //Thumb stick directed left
+                        
+                    }
+                    break;
+                    
+                case gameState.inGame: //Controls while in game
+                   
+                    break;
+
+                case gameState.gameOver: //Controls while in gameOver
+                    break;
+            }
+
+            // Allows the game to exit
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed) {
+                
+                this.Exit();
+            }
+                
+
+            
             testRbody.AddForce(new Vector2(0, 9.81f));
             physics.Step(gameTime);
 
@@ -99,7 +143,15 @@ namespace ThreeThingGameThree
 
             // TODO: Add your drawing code here
             spriteBatch.Begin();
-
+            switch (gameStateNow)
+            {
+                case gameState.menu: //Draw while in menu
+                    break;
+                case gameState.inGame: //Draw while in game
+                    break;
+                case gameState.gameOver: //Draw while in gameOver
+                    break;
+            }
             testRbody.Draw(spriteBatch);
             testGround.Draw(spriteBatch);
 
