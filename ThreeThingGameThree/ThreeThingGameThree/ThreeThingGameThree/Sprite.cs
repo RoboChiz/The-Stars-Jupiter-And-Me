@@ -104,6 +104,10 @@ namespace RobsSprite
             spriteBatch.Draw(spriteTexture, new Rectangle((int)position.X, (int)position.Y, width, height), null, colour, rotation, Vector2.Zero, SpriteEffects.None, 0);
         }
 
+        public void setDrawColour(Color Colour) {
+            colour = Colour;
+        }
+
     }
 
         public class Camera

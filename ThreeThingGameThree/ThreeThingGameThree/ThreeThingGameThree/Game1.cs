@@ -31,6 +31,8 @@ namespace ThreeThingGameThree
         private Physics physics;
         private Physics.RigidBody player, moon;
 
+        private Boolean selectPlay = true;
+
         enum gameState{menu, inGame, gameOver};
         gameState gameStateNow = gameState.menu;
 
@@ -98,13 +100,13 @@ namespace ThreeThingGameThree
             switch (gameStateNow)
             {
                 case gameState.menu: //Controls while in menu
-                    if (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X > 0.1)
+                    if (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X > 0.2 || Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.D) == true || Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Left) == true)
                     { //Thumb stick directed right
-
+                        selectPlay = true;
                     }
-                    if (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X < 0.1)
+                    if (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X < 0.2 || Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.A) == true || Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Right) == true)
                     { //Thumb stick directed left
-                        
+                        selectPlay = false;
                     }
                     break;
                     
@@ -141,9 +143,19 @@ namespace ThreeThingGameThree
             {
                 case gameState.menu: //Draw while in menu
                     Title.Draw(spriteBatch);
+                    if (selectPlay)
+                    {
+                        MenuPlanet.setDrawColour(Color.Blue);
+                        Option_Play.setDrawColour(Color.White);
+                    }
+                    else {
+                        MenuPlanet.setDrawColour(Color.White);
+                        Option_Play.setDrawColour(Color.Blue);
+                    }
                     MenuPlanet.Draw(spriteBatch);
                     Option_Play.Draw(spriteBatch);
                     break;
+
                 case gameState.inGame: //Draw while in game
                     break;
                 case gameState.gameOver: //Draw while in gameOver
