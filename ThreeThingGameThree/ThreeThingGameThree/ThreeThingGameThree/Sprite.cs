@@ -10,21 +10,21 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
-namespace ThreeThingGameThree
+namespace RobsSprite
 {
     public class Sprite
     {
 
         public Vector2 position;
-        public float width;
-        public float height;
+        public int width;
+        public int height;
 
         public float rotation = 0f;
 
         public Texture2D texture;
         public Color colour;
 
-        public Sprite(Texture2D textureVal, Vector2 pos, float widthVal, float heightVal)
+        public Sprite(Texture2D textureVal, Vector2 pos, int widthVal, int heightVal)
         {
             texture = textureVal;
             position = pos;
@@ -37,6 +37,11 @@ namespace ThreeThingGameThree
         {
 
             rotation = (float)(Math.Atan2(-dir.Y, dir.X) + (85 * (Math.PI / 180)));
+        }
+
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            spriteBatch.Draw(texture,new Rectangle((int)position.X,(int)position.Y,width,height), null, colour, rotation, Vector2.Zero, SpriteEffects.None, 0);
         }
 
     }

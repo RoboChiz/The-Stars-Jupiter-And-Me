@@ -8,6 +8,8 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using RobsSprite;
+using RobsPhysics;
 
 namespace ThreeThingGameThree
 {
@@ -18,6 +20,13 @@ namespace ThreeThingGameThree
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+
+        //Saved Sprite Variables
+        private Texture2D testTexture;
+        private Physics physics;
+
+        private Physics.RigidBody testRbody;
+        private Physics.RigidBody testGround;
 
         public Game1()
         {
@@ -34,7 +43,8 @@ namespace ThreeThingGameThree
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            physics = new Physics();
+            
             base.Initialize();
         }
 
@@ -47,7 +57,9 @@ namespace ThreeThingGameThree
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
+            testTexture = Content.Load<Texture2D>("OrangeBall");
+            testRbody = new Physics.RigidBody(testTexture, new Vector2(0, 0), 30, 30, 5, 140);
+            testGround = new Physics.RigidBody(testTexture, new Vector2(0, 150), 30, 30, 0, 140);
         }
 
         /// <summary>
@@ -71,6 +83,8 @@ namespace ThreeThingGameThree
                 this.Exit();
 
             // TODO: Add your update logic here
+            testRbody.AddForce(new Vector2(0, 9.81f));
+            physics.Step(gameTime);
 
             base.Update(gameTime);
         }
@@ -84,6 +98,12 @@ namespace ThreeThingGameThree
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
+            spriteBatch.Begin();
+
+            testRbody.Draw(spriteBatch);
+            testGround.Draw(spriteBatch);
+
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }

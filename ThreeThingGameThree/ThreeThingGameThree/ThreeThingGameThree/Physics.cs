@@ -6,10 +6,10 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.GamerServices;
-using ThreeThingGameThree;
+using RobsSprite;
 #endregion
 
-namespace ThreeThingGame2
+namespace RobsPhysics
 {
     class Physics
     {
@@ -34,10 +34,9 @@ namespace ThreeThingGame2
 
             public bool colliding;
             public RigidBody collidingWith;
-
             public RigidBody avoid;
 
-            public RigidBody(Texture2D textureVal, Vector2 pos, float widthVal, float heightVal, float mass, float maxSpeed)
+            public RigidBody(Texture2D textureVal, Vector2 pos, int widthVal, int heightVal, float mass, float maxSpeed)
                 : base(textureVal, pos, widthVal, heightVal)
             {
                 Mass = mass;
