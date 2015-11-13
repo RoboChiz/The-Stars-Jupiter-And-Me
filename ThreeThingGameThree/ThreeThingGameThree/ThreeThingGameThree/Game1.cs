@@ -29,11 +29,13 @@ namespace ThreeThingGameThree
 
         private Boolean selectPlay = true;
 
-        enum gameState{menu, inGame, gameOver};
+        enum gameState{menu, options, inGame, gameOver};
         gameState gameStateNow = gameState.menu;
 
-        private Sprite Title, MenuPlanet, Option_Play, Option_Options, Background, Foreground; //Menu textures
+        private Sprite Title, MenuPlanet, Option_Play, Option_Options, Background, Foreground, Omoon; //Menu sprites
         private Texture2D blankSprite, testBall, testSBall, jupiter;
+
+        private Sprite music, sfx; //Options sprites
 
         private Game currentGame;
 
@@ -74,8 +76,10 @@ namespace ThreeThingGameThree
             MenuPlanet = new Sprite(jupiter, new Vector2(scrW / 2 - (scrW / 5), scrH / 4), scrH / 2, scrH / 2);
             Option_Play = new Sprite(testSBall, new Vector2(scrW / 6 - scrW / 16, 3 * scrH / 5), scrW / 8, scrW / 8);
             Option_Options = new Sprite(testSBall, new Vector2(scrW / 2 + scrW / 4, 3 * scrH / 7), scrW / 8, scrW / 8);
-            Background = new Sprite(blankSprite, new Vector2(0, 0), 30, 30);
-            Foreground = new Sprite(blankSprite, new Vector2(0, 0), 30, 30);
+            Omoon = new Sprite(testSBall, new Vector2((scrW / 4), scrH / 32), scrH - scrH / 4, scrH - scrH / 4);
+
+            //Background = new Sprite(blankSprite, new Vector2(0, 0), 30, 30);
+            //Foreground = new Sprite(blankSprite, new Vector2(0, 0), 30, 30);
             //Menu assets - end
 
         }
@@ -115,9 +119,16 @@ namespace ThreeThingGameThree
                             currentGame = new Game(5);//5 = number of enemies to spawn
                             currentGame.StartGame();
                         }
-                        else //TODO - options menu
-                            ;
+                        else {
+                           //TODO - OPTIONS MENU
+                            gameStateNow = gameState.options;
+                            }
                     }
+                    break;
+
+                case gameState.options: //Controls while in game
+                    if (currentGame != null)
+                        currentGame.Update(gameTime);
                     break;
                     
                 case gameState.inGame: //Controls while in game
@@ -135,10 +146,9 @@ namespace ThreeThingGameThree
                 this.Exit();
             }
 
-            
-
             base.Update(gameTime);
         }
+       
 
         /// <summary>
         /// This is called when the game should draw itself.
@@ -168,6 +178,9 @@ namespace ThreeThingGameThree
                     Option_Options.Draw(spriteBatch);
                     break;
 
+                case gameState.options: //Draw while in options menu
+                    Omoon.Draw(spriteBatch);
+                    break;
                 case gameState.inGame: //Draw while in game
                     if (currentGame != null)
                         currentGame.Draw(spriteBatch);
