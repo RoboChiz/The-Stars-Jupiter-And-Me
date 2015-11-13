@@ -35,6 +35,8 @@ namespace ThreeThingGameThree
         private Sprite Title, MenuPlanet, Option_Play, Option_Options, Background, Foreground; //Menu textures
         private Texture2D blankSprite, testBall, testSBall, jupiter;
 
+        private Game currentGame;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -108,14 +110,19 @@ namespace ThreeThingGameThree
                     if (/*GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X < 0.15 ||*/ Keyboard.GetState().IsKeyDown(Keys.Space) == true || Keyboard.GetState().IsKeyDown(Keys.Enter) == true) 
                     { //Select button pressed
                         if (selectPlay)
+                        {
                             gameStateNow = gameState.inGame;
+                            currentGame = new Game(5);//5 = number of enemies to spawn
+                            currentGame.StartGame();
+                        }
                         else //TODO - options menu
                             ;
                     }
                     break;
                     
                 case gameState.inGame: //Controls while in game
-                   
+                    if (currentGame != null)
+                        currentGame.Update(gameTime);
                     break;
 
                 case gameState.gameOver: //Controls while in gameOver
@@ -127,6 +134,8 @@ namespace ThreeThingGameThree
                 
                 this.Exit();
             }
+
+            
 
             base.Update(gameTime);
         }
@@ -160,10 +169,14 @@ namespace ThreeThingGameThree
                     break;
 
                 case gameState.inGame: //Draw while in game
+                    if (currentGame != null)
+                        currentGame.Draw(spriteBatch);
                     break;
                 case gameState.gameOver: //Draw while in gameOver
                     break;
             }
+
+
 
             spriteBatch.End();
 
