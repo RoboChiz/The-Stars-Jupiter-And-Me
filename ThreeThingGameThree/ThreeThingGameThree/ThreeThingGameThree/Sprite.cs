@@ -84,6 +84,12 @@ namespace RobsSprite
             }
         }
 
+         public Color Colour
+         {
+             get { return colour; }
+             set { colour = value; }
+         }
+
         public Sprite(Texture2D textureVal, Vector2 pos, int widthVal, int heightVal)
         {
             spriteTexture = textureVal;
@@ -104,9 +110,7 @@ namespace RobsSprite
             spriteBatch.Draw(spriteTexture, new Rectangle((int)position.X, (int)position.Y, width, height), null, colour, rotation, Vector2.Zero, SpriteEffects.None, 0);
         }
 
-        public void setDrawColour(Color Colour) {
-            colour = Colour;
-        }
+     
 
     }
 
