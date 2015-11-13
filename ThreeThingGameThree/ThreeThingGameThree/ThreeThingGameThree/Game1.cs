@@ -28,6 +28,7 @@ namespace ThreeThingGameThree
         private Texture2D testTexture;   
 
         private Boolean selectPlay = true;
+        private Boolean pressed = false;
         private int selector = 0;
         enum gameState{menu, options, inGame, gameOver};
         gameState gameStateNow = gameState.menu;
@@ -114,7 +115,7 @@ namespace ThreeThingGameThree
                 case gameState.menu: //Controls while in menu
                     if (/*GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X > 0.15 ||*/ Keyboard.GetState().IsKeyDown(Keys.A) == true || Keyboard.GetState().IsKeyDown(Keys.Left) == true)
                     { //Thumb stick directed right
-                        selectPlay = true;
+                        selectPlay = true;                        
                     }
                     if (/*GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X < 0.15 ||*/ Keyboard.GetState().IsKeyDown(Keys.D) == true || Keyboard.GetState().IsKeyDown(Keys.Right) == true)
                     { //Thumb stick directed left
@@ -132,6 +133,11 @@ namespace ThreeThingGameThree
                            //TODO - OPTIONS MENU
                             gameStateNow = gameState.options;
                             }
+                        pressed = true;
+                    }
+                    if (/*GamePad.GetState(PlayerIndex.One).Buttons.A ||*/ Keyboard.GetState().IsKeyUp(Keys.Space) == true || Keyboard.GetState().IsKeyUp(Keys.Enter) == true)
+                    { //Select button pressed                       
+                        pressed = false;
                     }
                     break;
 
@@ -161,6 +167,11 @@ namespace ThreeThingGameThree
                         {
                             gameStateNow = gameState.menu;
                         }
+                        pressed = true;
+                    }
+                    if (/*GamePad.GetState(PlayerIndex.One).Buttons.A ||*/ Keyboard.GetState().IsKeyUp(Keys.Space) == true || Keyboard.GetState().IsKeyUp(Keys.Enter) == true)
+                    { //Select button pressed                       
+                        pressed = false;
                     }
                     break;
                     
@@ -171,6 +182,8 @@ namespace ThreeThingGameThree
 
                 case gameState.gameOver: //Controls while in gameOver
                     break;
+
+
             }
 
             // Allows the game to exit
