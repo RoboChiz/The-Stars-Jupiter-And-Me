@@ -33,7 +33,7 @@ namespace ThreeThingGameThree
         gameState gameStateNow = gameState.menu;
 
         private Sprite Title, MenuPlanet, Option_Play, Option_Options, Background, Foreground, Omoon; //Menu sprites
-        private Texture2D blankSprite, testBall, testSBall, jupiter;
+        private Texture2D blankSprite, testBall, testSBall, jupiter, player;
 
         private Sprite music, sfx; //Options sprites
 
@@ -82,6 +82,11 @@ namespace ThreeThingGameThree
             //Foreground = new Sprite(blankSprite, new Vector2(0, 0), 30, 30);
             //Menu assets - end
 
+
+            //Game Assets
+            player = Content.Load<Texture2D>("OrangeBall");
+            Moon.moonTexture = jupiter;
+            Player.playerTexture = player;
         }
 
         /// <summary>
@@ -182,8 +187,6 @@ namespace ThreeThingGameThree
                     Omoon.Draw(spriteBatch);
                     break;
                 case gameState.inGame: //Draw while in game
-                    if (currentGame != null)
-                        currentGame.Draw(spriteBatch);
                     break;
                 case gameState.gameOver: //Draw while in gameOver
                     break;
@@ -192,6 +195,9 @@ namespace ThreeThingGameThree
 
 
             spriteBatch.End();
+
+            if(gameStateNow == gameState.inGame && currentGame != null)
+                currentGame.Draw(spriteBatch, graphics.GraphicsDevice);
 
             base.Draw(gameTime);
         }
