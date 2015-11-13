@@ -9,3 +9,12 @@ G:\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameTh
 G:\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\obj\x86\Debug\ThreeThingGameThree.pdb
 G:\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Image1.xnb
 G:\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\BlankSprite.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\OrangeBall.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Image1.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\BlankSprite.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\ThreeThingGameThree.exe
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\ThreeThingGameThree.pdb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\obj\x86\Debug\ThreeThingGameThree.csprojResolveAssemblyReference.cache
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\obj\x86\Debug\ThreeThingGameThree.exe
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\obj\x86\Debug\ThreeThingGameThree.pdb

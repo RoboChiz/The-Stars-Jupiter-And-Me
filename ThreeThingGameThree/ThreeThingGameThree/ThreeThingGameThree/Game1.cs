@@ -21,8 +21,8 @@ namespace ThreeThingGameThree
         static GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        int scrW = graphics.PreferredBackBufferWidth; //TODO - set to screen resolution
-        int scrH = graphics.PreferredBackBufferHeight;
+        int scrW = 800; //TODO - set to screen resolution
+        int scrH = 600;
 
         //Saved Sprite Variables
         private Texture2D testTexture;
