@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <ContentProjectGUID>{35BE7C10-3D0F-4F62-B14F-0D9A7B9DCA23}</ContentProjectGUID>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>Reach</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>D:\Three Thing Game 3\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThreeContent\</RootDirectory>
+      <LoggerRootDirectory>D:\Three Thing Game 3\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\</LoggerRootDirectory>
+      <IntermediateDirectory>D:\Three Thing Game 3\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>D:\Three Thing Game 3\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2015-03-24T12:47:22.3780503+00:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

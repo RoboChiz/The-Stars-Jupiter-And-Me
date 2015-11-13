@@ -1,0 +1,2 @@
+D:\Three Thing Game 3\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\obj\x86\Debug\ThreeThingGameThree.csprojResolveAssemblyReference.cache
+D:\Three Thing Game 3\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
