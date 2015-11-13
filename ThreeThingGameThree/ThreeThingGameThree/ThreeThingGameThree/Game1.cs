@@ -26,7 +26,10 @@ namespace ThreeThingGameThree
 
         //Saved Sprite Variables
         private Texture2D testTexture;
+       
+        //Physics
         private Physics physics;
+        private Physics.RigidBody player, moon;
 
         enum gameState{menu, inGame, gameOver};
         gameState gameStateNow = gameState.menu;

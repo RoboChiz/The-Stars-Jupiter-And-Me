@@ -63,17 +63,17 @@ namespace RobsPhysics
             public bool checkCollision(RigidBody other)
             {
 
-                float Awidth = (width / 2f);
-                float AHeight = (height / 2f);
+                Vector2 normal = other.Position - Position;
+                float myRadius = ((width/2) + (height/2))/2;
+                float thereRadius = ((other.width / 2) + (other.height / 2)) / 2;
+                float radius = myRadius + thereRadius;
+                radius *= radius;
 
-                float Bwidth = (other.width / 2f);
-                float BHeight = (other.height / 2f);
+                if (normal.LengthSquared() > radius)
+                    return false;
 
-                if ((Position.X + Awidth >= other.Position.X - Bwidth && Position.X - Awidth <= other.Position.X + Bwidth)
-                   && (Position.Y + AHeight >= other.Position.Y - BHeight && Position.Y - AHeight <= other.Position.Y + BHeight))
-                    return true;
-
-                return false;
+                return true;
+               
 
             }
 
@@ -111,9 +111,6 @@ namespace RobsPhysics
             Vector2 impulse = j * normal;
             A.AddForce(-impulse);
             B.AddForce(impulse);
-
-            normal.Normalize();
-            normal *= 2.5f;
 
         }
 
