@@ -25,11 +25,7 @@ namespace ThreeThingGameThree
         int scrH = 600;
 
         //Saved Sprite Variables
-        private Texture2D testTexture;
-       
-        //Physics
-        private Physics physics;
-        private Physics.RigidBody player, moon;
+        private Texture2D testTexture;   
 
         private Boolean selectPlay = true;
 
@@ -54,7 +50,6 @@ namespace ThreeThingGameThree
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            physics = new Physics();
             
             base.Initialize();
         }
@@ -80,6 +75,7 @@ namespace ThreeThingGameThree
             Background = new Sprite(blankSprite, new Vector2(0, 0), 30, 30);
             Foreground = new Sprite(blankSprite, new Vector2(0, 0), 30, 30);
             //Menu assets - end
+
         }
 
         /// <summary>
@@ -131,8 +127,6 @@ namespace ThreeThingGameThree
                 
                 this.Exit();
             }
-                    
-            physics.Step(gameTime);
 
             base.Update(gameTime);
         }
