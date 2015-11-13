@@ -73,7 +73,7 @@ namespace ThreeThingGameThree
             testBall = Content.Load<Texture2D>("testBall");
             //----
             Title = new Sprite(blankSprite, new Vector2(scrW / 12, scrH / 24), scrW - 2 * (scrW / 12), scrH / 6);
-            MenuPlanet = new Sprite(jupiter, new Vector2(scrW / 2 - (scrW / 4), scrH / 4), scrH / 2, scrH / 2);
+            MenuPlanet = new Sprite(jupiter, new Vector2(scrW / 2 - (scrW / 5), scrH / 4), scrH / 2, scrH / 2);
             Option_Play = new Sprite(testBall, new Vector2(scrW / 6 - scrW / 16, 3 * scrH / 5), scrW / 8, scrW / 8);
             Option_Options = new Sprite(blankSprite, new Vector2(3 * (scrW / 4) - scrW / 6, scrH / 5), scrW / 6, scrH / 12);
             Background = new Sprite(blankSprite, new Vector2(0, 0), 30, 30);
