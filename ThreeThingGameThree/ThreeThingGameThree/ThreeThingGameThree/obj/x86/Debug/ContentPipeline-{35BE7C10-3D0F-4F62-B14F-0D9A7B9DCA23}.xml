@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\OrangeBall.xnb</Output>
-      <Time>2015-11-13T18:18:57.6478416+00:00</Time>
+      <Output>\\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\OrangeBall.xnb</Output>
+      <Time>2015-11-13T19:50:48.762102+00:00</Time>
     </Item>
     <Item>
       <Source>Image1.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Image1.xnb</Output>
-      <Time>2015-11-13T19:56:59.619829+00:00</Time>
+      <Output>\\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Image1.xnb</Output>
+      <Time>2015-11-13T19:50:48.689101+00:00</Time>
     </Item>
     <Item>
       <Source>BlankSprite.png</Source>
@@ -25,8 +25,35 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\BlankSprite.xnb</Output>
-      <Time>2015-11-13T19:56:59.531833+00:00</Time>
+      <Output>\\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\BlankSprite.xnb</Output>
+      <Time>2015-11-13T19:50:48.617101+00:00</Time>
+    </Item>
+    <Item>
+      <Source>Jupiter.png</Source>
+      <Name>Jupiter</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>\\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Jupiter.xnb</Output>
+      <Time>2015-11-13T21:52:39.788158+00:00</Time>
+    </Item>
+    <Item>
+      <Source>testBall.png</Source>
+      <Name>testBall</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>\\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\testBall.xnb</Output>
+      <Time>2015-11-13T21:52:39.89216+00:00</Time>
+    </Item>
+    <Item>
+      <Source>testSBall.png</Source>
+      <Name>testSBall</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>\\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\testSBall.xnb</Output>
+      <Time>2015-11-13T22:19:17.315603+00:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -35,10 +62,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThreeContent\</RootDirectory>
-      <LoggerRootDirectory>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\</LoggerRootDirectory>
-      <IntermediateDirectory>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>\\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThreeContent\</RootDirectory>
+      <LoggerRootDirectory>\\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\</LoggerRootDirectory>
+      <IntermediateDirectory>\\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>\\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

@@ -27,7 +27,7 @@ namespace ThreeThingGameThree
         }
 
         public Enemy(Texture2D textureVal, Vector2 pos, int widthVal, int heightVal)
-            : base(textureVal, pos, widthVal, heightVal) 
+            : base(textureVal, pos, widthVal, heightVal)
         {
             speed = randomSpeed(0.5, 2.0);
         }

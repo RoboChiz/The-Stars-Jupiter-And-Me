@@ -26,3 +26,7 @@ G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThi
 \\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 \\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\obj\x86\Debug\ThreeThingGameThree.exe
 \\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\obj\x86\Debug\ThreeThingGameThree.pdb
+\\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\obj\x86\Debug\ThreeThingGameThree.csprojResolveAssemblyReference.cache
+\\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Jupiter.xnb
+\\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\testBall.xnb
+\\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\testSBall.xnb
