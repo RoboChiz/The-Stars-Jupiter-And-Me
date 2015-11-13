@@ -10,6 +10,24 @@
       <Output>G:\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\OrangeBall.xnb</Output>
       <Time>2015-11-13T18:32:33.899234+00:00</Time>
     </Item>
+    <Item>
+      <Source>Image1.png</Source>
+      <Name>Image1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Image1.xnb</Output>
+      <Time>2015-11-13T19:17:26.9373109+00:00</Time>
+    </Item>
+    <Item>
+      <Source>BlankSprite.png</Source>
+      <Name>BlankSprite</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\BlankSprite.xnb</Output>
+      <Time>2015-11-13T19:24:40.5920702+00:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{35BE7C10-3D0F-4F62-B14F-0D9A7B9DCA23}</ContentProjectGUID>

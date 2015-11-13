@@ -18,11 +18,11 @@ namespace ThreeThingGameThree
     /// </summary>
     public class Game1 : Microsoft.Xna.Framework.Game
     {
-        GraphicsDeviceManager graphics;
+        static GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        private int scrW = 1920; //TODO - set to screen resolution
-        private int scrH = 1080;
+        int scrW = graphics.PreferredBackBufferWidth; //TODO - set to screen resolution
+        int scrH = graphics.PreferredBackBufferHeight;
 
         //Saved Sprite Variables
         private Texture2D testTexture;
@@ -69,7 +69,7 @@ namespace ThreeThingGameThree
             blankSprite = Content.Load<Texture2D>("BlankSprite");
             //----
             Title = new Sprite(blankSprite, new Vector2(scrW/13, scrH/22), scrW - 2*(scrW/13), scrH - scrH/10);
-            MenuPlanet = new Sprite(blankSprite, new Vector2(, 190), 30, 30);
+            MenuPlanet = new Sprite(blankSprite, new Vector2(scrW / 2 - scrW / 6, scrH), scrH / 4, scrH / 4);
             Option_Play = new Sprite(blankSprite, new Vector2(0, 0), 30, 30);
             Option_Options = new Sprite(blankSprite, new Vector2(0, 0), 30, 30);
             Background = new Sprite(blankSprite, new Vector2(0, 0), 30, 30);
@@ -146,6 +146,8 @@ namespace ThreeThingGameThree
             switch (gameStateNow)
             {
                 case gameState.menu: //Draw while in menu
+                    Title.Draw(spriteBatch);
+                    MenuPlanet.Draw(spriteBatch);
                     break;
                 case gameState.inGame: //Draw while in game
                     break;
