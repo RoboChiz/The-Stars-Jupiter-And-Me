@@ -32,7 +32,7 @@ namespace ThreeThingGameThree
         gameState gameStateNow = gameState.menu;
 
         private Sprite Title, MenuPlanet, Option_Play, Option_Options, Background, Foreground; //Menu textures
-        private Texture2D blankSprite;
+        private Texture2D blankSprite, testBall, jupiter;
 
         public Game1()
         {
@@ -64,11 +64,13 @@ namespace ThreeThingGameThree
             spriteBatch = new SpriteBatch(GraphicsDevice);
             //Menu assets - start
             blankSprite = Content.Load<Texture2D>("BlankSprite");
+            jupiter = Content.Load<Texture2D>("Jupiter");
+            testBall = Content.Load<Texture2D>("testBall");
             //----
-            Title = new Sprite(blankSprite, new Vector2(scrW/13, scrH/22), scrW - 2*(scrW/13), scrH - scrH/10);
-            MenuPlanet = new Sprite(blankSprite, new Vector2(scrW / 2 - scrW / 6, scrH), scrH / 4, scrH / 4);
-            Option_Play = new Sprite(blankSprite, new Vector2(0, 0), 30, 30);
-            Option_Options = new Sprite(blankSprite, new Vector2(0, 0), 30, 30);
+            Title = new Sprite(blankSprite, new Vector2(scrW / 12, scrH / 24), scrW - 2 * (scrW / 12), scrH / 6);
+            MenuPlanet = new Sprite(jupiter, new Vector2(scrW / 2 - (scrW / 4), scrH / 4), scrH / 2, scrH / 2);
+            Option_Play = new Sprite(testBall, new Vector2(scrW / 6 - scrW / 16, 3 * scrH / 5), scrW / 8, scrW / 8);
+            Option_Options = new Sprite(blankSprite, new Vector2(3 * (scrW / 4) - scrW / 6, scrH / 5), scrW / 6, scrH / 12);
             Background = new Sprite(blankSprite, new Vector2(0, 0), 30, 30);
             Foreground = new Sprite(blankSprite, new Vector2(0, 0), 30, 30);
             //Menu assets - end
@@ -137,6 +139,7 @@ namespace ThreeThingGameThree
                 case gameState.menu: //Draw while in menu
                     Title.Draw(spriteBatch);
                     MenuPlanet.Draw(spriteBatch);
+                    Option_Play.Draw(spriteBatch);
                     break;
                 case gameState.inGame: //Draw while in game
                     break;
@@ -147,6 +150,27 @@ namespace ThreeThingGameThree
             spriteBatch.End();
 
             base.Draw(gameTime);
+        }
+
+        private void orbitPlanets()
+        {
+            Vector2 planetA = Option_Play.Position;
+            Vector2 planetB = Option_Options.Position;
+
+            Sprite sprite = Option_Play;
+
+            double theta, phi;
+
+            float ax = MenuPlanet.Position.X;
+            float ay = MenuPlanet.Position.Y;
+            float bx = sprite.Position.X;
+            float by = sprite.Position.Y;
+
+            double top = (double)(ax * bx) + (double)(ay * by);
+            double bottom = Math.Pow(ax * ax + (ay * ay), bx * bx + (by * by));
+            theta = Math.Acos(top / bottom);
+
+
         }
     }
 }
