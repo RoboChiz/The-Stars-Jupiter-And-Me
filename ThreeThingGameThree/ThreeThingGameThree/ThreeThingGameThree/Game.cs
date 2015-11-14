@@ -132,6 +132,13 @@ namespace ThreeThingGameThree
     {
         float jumpHeight;
         float fireRate;
+        double money;
+
+        public double Money
+        {
+            get { return money; }
+            set { money = value; }
+        }
 
         public static Texture2D playerTexture;
 

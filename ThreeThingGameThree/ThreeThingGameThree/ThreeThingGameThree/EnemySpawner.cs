@@ -21,7 +21,7 @@ namespace ThreeThingGameThree
 
         public List<Enemy> StartWave(int numOfEnemies, Moon moon)
         {
-
+            CircleSpawning(3, moon);
             return Enemies;
         }
 
