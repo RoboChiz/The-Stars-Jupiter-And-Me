@@ -156,6 +156,12 @@ namespace ThreeThingGameThree
         public static int radius = 50;
         float health;
 
+        public float Health
+        {
+            get { return health; }
+            set { health = value; }
+        }
+
 
     }
 

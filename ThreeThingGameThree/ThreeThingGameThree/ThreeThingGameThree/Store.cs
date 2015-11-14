@@ -12,4 +12,14 @@ namespace ThreeThingGameThree
             money -= item.Price;
         }
     }
+
+    class MoonHealthPowerUp : StoreItem
+    {
+        public MoonHealthPowerUp (Moon moon) {}
+
+        public void Activate(Moon moon, float healthBonus)
+        {
+            moon.Health += healthBonus;
+        }
+    }
 }
