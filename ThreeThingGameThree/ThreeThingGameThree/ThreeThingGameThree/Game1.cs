@@ -26,6 +26,7 @@ namespace ThreeThingGameThree
 
         //Saved Sprite Variables
         private Texture2D testTexture;   
+        private static Color selectColour = Color.Blue;
 
         private Boolean selectPlay = true;
         private Boolean pressed = false;
@@ -121,7 +122,7 @@ namespace ThreeThingGameThree
                     { //Thumb stick directed left
                         selectPlay = false;
                     }
-                    if (/*GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X < 0.15 ||*/ Keyboard.GetState().IsKeyDown(Keys.Space) == true || Keyboard.GetState().IsKeyDown(Keys.Enter) == true) 
+                    if (/*GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X < 0.15 ||*/ !pressed && (Keyboard.GetState().IsKeyDown(Keys.Space) == true || Keyboard.GetState().IsKeyDown(Keys.Enter) == true)) 
                     { //Select button pressed
                         if (selectPlay)
                         {
@@ -132,33 +133,35 @@ namespace ThreeThingGameThree
                         else {
                            //TODO - OPTIONS MENU
                             gameStateNow = gameState.options;
+                            selector = 0;
                             }
                         pressed = true;
                     }
-                    if (/*GamePad.GetState(PlayerIndex.One).Buttons.A ||*/ Keyboard.GetState().IsKeyUp(Keys.Space) == true || Keyboard.GetState().IsKeyUp(Keys.Enter) == true)
+                    if (/*GamePad.GetState(PlayerIndex.One).Buttons.A ||*/ pressed && (Keyboard.GetState().IsKeyUp(Keys.Space) == true && Keyboard.GetState().IsKeyUp(Keys.Enter) == true))
                     { //Select button pressed                       
                         pressed = false;
                     }
                     break;
 
                 case gameState.options: //Controls while in game
-                    if (/*GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.Y > 0.15 ||*/ Keyboard.GetState().IsKeyDown(Keys.W) == true || Keyboard.GetState().IsKeyDown(Keys.Up) == true)
-                    { //Thumb stick directed right
-                        if (selector != 2) {
-                            selector += 1;
-                        }
-                    }
-                    if (/*GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.Y < 0.15 ||*/ Keyboard.GetState().IsKeyDown(Keys.S) == true || Keyboard.GetState().IsKeyDown(Keys.Down) == true)
-                    { //Thumb stick directed left
+                    if (/*GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.Y > 0.15 ||*/ !pressed && (Keyboard.GetState().IsKeyDown(Keys.W) == true || Keyboard.GetState().IsKeyDown(Keys.Up) == true))
+                    { //Thumb stick directed right                        
                         if (selector != 0)
                         {
                             selector -= 1;
                         }
                     }
-                    if (/*GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X < 0.15 ||*/ Keyboard.GetState().IsKeyDown(Keys.Space) == true || Keyboard.GetState().IsKeyDown(Keys.Enter) == true) 
+                    if (/*GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.Y < 0.15 ||*/ !pressed &&(Keyboard.GetState().IsKeyDown(Keys.S) == true || Keyboard.GetState().IsKeyDown(Keys.Down) == true))
+                    { //Thumb stick directed left
+                        if (selector != 2)
+                        {
+                            selector += 1;
+                        }
+                    }
+                    if (/*GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X < 0.15 ||*/!pressed && (Keyboard.GetState().IsKeyDown(Keys.Space) == true || Keyboard.GetState().IsKeyDown(Keys.Enter) == true)) 
                     { //Select button pressed
                         if (selector == 0) { //music on/off
-
+                            
                         }
                         if (selector == 1) //sfx on/off
                         {
@@ -169,7 +172,7 @@ namespace ThreeThingGameThree
                         }
                         pressed = true;
                     }
-                    if (/*GamePad.GetState(PlayerIndex.One).Buttons.A ||*/ Keyboard.GetState().IsKeyUp(Keys.Space) == true || Keyboard.GetState().IsKeyUp(Keys.Enter) == true)
+                    if (/*GamePad.GetState(PlayerIndex.One).Buttons.A ||*/ pressed && (Keyboard.GetState().IsKeyUp(Keys.Space) == true && Keyboard.GetState().IsKeyUp(Keys.Enter) == true && Keyboard.GetState().IsKeyUp(Keys.W) == true && Keyboard.GetState().IsKeyUp(Keys.Up) == true && Keyboard.GetState().IsKeyUp(Keys.S) == true && Keyboard.GetState().IsKeyUp(Keys.Down) == true))
                     { //Select button pressed                       
                         pressed = false;
                     }
@@ -212,12 +215,12 @@ namespace ThreeThingGameThree
                     Title.Draw(spriteBatch);
                     if (selectPlay)
                     {
-                        Option_Play.Colour = Color.Blue;
+                        Option_Play.Colour = selectColour;
                         Option_Options.Colour = Color.White;
                     }
                     else {
                         Option_Play.Colour = Color.White;
-                        Option_Options.Colour = Color.Blue;
+                        Option_Options.Colour = selectColour;
                     }
                     MenuPlanet.Draw(spriteBatch);
                     Option_Play.Draw(spriteBatch);
@@ -226,6 +229,27 @@ namespace ThreeThingGameThree
 
                 case gameState.options: //Draw while in options menu
                     Omoon.Draw(spriteBatch);
+                    switch (selector) {
+                        case 0:
+                            music.Colour = selectColour;
+                            sfx.Colour = Color.White;
+                            back.Colour = Color.White;
+                            break;
+                        case 1:
+                            music.Colour = Color.White;
+                            sfx.Colour = selectColour;
+                            back.Colour = Color.White;
+                            break;
+                        case 2:
+                            music.Colour = Color.White;
+                            sfx.Colour = Color.White;
+                            back.Colour = selectColour;
+                            break;
+                    }
+
+                    music.Draw(spriteBatch);
+                    sfx.Draw(spriteBatch);
+                    back.Draw(spriteBatch);
                     break;
                 case gameState.inGame: //Draw while in game
                     break;
