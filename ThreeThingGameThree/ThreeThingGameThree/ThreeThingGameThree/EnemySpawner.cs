@@ -17,40 +17,34 @@ namespace ThreeThingGameThree
     class EnemySpawner
     {
         List<Enemy> Enemies = new List<Enemy>();
-        Random random = new Random();
+        private Random random;
+
+        public EnemySpawner()
+        {
+            random = new Random();
+        }
 
         public List<Enemy> StartWave(int numOfEnemies, Moon moon)
         {
-            CircleSpawning(3, moon);
+            CircleSpawning(numOfEnemies, moon);
             return Enemies;
-        }
-
-        public void SimpleWave(int numOfEnemies)
-        {
-            for (int i = 0; i < numOfEnemies; i++)
-            {
-                Enemies.Add(new Enemy(Enemies[i].spriteTexture, generatePosition(), Enemies[i].Width, Enemies[i].Height));
-            }
         }
 
         public void CircleSpawning(int numOfEnemies, Moon moon)
         {
             for (int i = 0; i < numOfEnemies; i++)
             {
-                Enemies.Add(new Enemy(Enemies[i].spriteTexture, generateCirclePositioning(moon), Enemies[i].Width, Enemies[i].Height));
+                Enemies.Add(new Enemy(null, Vector2.Zero, 25, 25, generateCirclePositioning(),
+                    random.Next(Moon.radius + 400,Moon.radius + 1000)));
             }
         }
 
-        public Vector2 generateCirclePositioning(Moon moon)
+        public float generateCirclePositioning()
         {
-            Random random = new Random();
             float angleDegrees = random.Next(0, 360);
             float angleRadians = angleDegrees * (float)Math.PI / 180.0f;
 
-            double x = moon.Position.X + ((double)random.Next(100, 200) * Math.Cos(angleRadians));
-            double y = moon.Position.Y + ((double)random.Next(100, 200) * Math.Sin(angleRadians));
-
-            return new Vector2((float)x, (float)y);
+            return angleRadians;
         }
 
         public Vector2 generatePosition()

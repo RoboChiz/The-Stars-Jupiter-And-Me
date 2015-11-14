@@ -17,36 +17,31 @@ namespace ThreeThingGameThree
     {
 
         static Random random = new Random();
+        static public Texture2D enemyTexture;
+
+        public float angleOnMoon; //In Radians
+        public float distanceFromMoon;
 
         private float speed;
 
-        enum State
+        public Enemy(Texture2D textureVal, Vector2 pos, int widthVal, int heightVal, float angle, float distance)
+            : base(enemyTexture, pos, widthVal, heightVal)
         {
-            Idling,
-            Moving
+            speed = random.Next(50, 100);
+            angleOnMoon = angle;
+            distanceFromMoon = distance;
         }
 
-        public Enemy(Texture2D textureVal, Vector2 pos, int widthVal, int heightVal)
-            : base(textureVal, pos, widthVal, heightVal)
-        {
-            speed = randomSpeed(0.5, 2.0);
-        }
-
-        public void Update(GameTime gameTime, Moon moonObj)
+        public void Update(float deltaTime, Moon moon)
         {
             //Move towards moon position
-            Direction = Vector2.Normalize(moonObj.Position - this.Position);
-            Position += Direction * speed;
+            distanceFromMoon -= speed * deltaTime;
+            
+            float x = moon.Position.X + (distanceFromMoon * (float)Math.Cos(angleOnMoon));
+            float y = moon.Position.Y + (distanceFromMoon * (float)Math.Sin(angleOnMoon));
+
+            Position = new Vector2(x, y);
         }
-
-        public float randomSpeed(double minimum, double maximum)
-        {
-            return (float)(random.Next() * (maximum - minimum) + minimum);
-        }
-
-
-
-
 
     }
 }

@@ -19,6 +19,9 @@ namespace ThreeThingGameThree
         NewPlayer player;
         List<Enemy> enemies;
         Moon moon;
+        EnemySpawner es;
+
+        int enemyAmount;
 
         Camera cam;
 
@@ -33,22 +36,28 @@ namespace ThreeThingGameThree
         {
             enemies = new List<Enemy>();            
             cam = new Camera();
+            es = new EnemySpawner();
+
+            enemyAmount = 5;
         }
 
         public void StartGame()
         {
             moon = new Moon(Moon.moonTexture, new Vector2(0, 0), Moon.radius * 2, Moon.radius * 2);
             player = new NewPlayer(NewPlayer.playerTexture, new Vector2(0, 0), 25, 25);
+            StartWave();
         }
 
         public void StartWave()
         {
             gameState = GameState.Attack;
+            enemies = es.StartWave(enemyAmount, moon);
         }
 
         public void EndWave()
         {
             gameState = GameState.Rest;
+            enemyAmount += 5;
         }
 
         public void Update(GameTime gameTime, GraphicsDevice device)
@@ -60,7 +69,14 @@ namespace ThreeThingGameThree
                
                 for (int i = 0; i < enemies.Count; i++)
                 {
-                    enemies[i].Update(gameTime, moon);
+                    enemies[i].Update(deltaTime, moon);
+                    
+                    if (enemies[i].distanceFromMoon <= Moon.radius)
+                    {
+                        enemies.RemoveAt(i);
+                        moon.Health -= 5f;
+                        i--;
+                    }
                 }
 
                 if(enemies.Count == 0) //At end of Wave
