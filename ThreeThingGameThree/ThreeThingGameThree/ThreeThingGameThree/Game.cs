@@ -169,7 +169,6 @@ namespace ThreeThingGameThree
             if (/*GamePad.GetState(PlayerIndex.One).AButton? < 0.15 ||*/ Keyboard.GetState().IsKeyDown(Keys.Space) == true)
             { //Thumb stick directed left
                 float amount = deltaTime * 300f;
-                Console.WriteLine(amount);
                 if (currentFuel >= 0)
                 {
                     currentFuel -= amount;

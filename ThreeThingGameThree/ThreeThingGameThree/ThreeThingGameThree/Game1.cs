@@ -240,17 +240,11 @@ namespace ThreeThingGameThree
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-            spriteBatch.Begin(SpriteSortMode.BackToFront,
-                        BlendState.AlphaBlend,
-                        null,
-                        null,  
-                        null,
-                        null,
-                        cam.get_transformation(graphics.GraphicsDevice));
+            spriteBatch.Begin();
             switch (gameStateNow)
             {
                 case gameState.menu: //Draw while in menu
-                    Title.Draw(spriteBatch);
+                    Title.DrawNoRotCentre(spriteBatch);
                     if (selectPlay)
                     {
                         Option_Play.Colour = selectColour;
@@ -260,13 +254,13 @@ namespace ThreeThingGameThree
                         Option_Play.Colour = Color.White;
                         Option_Options.Colour = selectColour;
                     }
-                    MenuPlanet.Draw(spriteBatch);
-                    Option_Play.Draw(spriteBatch);
-                    Option_Options.Draw(spriteBatch);
+                    MenuPlanet.DrawNoRotCentre(spriteBatch);
+                    Option_Play.DrawNoRotCentre(spriteBatch);
+                    Option_Options.DrawNoRotCentre(spriteBatch);
                     break;
 
                 case gameState.options: //Draw while in options menu
-                    Omoon.Draw(spriteBatch);
+                    Omoon.DrawNoRotCentre(spriteBatch);
                     switch (selector) {
                         case 0:
                             music.Colour = selectColour;
@@ -285,9 +279,9 @@ namespace ThreeThingGameThree
                             break;
                     }
 
-                    music.Draw(spriteBatch);
-                    sfx.Draw(spriteBatch);
-                    back.Draw(spriteBatch);
+                    music.DrawNoRotCentre(spriteBatch);
+                    sfx.DrawNoRotCentre(spriteBatch);
+                    back.DrawNoRotCentre(spriteBatch);
                     break;
                 case gameState.inGame: //Draw while in game
                     break;
