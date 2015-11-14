@@ -34,8 +34,7 @@ namespace ThreeThingGameThree
         {
             for (int i = 0; i < numOfEnemies; i++)
             {
-                Enemies.Add(new Enemy(null, Vector2.Zero, 25, 25, generateCirclePositioning(),
-                    random.Next(Moon.radius + 400,Moon.radius + 1000)));
+                Enemies.Add(new Enemy(null, Vector2.Zero, 25, 25, generateCirclePositioning(),Moon.radius + 700 + (i * 100)));
             }
         }
 

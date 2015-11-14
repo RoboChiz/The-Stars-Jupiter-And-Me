@@ -35,14 +35,14 @@ Content\pointer.xnb
 Content\fire.xnb
 Content\Wave_complete.xnb
 Content\Wave_start.xnb
+Content\monster.xnb
+Content\Title2.xnb
+Content\store.xnb
 Content\Betweenwaves.xnb
 Content\Betweenwaves.wma
 Content\MidWave.xnb
 Content\MidWave.wma
 Content\Blaster_fire.xnb
-Content\monster.xnb
-Content\Title2.xnb
-Content\Courier New.xnb
-Content\store.xnb
 Content\Blast.xnb
 Content\pop.xnb
+Content\Courier New.xnb

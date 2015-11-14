@@ -95,7 +95,7 @@ namespace ThreeThingGameThree
             gameState = GameState.Rest;
             showEnd = true;
             enemyAmount += 5;
-            waveWait = 30f;
+            waveWait = 10f;
             waitTimer = 0f;
             waves++;
             MediaPlayer.Stop();
@@ -255,6 +255,11 @@ namespace ThreeThingGameThree
             else
             {
                 spriteBatch.DrawString(Game1.font, "Money: " + player.currentCash.ToString(), new Vector2(10, 70), Color.White);
+                if (gameState == GameState.Attack)
+                {
+                    spriteBatch.DrawString(Game1.font, "Wave: " + (waves+1).ToString(), new Vector2(10, 100), Color.White);
+                    spriteBatch.DrawString(Game1.font, "Enemies Left: " + enemies.Count.ToString(), new Vector2(10, 130), Color.White);
+                }
             }
 
             player.DrawGUI(spriteBatch);
@@ -469,11 +474,11 @@ namespace ThreeThingGameThree
                 }                
             }
 
-            if (Keyboard.GetState().IsKeyDown(Keys.S) == true)
+            if (Keyboard.GetState().IsKeyDown(Keys.B) == true)
             {
 
             }
-
+            
             gunWait += deltaTime;
 
             for (int i = 0; i < bullets.Count; i++)
@@ -544,7 +549,7 @@ namespace ThreeThingGameThree
             }
 
             Sprite Shop = new Sprite(Game1.storeTexture, new Vector2(Game1.scrW - 40, 10),20,20);
-            Shop.DrawNoRotCentre(spriteBatch);
+            //Shop.DrawNoRotCentre(spriteBatch);
             
             //Draw Jetpack Fuel
             Sprite fuelBackground = new Sprite(fuelBackgroundTexture,new Vector2(10,40),(int)(maxFuel),20);
