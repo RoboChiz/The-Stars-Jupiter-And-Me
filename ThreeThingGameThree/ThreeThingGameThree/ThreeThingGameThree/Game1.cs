@@ -31,7 +31,7 @@ namespace ThreeThingGameThree
         private Boolean selectPlay = true;
         private Boolean pressed = false;
         private int selector = 0;
-        enum gameState{menu, options, inGame, gameOver};
+        enum gameState{menu, options, inGame, gameOver, paused};
         gameState gameStateNow = gameState.menu;
 
         private Sprite Title, MenuPlanet, Option_Play, Option_Options, Background, Foreground, Omoon; //Menu sprites
@@ -183,6 +183,13 @@ namespace ThreeThingGameThree
                 case gameState.inGame: //Controls while in game
                     if (currentGame != null)
                         currentGame.Update(gameTime);
+                    break;
+
+                case gameState.paused: //When the game is paused
+                    if (/*GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X < 0.15 ||*/!pressed && (Keyboard.GetState().IsKeyDown(Keys.Space) == true || Keyboard.GetState().IsKeyDown(Keys.Enter) == true))
+                    { //Select button pressed
+                        gameStateNow = gameState.inGame;
+                    }
                     break;
 
                 case gameState.gameOver: //Controls while in gameOver
