@@ -430,6 +430,11 @@ namespace ThreeThingGameThree
                 }                
             }
 
+            if (Keyboard.GetState().IsKeyDown(Keys.S) == true)
+            {
+
+            }
+
             gunWait += deltaTime;
 
             for (int i = 0; i < bullets.Count; i++)
@@ -499,7 +504,7 @@ namespace ThreeThingGameThree
                 Heart.DrawNoRotCentre(spriteBatch);
             }
 
-            Sprite Shop = new Sprite(heartTexture, new Vector2(Game1.scrW - 40, 20),20,20);
+            Sprite Shop = new Sprite(Game1.storeTexture, new Vector2(Game1.scrW - 40, 10),20,20);
             Shop.DrawNoRotCentre(spriteBatch);
             
             //Draw Jetpack Fuel

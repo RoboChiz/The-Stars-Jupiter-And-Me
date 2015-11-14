@@ -44,6 +44,7 @@ namespace ThreeThingGameThree
         private Sprite Title, MenuPlanet, Option_Play, Option_Options, Background, Foreground, Omoon, satellite; //Menu sprites
         private Texture2D blankSprite, testBall, testSBall, jupiter, player, heart, noHeart, fuelbackground, fuelBar, backgroundTexture,
             gun,cursorTexture,bulletTexture, tOptionIcon, tOptions, tPlay, tTitle, enemy, startWave, endWave;
+        public static Texture2D storeTexture;
         public static SpriteFont font;
 
         private Sprite music, sfx, back, mOn, sOn; //Options sprites
@@ -104,6 +105,7 @@ namespace ThreeThingGameThree
             tMoon3 = Content.Load<Texture2D>("moon_3");
             tSatellite = Content.Load<Texture2D>("Satellite");
             tSound = Content.Load<Texture2D>("Sound_on");
+            storeTexture = Content.Load<Texture2D>("store");
 
             actionMusic = Content.Load<Song>("MidWave");
             inbetweenWaveMusic = Content.Load<Song>("Betweenwaves");
