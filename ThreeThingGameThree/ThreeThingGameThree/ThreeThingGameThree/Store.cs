@@ -68,7 +68,34 @@ namespace ThreeThingGameThree
             }
         }
     }
-    
+
+    /// <summary>
+    /// Upgrade rate of fire.
+    /// </summary>
+    class PlayerWeaponROFIncrease : StoreItem
+    {
+        int upgradeLevel = 0;
+        double[] upgradePrices = new double[] { 10.0, 25.0, 55.0, 75.0, 100.0 };
+
+        public PlayerWeaponROFIncrease(NewPlayer player, Double money)
+        {
+            this.Price = upgradePrices[0];
+        }
+
+        public void Activate(NewPlayer player, Double money)
+        {
+            this.Price = upgradePrices[upgradeLevel];
+            Store.BuyItem(this, money);
+
+            if (upgradeLevel <= upgradePrices.Length)
+            {
+                player.GunROF += 1f;
+                upgradeLevel++;
+            }
+        }
+    }
+
+
 
     /// <summary>
     /// Increases the moons health by 25
