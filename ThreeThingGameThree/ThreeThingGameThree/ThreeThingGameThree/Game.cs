@@ -69,22 +69,48 @@ namespace ThreeThingGameThree
 
             if(gameState == GameState.Attack)
             {
-               
+
+                List<int> enemyToRemove = new List<int>();
+                List<int> bulletToRemove = new List<int>();
+
                 for (int i = 0; i < enemies.Count; i++)
                 {
                     enemies[i].Update(deltaTime, moon);
-                    
+
+                    for (int b = 0; b < player.bullets.Count; b++ )
+                    {
+                        if(Vector2.Distance(enemies[i].Position,player.bullets[b].Position) < enemies[i].width/2f)
+                        {
+                            enemies[i].health -= player.GunDamage;
+                            bulletToRemove.Add(b);
+                        }
+                    }
+
                     if (enemies[i].distanceFromMoon <= Moon.radius)
                     {
-                        enemies.RemoveAt(i);
+                        enemyToRemove.Add(i);
                         moon.Health -= 5f;
-                        i--;
+                    }
+
+                    if(enemies[i].health <= 0)
+                    {
+                        enemyToRemove.Add(i);
                     }
                 }
 
                 if(enemies.Count == 0) //At end of Wave
                 {
                     EndWave();
+                }
+
+                for (int i = 0; i < enemyToRemove.Count; i++)
+                {
+                    enemies.RemoveAt(enemyToRemove[i]);
+                }
+
+                for (int i = 0; i < bulletToRemove.Count; i++)
+                {
+                    player.bullets.RemoveAt(bulletToRemove[i]);
                 }
 
             }

@@ -23,6 +23,7 @@ namespace ThreeThingGameThree
         public float distanceFromMoon;
 
         private float speed;
+        public float health;
 
         public Enemy(Texture2D textureVal, Vector2 pos, int widthVal, int heightVal, float angle, float distance)
             : base(enemyTexture, pos, widthVal, heightVal)
@@ -30,6 +31,7 @@ namespace ThreeThingGameThree
             speed = random.Next(50, 100);
             angleOnMoon = angle;
             distanceFromMoon = distance;
+            health = 1f;
         }
 
         public void Update(float deltaTime, Moon moon)
