@@ -26,7 +26,13 @@ namespace ThreeThingGameThree
             // Make sure that the moon health is less than the max before adding it.
             if ((moon.Health < maxHealth))
             {
-                moon.Health += healthBonus;
+                if (moon.Health + healthBonus > maxHealth) {
+                    moon.Health = maxHealth;
+                }
+                else
+                {
+                    moon.Health += healthBonus;
+                }
             }
         }
     }

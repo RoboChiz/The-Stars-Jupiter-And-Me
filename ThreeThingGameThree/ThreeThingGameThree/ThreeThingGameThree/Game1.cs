@@ -232,13 +232,7 @@ namespace ThreeThingGameThree
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-            spriteBatch.Begin(SpriteSortMode.BackToFront,
-                        BlendState.AlphaBlend,
-                        null,
-                        null,  
-                        null,
-                        null,
-                        cam.get_transformation(graphics.GraphicsDevice));
+            spriteBatch.Begin();
             switch (gameStateNow)
             {
                 case gameState.menu: //Draw while in menu
