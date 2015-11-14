@@ -64,6 +64,7 @@ namespace ThreeThingGameThree
             if (upgradeLevel <= upgradePrices.Length)
             {
                 player.GunDamage += 1f;
+                upgradeLevel++;
             }
         }
     }
@@ -120,6 +121,7 @@ namespace ThreeThingGameThree
             {
                 moon.MaxHealth += 25;
                 moon.Health = moon.MaxHealth;
+                upgradeLevel++;
             }
         }
     }
