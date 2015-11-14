@@ -304,17 +304,23 @@ namespace ThreeThingGameThree
                     Omoon.DrawNoRotCentre(spriteBatch);
                     switch (selector) {
                         case 0:
-                            music.Colour = selectColourO;                            
+                            music.Colour = selectColourO;
+                            mOn.Colour = selectColourO;
+                            sOn.Colour = Color.Red;
                             sfx.Colour = Color.Red;
                             back.Colour = Color.Red;
                             break;
                         case 1:
                             music.Colour = Color.Red;
+                            mOn.Colour = Color.Red;
+                            sOn.Colour = selectColourO;
                             sfx.Colour = selectColourO;
                             back.Colour = Color.Red;
                             break;
                         case 2:
                             music.Colour = Color.Red;
+                            mOn.Colour = Color.Red;
+                            sOn.Colour = Color.Red;
                             sfx.Colour = Color.Red;
                             back.Colour = selectColourO;
                             break;
@@ -348,8 +354,8 @@ namespace ThreeThingGameThree
 
         private void orbitPlanets()
         {
-            Double angle = theta * (Math.PI / 180);
-            satellite.Position = MenuPlanet.Position + (new Vector2((float)((jupiter.Width) * Math.Cos(angle)), (float)((jupiter.Width) * Math.Sin(angle))));            
+            Double angle = theta * (Math.PI / 180);            
+            satellite.Position = MenuPlanet.Position + (new Vector2((float)((400) * Math.Cos(angle)), (float)((200) * Math.Sin(angle))));            
         }
     }
 }
