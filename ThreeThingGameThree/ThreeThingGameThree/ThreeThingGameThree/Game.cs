@@ -130,7 +130,10 @@ namespace ThreeThingGameThree
         private bool flying;
         private bool isGrounded;
 
+        private bool faceRight;
+
         private Vector2 gunDir;
+
 
         public NewPlayer(Texture2D textureVal, Vector2 pos, int widthVal, int heightVal)
                 : base(textureVal, pos, widthVal, heightVal)
@@ -149,6 +152,8 @@ namespace ThreeThingGameThree
             flying = false;
             isGrounded = true;
 
+            faceRight = false;
+
             gunDir = new Vector2(1, 0);
         }
 
@@ -162,10 +167,12 @@ namespace ThreeThingGameThree
             if (/*GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X > 0.15 ||*/ Keyboard.GetState().IsKeyDown(Keys.A) == true || Keyboard.GetState().IsKeyDown(Keys.Left) == true)
             { //Thumb stick directed right
                 angleOnMoon -= moveSpeed;
+                faceRight = false;
             }
             if (/*GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X < 0.15 ||*/ Keyboard.GetState().IsKeyDown(Keys.D) == true || Keyboard.GetState().IsKeyDown(Keys.Right) == true)
             { //Thumb stick directed left
                 angleOnMoon += moveSpeed;
+                faceRight = true;
             }
 
             flying = false;
@@ -214,6 +221,27 @@ namespace ThreeThingGameThree
             lookDir = new Vector2((float)Math.Cos(angleOnMoon), -(float)Math.Sin(angleOnMoon));
             FaceDirection(lookDir);
 
+
+        }
+
+        public override void Draw(SpriteBatch spriteBatch)
+        {
+            int spriteWidth = (int)(Width);
+            int spriteHeight = (int)(Height);
+
+            int spriteX = (int)(Position.X);
+            int spriteY = (int)(Position.Y);
+
+            Rectangle destinationRectangle = new Rectangle(spriteX, spriteY, spriteWidth, spriteHeight);
+
+            Vector2 spriteOrigin = new Vector2(spriteTexture.Width / 2f, spriteTexture.Height / 2f);
+
+            SpriteEffects sp = SpriteEffects.None;
+
+            if (!faceRight)
+                sp = SpriteEffects.FlipHorizontally;
+
+            spriteBatch.Draw(spriteTexture, destinationRectangle, null, Color.White, Rotation, spriteOrigin, sp, 0);
 
         }
 

@@ -98,7 +98,7 @@ namespace ThreeThingGameThree
 
 
             //Game Assets
-            player = Content.Load<Texture2D>("OrangeBall");
+            player = Content.Load<Texture2D>("player");
             heart = Content.Load<Texture2D>("heart");
             noHeart = Content.Load<Texture2D>("heart_Empty");
             fuelbackground = Content.Load<Texture2D>("fuelbackground");

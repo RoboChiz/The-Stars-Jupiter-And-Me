@@ -110,7 +110,7 @@ namespace RobsSprite
             return rotation;
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public virtual void Draw(SpriteBatch spriteBatch)
         {
             int spriteWidth = (int)(Width);
             int spriteHeight = (int)(Height);
