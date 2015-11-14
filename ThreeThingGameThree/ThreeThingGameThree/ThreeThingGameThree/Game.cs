@@ -23,7 +23,17 @@ namespace ThreeThingGameThree
 
         int enemyAmount;
 
+        float waveWait,waitTimer;
+
         Camera cam;
+
+        static public Texture2D startWaveTexture;
+        static public Texture2D endWaveTexture;
+
+        private Sprite startWave;
+        private bool showStart;
+        private Sprite endWave;
+        private bool showEnd;
 
         enum GameState
         {
@@ -39,19 +49,34 @@ namespace ThreeThingGameThree
             es = new EnemySpawner();
 
             enemyAmount = 5;
+            
+            waveWait = 10f;
+            waitTimer = 0f;
+
+            float width = (Game1.scrW / 2f);
+            float height = (Game1.scrH / 2f);
+
+            startWave = new Sprite(startWaveTexture, new Vector2(Game1.scrW / 2f, Game1.scrH * 0.4f), (int)width, (int)height);
+            endWave = new Sprite(endWaveTexture, new Vector2(Game1.scrW / 2f, Game1.scrH * 0.4f), (int)width, (int)height);
+           
+            showStart = false;
+            showEnd = false;
         }
 
         public void StartGame()
         {
             moon = new Moon(Moon.moonTexture, new Vector2(0, 0), Moon.radius * 2, Moon.radius * 2);
             player = new NewPlayer(NewPlayer.playerTexture, new Vector2(0, 0), 25, 25);
-            StartWave();
+            gameState = GameState.Rest;
+            waitTimer = 0f;
         }
 
         public void StartWave()
         {
             gameState = GameState.Attack;
+            showStart = true;
  			enemies = es.StartWave(enemyAmount, moon);
+            waitTimer = 0f;
             MediaPlayer.Stop();
             if (Game1.musicOn) 
             {
@@ -62,7 +87,10 @@ namespace ThreeThingGameThree
         public void EndWave()
         {
             gameState = GameState.Rest;
+            showEnd = true;
             enemyAmount += 5;
+            waveWait = 30f;
+            waitTimer = 0f;
             MediaPlayer.Stop();
             if (Game1.musicOn)
             {
@@ -72,9 +100,34 @@ namespace ThreeThingGameThree
 
         public void Update(GameTime gameTime, GraphicsDevice device)
         {         
-            float deltaTime = (gameTime.ElapsedGameTime.Milliseconds / 1000f);       
+            float deltaTime = (gameTime.ElapsedGameTime.Milliseconds / 1000f);
+            waitTimer += deltaTime;
 
-            if(gameState == GameState.Attack)
+            if(showStart)
+            {
+                if(waitTimer >= 1)
+                {
+                    showStart = false;
+                }
+            }else if (showEnd)
+            {
+                if (waitTimer >= 1)
+                {
+                    showEnd = false;
+                }
+            }
+            else
+            {
+                if (gameState == GameState.Rest)
+                {
+                    if(waitTimer >= waveWait)
+                    {
+                        StartWave();
+                    }
+                }
+            }
+
+            if(gameState != GameState.Rest)
             {
 
                 List<int> enemyToRemove = new List<int>();
@@ -152,7 +205,24 @@ namespace ThreeThingGameThree
 
             //Draw GUI
             spriteBatch.Begin();
-                player.DrawGUI(spriteBatch);
+            
+            if(gameState == GameState.Rest)
+            {
+                spriteBatch.DrawString(Game1.font, "Next wave in: " + (waveWait - waitTimer).ToString("00"), new Vector2(10, 70), Color.White);
+            }
+
+            player.DrawGUI(spriteBatch);
+                
+            if (showStart)
+            {
+                startWave.Draw(spriteBatch);
+            }
+
+            if (showEnd)
+            {
+                endWave.Draw(spriteBatch);
+            }
+
             spriteBatch.End();
         }
 
@@ -245,7 +315,7 @@ namespace ThreeThingGameThree
             gunDir = new Vector2(1, 0);
 
             GunDamage = 1f;
-            GunROF = 1f;
+            GunROF = 0.5f;
             bullets = new List<Bullet>();
         }
         
@@ -447,7 +517,7 @@ namespace ThreeThingGameThree
     class Bullet : Sprite
     {
         private Vector2 dir;
-        static public float speed = 150f;
+        static public float speed = 200f;
         public Bullet(Texture2D textureVal, Vector2 pos, int widthVal, int heightVal, Vector2 bulletDir)
                 : base(textureVal, pos, widthVal, heightVal)
          {

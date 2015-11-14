@@ -44,6 +44,7 @@ namespace ThreeThingGameThree
         private Sprite Title, MenuPlanet, Option_Play, Option_Options, Background, Foreground, Omoon, satellite; //Menu sprites
         private Texture2D blankSprite, testBall, testSBall, jupiter, player, heart, noHeart, fuelbackground, fuelBar, backgroundTexture,
             gun,cursorTexture,bulletTexture, tOptionIcon, tOptions, tPlay, tTitle, enemy, startWave, endWave;
+        public static SpriteFont font;
 
         private Sprite music, sfx, back, mOn, sOn; //Options sprites
         private Texture2D tMusic, tSfx, tBack, tSound;
@@ -128,8 +129,8 @@ namespace ThreeThingGameThree
             //Foreground = new Sprite(blankSprite, new Vector2(0, 0), 30, 30);
 
             //Menu assets - end
-
-
+            font = Content.Load<SpriteFont>("Courier New");
+            
             //Game Assets
             player = Content.Load<Texture2D>("player");
             heart = Content.Load<Texture2D>("heart");
@@ -154,6 +155,8 @@ namespace ThreeThingGameThree
             NewPlayer.bulletTexture = bulletTexture;
 
             Enemy.enemyTexture = enemy;
+            GameClass.startWaveTexture = startWave;
+            GameClass.endWaveTexture = endWave;
 
             music.Colour = Color.Red;
             sfx.Colour = Color.Red;
