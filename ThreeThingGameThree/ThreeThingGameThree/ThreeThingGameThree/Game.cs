@@ -170,13 +170,17 @@ namespace ThreeThingGameThree
                     {
                         enemyToRemove.Add(i);
 						if (Game1.sfxOn) {
-                            MediaPlayer.Play(Game1.blast);
+                            Game1.blast.Play(0.5f, 0f, 0f);
                         }                        continue;
                     }
 
                     if(enemies[i].health <= 0)
                     {
                         enemyToRemove.Add(i);
+                        if (Game1.sfxOn)
+                        {
+                            Game1.pop.Play(0.5f, 0f, 0f);
+                        }
                         continue;
                     }
                 }
