@@ -24,7 +24,7 @@ namespace ThreeThingGameThree
         private Boolean musicOn = true;
         private Boolean sfxOn = true;
 
-        private int theta = 0;
+        private float theta = 0;
 
         static public int scrW = 800; //TODO - set to screen resolution
         static public int scrH = 600;
@@ -113,7 +113,7 @@ namespace ThreeThingGameThree
             mOn = new Sprite(tSound, new Vector2(scrW / 2 - 2 * (scrW / 15) + (scrW / 3), (scrH / 32 + scrH / 6) + 5), 19, 47);
             sOn = new Sprite(tSound, new Vector2(scrW / 2 - 2 * (scrW / 15) + (scrW / 3), (scrH / 32 + scrH / 3) + 5), 19, 47);
 
-            satellite = new Sprite(tSatellite, new Vector2(0,0),0,0);
+            satellite = new Sprite(tSatellite, new Vector2(0,0),50,50);
 
             Background = new Sprite(backgroundTexture, new Vector2(0, 0), scrW, scrH);
             //Foreground = new Sprite(blankSprite, new Vector2(0, 0), 30, 30);
@@ -259,7 +259,7 @@ namespace ThreeThingGameThree
                 
                 this.Exit();
             }
-            theta += 5;
+            theta += 0.5f;
             while (theta > 360) {
                 theta -= 360;
             }
@@ -294,10 +294,11 @@ namespace ThreeThingGameThree
                         Option_Options.Colour = selectColour;
                     }
                     MenuPlanet.DrawNoRotCentre(spriteBatch);
-                    Title.DrawNoRotCentre(spriteBatch);
                     Option_Play.DrawNoRotCentre(spriteBatch);
                     Option_Options.DrawNoRotCentre(spriteBatch);
                     satellite.DrawNoRotCentre(spriteBatch);
+                    Title.DrawNoRotCentre(spriteBatch);
+                    
                     break;
 
                 case gameState.options: //Draw while in options menu
@@ -355,7 +356,7 @@ namespace ThreeThingGameThree
         private void orbitPlanets()
         {
             Double angle = theta * (Math.PI / 180);            
-            satellite.Position = MenuPlanet.Position + (new Vector2((float)((400) * Math.Cos(angle)), (float)((200) * Math.Sin(angle))));            
+            satellite.Position = MenuPlanet.Position + (new Vector2((float)((350) * Math.Cos(angle)), (float)((140) * Math.Sin(angle))));            
         }
     }
 }
