@@ -47,8 +47,8 @@ namespace ThreeThingGameThree
             float angleDegrees = random.Next(0, 360);
             float angleRadians = angleDegrees * (float)Math.PI / 180.0f;
 
-            double x = moon.GetCentre().X + ((double)random.Next(100, 200) * Math.Cos(angleRadians));
-            double y = moon.GetCentre().Y + ((double)random.Next(100, 200) * Math.Sin(angleRadians));
+            double x = moon.Position.X + ((double)random.Next(100, 200) * Math.Cos(angleRadians));
+            double y = moon.Position.Y + ((double)random.Next(100, 200) * Math.Sin(angleRadians));
 
             return new Vector2((float)x, (float)y);
         }
