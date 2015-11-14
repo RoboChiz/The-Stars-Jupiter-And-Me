@@ -139,7 +139,7 @@ namespace ThreeThingGameThree
             gun = Content.Load<Texture2D>("Gun");
             cursorTexture = Content.Load<Texture2D>("pointer");
             bulletTexture = Content.Load<Texture2D>("fire");
-            enemy = Content.Load<Texture2D>("OrangeBall");
+            enemy = Content.Load<Texture2D>("monster");
             startWave = Content.Load<Texture2D>("Wave_start");
             endWave = Content.Load<Texture2D>("Wave_complete");
 
