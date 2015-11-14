@@ -193,7 +193,7 @@ namespace ThreeThingGameThree
             gunDir = new Vector2(1, 0);
 
             GunDamage = 1f;
-            GunROF = 0.3f;
+            GunROF = 1f;
             bullets = new List<Bullet>();
         }
         
@@ -277,6 +277,9 @@ namespace ThreeThingGameThree
 
             Vector2 gunDir = worldPosition - gun.Position;
             gunDir.Normalize();
+
+            Vector2 bulletDir = gunDir;
+
             gunDir.Y *= -1;
 
             gunDir = Rotatevector(gunDir, (float)-Math.PI / 2f);
@@ -287,23 +290,19 @@ namespace ThreeThingGameThree
             { //Thumb stick directed left
                 if (gunWait >= GunROF)
                 {
-                    Bullet nBullet = new Bullet(bulletTexture, gun.Position, gun.width, gun.width, gunDir);
+                    Bullet nBullet = new Bullet(bulletTexture, gun.Position, gun.width, gun.width, bulletDir);
                     bullets.Add(nBullet);
                     gunWait = 0f;
-                }
+                }                
+            }
 
-                gunWait += deltaTime;
-            }
-            else
-            {
-                gunWait = GunROF;
-            }
+            gunWait += deltaTime;
 
             for (int i = 0; i < bullets.Count; i++)
             {
                 bullets[i].Update(deltaTime);
 
-                if (Math.Abs(bullets[i].Position.X) > 300 || Math.Abs(bullets[i].Position.Y) > 300)
+                if (Math.Abs(bullets[i].Position.X) > 1000 || Math.Abs(bullets[i].Position.Y) > 1000)
                 {
                     bullets.RemoveAt(i);
                     i -= 1;
@@ -401,13 +400,15 @@ namespace ThreeThingGameThree
                 : base(textureVal, pos, widthVal, heightVal)
          {
              dir = Vector2.Normalize(bulletDir);
-             FaceDirection(dir);
+             FaceDirection(bulletDir);
          }
 
         public void Update(float deltaTime)
         {
             Position += dir * deltaTime * speed;               
         }
+
+
 
     }
 

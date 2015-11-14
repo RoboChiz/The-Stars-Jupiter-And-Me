@@ -129,7 +129,7 @@ namespace ThreeThingGameThree
             fuelBar = Content.Load<Texture2D>("fuelBar");
             gun = Content.Load<Texture2D>("Gun");
             cursorTexture = Content.Load<Texture2D>("pointer");
-            bulletTexture = Content.Load<Texture2D>("OrangeBall");
+            bulletTexture = Content.Load<Texture2D>("fire");
 
             Moon.moonTexture = tMoon1;
             NewPlayer.playerTexture = player;
