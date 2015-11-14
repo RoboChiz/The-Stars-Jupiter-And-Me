@@ -112,7 +112,7 @@ namespace RobsSprite
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(spriteTexture, new Rectangle((int)position.X, (int)position.Y, width, height), null, colour, rotation, Vector2.Zero, SpriteEffects.None, 0);
+            spriteBatch.Draw(spriteTexture, Position, null, Colour, Rotation, new Vector2(Width / 2f, Height / 2f), 1.0f, SpriteEffects.None, 0f);
         }
 
      

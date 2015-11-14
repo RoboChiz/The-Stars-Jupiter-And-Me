@@ -63,8 +63,8 @@ namespace RobsPhysics
             public bool checkCollision(RigidBody other)
             {
 
-                Vector2 myCente = GetCentre();
-                Vector2 thereCente = other.GetCentre();
+                Vector2 myCente = Position;
+                Vector2 thereCente = other.Position;
 
                 Vector2 normal = thereCente - myCente;
 

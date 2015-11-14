@@ -99,7 +99,7 @@ namespace ThreeThingGameThree
             //Game Assets
             player = Content.Load<Texture2D>("OrangeBall");
             Moon.moonTexture = jupiter;
-            Player.playerTexture = player;
+            NewPlayer.playerTexture = player;
 
             
         }
@@ -232,7 +232,13 @@ namespace ThreeThingGameThree
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-            spriteBatch.Begin();
+            spriteBatch.Begin(SpriteSortMode.BackToFront,
+                        BlendState.AlphaBlend,
+                        null,
+                        null,  
+                        null,
+                        null,
+                        cam.get_transformation(graphics.GraphicsDevice));
             switch (gameStateNow)
             {
                 case gameState.menu: //Draw while in menu
