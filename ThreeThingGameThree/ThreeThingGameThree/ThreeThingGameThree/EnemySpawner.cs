@@ -17,16 +17,34 @@ namespace ThreeThingGameThree
     class EnemySpawner
     {
         List<Enemy> Enemies = new List<Enemy>();
-        static Random random = new Random();
+        Random random = new Random();
 
 
-        public List<Enemy> StartWave(int numOfEnemies)
+        public List<Enemy> StartWave(int numOfEnemies, Moon moon)
+        {
+
+            return Enemies;
+        }
+
+        public void SimpleWave(int numOfEnemies)
         {
             for (int i = 0; i < numOfEnemies; i++)
             {
-                Enemies.Add(new Enemy(Enemies[i].spriteTexture,generatePosition(),Enemies[i].Width, Enemies[i].Height));
+                Enemies.Add(new Enemy(Enemies[i].spriteTexture, generatePosition(), Enemies[i].Width, Enemies[i].Height));
             }
-            return Enemies;
+        }
+
+        public void CircleSpawning(int numOfEnemies, Moon moon)
+        {
+            //min 100, max 200
+            Random random = new Random();
+            float angleDegrees = random.Next(0, 360);
+            float angleRadians = angleDegrees * (float)Math.PI / 180.0f;
+
+            double x = moon.GetCentre().X + ((double)random.Next(100,200) * Math.Cos(angleRadians));
+            double y = moon.GetCentre().Y + ((double)random.Next(100,200) * Math.Cos(angleRadians));
+
+
         }
 
         public Vector2 generatePosition()
@@ -39,5 +57,7 @@ namespace ThreeThingGameThree
 
             return newPosition;
         } 
+
+
     }
 }
