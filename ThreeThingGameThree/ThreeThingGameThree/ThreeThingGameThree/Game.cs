@@ -35,13 +35,17 @@ namespace ThreeThingGameThree
         private Sprite endWave;
         private bool showEnd;
 
-        enum GameState
+        private int enemyKill;
+        private int waves;
+
+        public enum GameState
         {
             Attack,
             Rest,
-            GameOver
+            GameOver,
+            Finished
         }
-        GameState gameState = GameState.Attack;
+        public GameState gameState = GameState.Attack;
 
         public GameClass(float enemyNum)
         {
@@ -78,6 +82,7 @@ namespace ThreeThingGameThree
             showStart = true;
  			enemies = es.StartWave(enemyAmount, moon);
             waitTimer = 0f;
+
             MediaPlayer.Stop();
             if (Game1.musicOn) 
             {
@@ -92,11 +97,18 @@ namespace ThreeThingGameThree
             enemyAmount += 5;
             waveWait = 30f;
             waitTimer = 0f;
+            waves++;
             MediaPlayer.Stop();
             if (Game1.musicOn)
             {
                 MediaPlayer.Play(Game1.inbetweenWaveMusic);
             }
+        }
+
+        public void EndGame()
+        {
+            waitTimer = 0f;
+            gameState = GameState.GameOver;
         }
 
         public void Update(GameTime gameTime, GraphicsDevice device)
@@ -126,9 +138,16 @@ namespace ThreeThingGameThree
                         StartWave();
                     }
                 }
+                if(gameState == GameState.GameOver)
+                {
+                     if(waitTimer >= 10)
+                     {
+                         gameState = GameState.Finished;
+                     }
+                }
             }
 
-            if(gameState != GameState.Rest)
+            if(gameState == GameState.Attack)
             {
 
                 List<int> enemyToRemove = new List<int>();
@@ -150,11 +169,9 @@ namespace ThreeThingGameThree
                     if (enemies[i].distanceFromMoon <= Moon.radius)
                     {
                         enemyToRemove.Add(i);
-                        if (Game1.sfxOn) {
+						if (Game1.sfxOn) {
                             MediaPlayer.Play(Game1.blast);
-                        }
-                        player.currentHealth--;
-                        continue;
+                        }                        continue;
                     }
 
                     if(enemies[i].health <= 0)
@@ -162,6 +179,11 @@ namespace ThreeThingGameThree
                         enemyToRemove.Add(i);
                         continue;
                     }
+                }
+
+                if(player.currentHealth <= 0)
+                {
+                    EndGame();
                 }
 
                 if(enemies.Count == 0) //At end of Wave
@@ -172,6 +194,7 @@ namespace ThreeThingGameThree
                 for (int i = 0; i < enemyToRemove.Count; i++)
                 {
                     enemies.RemoveAt(enemyToRemove[i]);
+                    enemyKill++;
                 }
 
                 for (int i = 0; i < bulletToRemove.Count; i++)
@@ -219,7 +242,10 @@ namespace ThreeThingGameThree
 
             if(gameState == GameState.GameOver)
             {
-                spriteBatch.DrawString(Game1.font, "Game Over!", new Vector2(Game1.scrW/2f, Game1.scrH/2f), Color.White);
+                spriteBatch.DrawString(Game1.font, "Game Over!", new Vector2(10,70), Color.White);
+                spriteBatch.DrawString(Game1.font, "Returning to Menu in: " + (10 - waitTimer).ToString("00"), new Vector2(10, 100), Color.White);
+                spriteBatch.DrawString(Game1.font, "Waves Survived: " + (10 - waitTimer).ToString(), new Vector2(10, 130), Color.White);
+                spriteBatch.DrawString(Game1.font, "Enemies Killed: " + (10 - waitTimer).ToString(), new Vector2(10, 160), Color.White);
             }
 
             player.DrawGUI(spriteBatch);
@@ -496,7 +522,7 @@ namespace ThreeThingGameThree
             {
                 Sprite Heart;
 
-                if(i <= currentHealth)
+                if(i+1 <= currentHealth)
                     Heart = new Sprite(heartTexture, new Vector2(10 + (i*25), 10), 20, 20);
                 else
                     Heart = new Sprite(noHeartTexture, new Vector2(10 + (i * 25), 10), 20, 20);

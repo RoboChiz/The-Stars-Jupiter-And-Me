@@ -38,8 +38,8 @@ namespace ThreeThingGameThree
         private Boolean selectPlay = true;
         private Boolean pressed = false;
         private int selector = 0;
-        enum gameState{menu, options, inGame, gameOver, paused};
-        gameState gameStateNow = gameState.menu;
+        public enum gameState{menu, options, inGame, gameOver, paused};
+        public gameState gameStateNow = gameState.menu;
 
         private Sprite Title, MenuPlanet, Option_Play, Option_Options, Background, Foreground, Omoon, satellite; //Menu sprites
         private Texture2D blankSprite, testBall, testSBall, jupiter, player, heart, noHeart, fuelbackground, fuelBar, backgroundTexture,
@@ -270,6 +270,12 @@ namespace ThreeThingGameThree
                 case gameState.inGame: //Controls while in game
                     if (currentGame != null)
                         currentGame.Update(gameTime,graphics.GraphicsDevice);
+
+                    if (currentGame.gameState == GameClass.GameState.Finished)
+                    {
+                        gameStateNow = gameState.menu;
+                        MediaPlayer.Play(inbetweenWaveMusic);
+                    }
                     break;
 
                 case gameState.paused: //When the game is paused
