@@ -46,3 +46,57 @@
 \\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Wave_complete.xnb
 \\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Wave_start.xnb
 \\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Blaster_fire.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\OrangeBall.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Image1.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\BlankSprite.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Jupiter.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\testBall.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\testSBall.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\heart.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\heart_Empty.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\fuelBackground.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\fuelBar.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Back.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Background.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Continue.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\DMG.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Gun.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Icon_Defense.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\icon_HP.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Icon_jetpack.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Icon_jetpack_bar.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\moon_1.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\moon_2.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\moon_3.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Music.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Options.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Paused.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Play.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\player.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Quit.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Satellite.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\SFX.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Shop_board.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Sound_on.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\TitleW_alt1.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\pointer.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\fire.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Wave_complete.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Wave_start.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Betweenwaves.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\MidWave.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Blaster_fire.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Betweenwaves.wma
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\MidWave.wma
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\ThreeThingGameThree.exe
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\ThreeThingGameThree.pdb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\obj\x86\Debug\ThreeThingGameThree.csprojResolveAssemblyReference.cache
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\obj\x86\Debug\ThreeThingGameThree.exe
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\obj\x86\Debug\ThreeThingGameThree.pdb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\monster.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Title2.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Blast.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Courier New.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\store.xnb
+G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\pop.xnb

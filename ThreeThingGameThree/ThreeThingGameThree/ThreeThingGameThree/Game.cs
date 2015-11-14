@@ -179,6 +179,7 @@ namespace ThreeThingGameThree
                     {
                         enemyToRemove.Add(i);
 						 enemyKill++;
+                         player.currentCash += 3;
 						 if (Game1.sfxOn)
                         {
                             Game1.pop.Play(0.5f, 0f, 0f);
@@ -241,7 +242,7 @@ namespace ThreeThingGameThree
             
             if(gameState == GameState.Rest)
             {
-                spriteBatch.DrawString(Game1.font, "Next wave in: " + (waveWait - waitTimer).ToString("00"), new Vector2(10, 70), Color.White);
+                spriteBatch.DrawString(Game1.font, "Next wave in: " + (waveWait - waitTimer).ToString("00"), new Vector2(10, 100), Color.White);
             }
 
             if(gameState == GameState.GameOver)
@@ -250,6 +251,10 @@ namespace ThreeThingGameThree
                 spriteBatch.DrawString(Game1.font, "Returning to Menu in: " + (10 - waitTimer).ToString("00"), new Vector2(10, 100), Color.White);
                 spriteBatch.DrawString(Game1.font, "Waves Survived: " + waves.ToString(), new Vector2(10, 130), Color.White);
                 spriteBatch.DrawString(Game1.font, "Enemies Killed: " + enemyKill.ToString(), new Vector2(10, 160), Color.White);
+            }
+            else
+            {
+                spriteBatch.DrawString(Game1.font, "Money: " + player.currentCash.ToString(), new Vector2(10, 70), Color.White);
             }
 
             player.DrawGUI(spriteBatch);
@@ -307,6 +312,8 @@ namespace ThreeThingGameThree
         public float gunFireRate;
         private float gunWait;
         public List<Bullet> bullets;
+
+        public float currentCash;
 	
 		public int Health
         {
@@ -359,6 +366,8 @@ namespace ThreeThingGameThree
             GunDamage = 1f;
             GunROF = 0.5f;
             bullets = new List<Bullet>();
+
+            currentCash = 0;
         }
         
 
