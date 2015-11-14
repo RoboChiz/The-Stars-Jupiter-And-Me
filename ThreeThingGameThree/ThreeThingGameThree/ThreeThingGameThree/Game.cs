@@ -38,7 +38,8 @@ namespace ThreeThingGameThree
         enum GameState
         {
             Attack,
-            Rest
+            Rest,
+            GameOver
         }
         GameState gameState = GameState.Attack;
 
@@ -105,13 +106,13 @@ namespace ThreeThingGameThree
 
             if(showStart)
             {
-                if(waitTimer >= 1)
+                if(waitTimer >= 2)
                 {
                     showStart = false;
                 }
             }else if (showEnd)
             {
-                if (waitTimer >= 1)
+                if (waitTimer >= 2)
                 {
                     showEnd = false;
                 }
@@ -149,12 +150,14 @@ namespace ThreeThingGameThree
                     if (enemies[i].distanceFromMoon <= Moon.radius)
                     {
                         enemyToRemove.Add(i);
-                        moon.Health -= 5f;
+                        player.currentHealth--;
+                        continue;
                     }
 
                     if(enemies[i].health <= 0)
                     {
                         enemyToRemove.Add(i);
+                        continue;
                     }
                 }
 
@@ -209,6 +212,11 @@ namespace ThreeThingGameThree
             if(gameState == GameState.Rest)
             {
                 spriteBatch.DrawString(Game1.font, "Next wave in: " + (waveWait - waitTimer).ToString("00"), new Vector2(10, 70), Color.White);
+            }
+
+            if(gameState == GameState.GameOver)
+            {
+                spriteBatch.DrawString(Game1.font, "Game Over!", new Vector2(Game1.scrW/2f, Game1.scrH/2f), Color.White);
             }
 
             player.DrawGUI(spriteBatch);
