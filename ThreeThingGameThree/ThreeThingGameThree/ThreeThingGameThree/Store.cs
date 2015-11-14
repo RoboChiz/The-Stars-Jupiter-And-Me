@@ -44,7 +44,33 @@ namespace ThreeThingGameThree
     }
 
     /// <summary>
-    /// Increases the moons health by 
+    /// Weapon Damage Increase Power up
+    /// </summary>
+    class PlayerWeaponDamageIncrease : StoreItem
+    {
+        int upgradeLevel = 0;
+        double[] upgradePrices = new double[] { 10.0, 25.0, 55.0, 75.0, 100.0 };
+
+        public PlayerWeaponDamageIncrease(NewPlayer player, Double money)
+        {
+            this.Price = upgradePrices[0];
+        }
+
+        public void Activate(NewPlayer player, Double money)
+        {
+            this.Price = upgradePrices[upgradeLevel];
+            Store.BuyItem(this, money);
+
+            if (upgradeLevel <= upgradePrices.Length)
+            {
+                player.GunDamage += 1f;
+            }
+        }
+    }
+    
+
+    /// <summary>
+    /// Increases the moons health by 25
     /// </summary>
     class MoonHealthReplenish : StoreItem
     {
@@ -72,12 +98,18 @@ namespace ThreeThingGameThree
         }
     }
 
+    /// <summary>
+    /// Upgrade the moons health capacity
+    /// </summary>
     class MoonHealthUpgradePowerUp : StoreItem
     {
         int upgradeLevel = 0;
         double[] upgradePrices = new double[] { 10.0, 25.0, 55.0, 75.0, 100.0 };
 
-        public MoonHealthUpgradePowerUp(Moon moon, Double money) { }
+        public MoonHealthUpgradePowerUp(Moon moon, Double money) 
+        {
+            this.Price = upgradePrices[0];
+        }
 
         public void Activate(Moon moon, Double money)
         {

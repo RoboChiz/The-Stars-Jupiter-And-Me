@@ -139,7 +139,8 @@ namespace ThreeThingGameThree
         private Vector2 gunDir;
 
  		public float gunDamage;
-        public float gunFireRate;		
+        public float gunFireRate;	
+	
 		public int Health
         {
             get { return currentHealth; }
@@ -152,6 +153,18 @@ namespace ThreeThingGameThree
             set { maxHealth = value; }
         }
 
+        public float GunDamage
+        {
+            get { return gunDamage; }
+            set { gunDamage = value; }
+        }
+
+        public float GunROF
+        {
+            get { return gunFireRate; }
+            set { gunFireRate = value; }
+        }
+
         public NewPlayer(Texture2D textureVal, Vector2 pos, int widthVal, int heightVal)
                 : base(textureVal, pos, widthVal, heightVal)
         {
@@ -159,8 +172,8 @@ namespace ThreeThingGameThree
             distanceFromMoon = Moon.radius + (Width*0.5f);
             minDistanceFromMoon = distanceFromMoon;
 
-            maxHealth = 3;
-            currentHealth = 3;
+            MaxHealth = 3;
+            Health = 3;
 
             maxFuel = 100;
             currentFuel = maxFuel;
@@ -174,8 +187,8 @@ namespace ThreeThingGameThree
             gun = new Sprite(gunTexture, pos, widthVal / 3, widthVal / 3);
             gunDir = new Vector2(1, 0);
 
-            gunDamage = 1f;
-            gunFireRate = 0.3f;
+            GunDamage = 1f;
+            GunROF = 0.3f;
         }
         
 
@@ -293,13 +306,13 @@ namespace ThreeThingGameThree
 
         public void TakeDamage()
         {
-            currentHealth -= 1;
+            Health -= 1;
         }
 
         public void GainHealth()
         {
-            if(currentHealth < maxHealth)
-                currentHealth += 1;
+            if(Health < MaxHealth)
+                Health += 1;
         }
 
         public void DrawGUI(SpriteBatch spriteBatch)
@@ -346,6 +359,7 @@ namespace ThreeThingGameThree
 
         public static Texture2D moonTexture;
         public static int radius = 250;
+
         float health;
         float maxHealth = 100;
 
