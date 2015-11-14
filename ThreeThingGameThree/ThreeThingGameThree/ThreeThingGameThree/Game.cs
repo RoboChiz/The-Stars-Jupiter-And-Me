@@ -169,6 +169,7 @@ namespace ThreeThingGameThree
                     if (enemies[i].distanceFromMoon <= Moon.radius)
                     {
                         enemyToRemove.Add(i);
+                        player.currentHealth -= 1;
 						if (Game1.sfxOn) {
                             Game1.blast.Play(0.5f, 0f, 0f);
                         }                        continue;
@@ -177,11 +178,11 @@ namespace ThreeThingGameThree
                     if(enemies[i].health <= 0)
                     {
                         enemyToRemove.Add(i);
-                        if (Game1.sfxOn)
+						 enemyKill++;
+						 if (Game1.sfxOn)
                         {
                             Game1.pop.Play(0.5f, 0f, 0f);
-                        }
-                        continue;
+                        }                        continue;
                     }
                 }
 
@@ -198,7 +199,6 @@ namespace ThreeThingGameThree
                 for (int i = 0; i < enemyToRemove.Count; i++)
                 {
                     enemies.RemoveAt(enemyToRemove[i]);
-                    enemyKill++;
                 }
 
                 for (int i = 0; i < bulletToRemove.Count; i++)
@@ -248,8 +248,8 @@ namespace ThreeThingGameThree
             {
                 spriteBatch.DrawString(Game1.font, "Game Over!", new Vector2(10,70), Color.White);
                 spriteBatch.DrawString(Game1.font, "Returning to Menu in: " + (10 - waitTimer).ToString("00"), new Vector2(10, 100), Color.White);
-                spriteBatch.DrawString(Game1.font, "Waves Survived: " + (10 - waitTimer).ToString(), new Vector2(10, 130), Color.White);
-                spriteBatch.DrawString(Game1.font, "Enemies Killed: " + (10 - waitTimer).ToString(), new Vector2(10, 160), Color.White);
+                spriteBatch.DrawString(Game1.font, "Waves Survived: " + waves.ToString(), new Vector2(10, 130), Color.White);
+                spriteBatch.DrawString(Game1.font, "Enemies Killed: " + enemyKill.ToString(), new Vector2(10, 160), Color.White);
             }
 
             player.DrawGUI(spriteBatch);
