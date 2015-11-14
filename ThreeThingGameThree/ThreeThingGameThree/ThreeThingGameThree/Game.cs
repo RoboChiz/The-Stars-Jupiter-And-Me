@@ -51,7 +51,7 @@ namespace ThreeThingGameThree
             gameState = GameState.Rest;
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime gameTime, GraphicsDevice device)
         {         
             float deltaTime = (gameTime.ElapsedGameTime.Milliseconds / 1000f);       
 
@@ -70,7 +70,7 @@ namespace ThreeThingGameThree
 
             }
 
-            player.Update(deltaTime,moon,cam);
+            player.Update(deltaTime, moon, cam, device);
 
             //Get Camera to follow Player
             cam.Zoom = MathHelper.Lerp(cam.Zoom, 3f,deltaTime);
@@ -120,6 +120,7 @@ namespace ThreeThingGameThree
         public static Texture2D fuelBackgroundTexture;
         public static Texture2D fuelBarTexture;
         public static Texture2D gunTexture;
+        public static Texture2D cursorTexture;
 
         public int maxHealth;
         public int currentHealth;
@@ -134,9 +135,12 @@ namespace ThreeThingGameThree
         private bool faceRight;
 
         private Sprite gun;
+        private Sprite cursor;
         private Vector2 gunDir;
 
-        public int Health
+ 		public float gunDamage;
+        public float gunFireRate;		
+		public int Health
         {
             get { return currentHealth; }
             set { currentHealth = value; }
@@ -147,7 +151,6 @@ namespace ThreeThingGameThree
             get { return maxHealth; }
             set { maxHealth = value; }
         }
-
 
         public NewPlayer(Texture2D textureVal, Vector2 pos, int widthVal, int heightVal)
                 : base(textureVal, pos, widthVal, heightVal)
@@ -170,10 +173,13 @@ namespace ThreeThingGameThree
 
             gun = new Sprite(gunTexture, pos, widthVal / 3, widthVal / 3);
             gunDir = new Vector2(1, 0);
+
+            gunDamage = 1f;
+            gunFireRate = 0.3f;
         }
         
 
-        public void Update(float deltaTime,Moon moon, Camera cam)
+        public void Update(float deltaTime, Moon moon, Camera cam, GraphicsDevice device)
         {
             //Calculate Inputs
             float moveSpeed = deltaTime;
@@ -248,10 +254,12 @@ namespace ThreeThingGameThree
 
             MouseState ms = Mouse.GetState();
             Vector2 mousePosition = new Vector2(ms.X, ms.Y);
-            mousePosition -= new Vector2(Game1.scrW / 2f, Game1.scrH/2f);
-            mousePosition.Normalize();
+            Vector2 worldPosition = Vector2.Transform(mousePosition, Matrix.Invert(cam.get_transformation(device)));
 
-            gunDir = Rotatevector(mousePosition,Rotation);
+
+
+            Vector2 gunDir = worldPosition - gun.Position;
+            gunDir.Normalize();
 
             gun.FaceDirection(gunDir);
 

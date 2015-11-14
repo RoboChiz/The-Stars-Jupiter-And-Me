@@ -37,7 +37,7 @@ namespace ThreeThingGameThree
         gameState gameStateNow = gameState.menu;
 
         private Sprite Title, MenuPlanet, Option_Play, Option_Options, Background, Foreground, Omoon; //Menu sprites
-        private Texture2D blankSprite, testBall, testSBall, jupiter, player, heart, noHeart, fuelbackground, fuelBar, backgroundTexture,gun, tOptionIcon, tOptions, tPlay, tTitle;
+        private Texture2D blankSprite, testBall, testSBall, jupiter, player, heart, noHeart, fuelbackground, fuelBar, backgroundTexture,gun,cursorTexture, tOptionIcon, tOptions, tPlay, tTitle;
 
         private Sprite music, sfx, back; //Options sprites
         private Texture2D tMusic, tSfx, tBack;
@@ -117,6 +117,7 @@ namespace ThreeThingGameThree
             fuelbackground = Content.Load<Texture2D>("fuelbackground");
             fuelBar = Content.Load<Texture2D>("fuelBar");
             gun = Content.Load<Texture2D>("Gun");
+            cursorTexture = Content.Load<Texture2D>("pointer");
 
             Moon.moonTexture = tMoon1;
             NewPlayer.playerTexture = player;
@@ -219,7 +220,7 @@ namespace ThreeThingGameThree
                     
                 case gameState.inGame: //Controls while in game
                     if (currentGame != null)
-                        currentGame.Update(gameTime);
+                        currentGame.Update(gameTime,graphics.GraphicsDevice);
                     break;
 
                 case gameState.paused: //When the game is paused
