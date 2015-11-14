@@ -5,21 +5,29 @@ using System.Text;
 
 namespace ThreeThingGameThree
 {
-    class Store
+    static class Store
     {
-        public void BuyItem(StoreItem item, Double money)
+        static public void BuyItem(StoreItem item, Double money)
         {
-            money -= item.Price;
+            if (money >= item.Price) {
+                money -= item.Price;
+            }
         }
     }
 
     class MoonHealthPowerUp : StoreItem
     {
-        public MoonHealthPowerUp (Moon moon) {}
+        public MoonHealthPowerUp (Moon moon, Double money) {}
 
-        public void Activate(Moon moon, float healthBonus)
+        public void Activate(Moon moon, Double money, float healthBonus, float maxHealth)
         {
-            moon.Health += healthBonus;
+            Store.BuyItem(this, money);    
+
+            // Make sure that the moon health is less than the max before adding it.
+            if ((moon.Health < maxHealth))
+            {
+                moon.Health += healthBonus;
+            }
         }
     }
 }
