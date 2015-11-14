@@ -42,10 +42,10 @@ namespace ThreeThingGameThree
         private Sprite music, sfx, back; //Options sprites
         private Texture2D tMusic, tSfx, tBack;
 
+        private Texture2D tMoon1, tMoon2, tMoon3;
+
         private GameClass currentGame;
 
-        
-        
         private float deltaX = 0;
         private float deltaY = 0;
         public Game1()
@@ -89,7 +89,9 @@ namespace ThreeThingGameThree
             tMusic = Content.Load<Texture2D>("Music");
             tSfx = Content.Load<Texture2D>("SFX");
             tBack = Content.Load<Texture2D>("Back");
-            
+            tMoon1= Content.Load<Texture2D>("moon_1");
+            tMoon2 = Content.Load<Texture2D>("moon_2");
+            tMoon3 = Content.Load<Texture2D>("moon_3");
 
             //----
             Title = new Sprite(tTitle, new Vector2(scrW / 12, scrH / 24), scrW - 2 * (scrW / 12), (scrW - 2 * (scrW / 12))/3);
@@ -104,6 +106,7 @@ namespace ThreeThingGameThree
 
             Background = new Sprite(backgroundTexture, new Vector2(0, 0), scrW, scrH);
             //Foreground = new Sprite(blankSprite, new Vector2(0, 0), 30, 30);
+            
             //Menu assets - end
 
 
@@ -114,7 +117,7 @@ namespace ThreeThingGameThree
             fuelbackground = Content.Load<Texture2D>("fuelbackground");
             fuelBar = Content.Load<Texture2D>("fuelBar");
 
-            Moon.moonTexture = jupiter;
+            Moon.moonTexture = tMoon1;
             NewPlayer.playerTexture = player;
             NewPlayer.heartTexture = heart;
             NewPlayer.noHeartTexture = noHeart;
