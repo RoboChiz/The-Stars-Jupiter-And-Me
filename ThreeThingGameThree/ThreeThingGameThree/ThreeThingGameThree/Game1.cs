@@ -48,6 +48,7 @@ namespace ThreeThingGameThree
         private Sprite music, sfx, back, mOn, sOn; //Options sprites
         private Texture2D tMusic, tSfx, tBack, tSound;
         public static Song actionMusic, inbetweenWaveMusic;
+        public static SoundEffect bulletSound;
 
         private Texture2D tMoon1, tMoon2, tMoon3, tSatellite;
 
@@ -104,6 +105,7 @@ namespace ThreeThingGameThree
 
             actionMusic = Content.Load<Song>("MidWave");
             inbetweenWaveMusic = Content.Load<Song>("Betweenwaves");
+            bulletSound = Content.Load<SoundEffect>("Blaster_fire");
 
             MediaPlayer.Play(actionMusic);
 

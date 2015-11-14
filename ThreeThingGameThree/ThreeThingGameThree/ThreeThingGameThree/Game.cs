@@ -447,6 +447,7 @@ namespace ThreeThingGameThree
          {
              dir = Vector2.Normalize(bulletDir);
              FaceDirection(bulletDir);
+             Game1.bulletSound.Play(0.5f, 0f, 0f);
          }
 
         public void Update(float deltaTime)
