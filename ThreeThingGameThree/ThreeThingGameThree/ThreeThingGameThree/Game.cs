@@ -176,9 +176,12 @@ namespace ThreeThingGameThree
             float x = moon.GetCentre().X + (currentOrbitHeight * (float)Math.Cos(SlipangleRadians));
             float y = moon.GetCentre().Y + (currentOrbitHeight * (float)Math.Sin(SlipangleRadians));
 
-            Console.WriteLine(moon.GetCentre());
+            for (int i = 0; i < 4; i++)
+            {
 
-            Position = new Vector2(x, y);
+            }
+
+                Position = new Vector2(x, y);
         }
     }
 

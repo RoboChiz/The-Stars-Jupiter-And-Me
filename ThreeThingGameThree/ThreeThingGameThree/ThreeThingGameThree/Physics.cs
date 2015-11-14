@@ -66,7 +66,9 @@ namespace RobsPhysics
                 Vector2 myCente = GetCentre();
                 Vector2 thereCente = other.GetCentre();
 
-                if(Vector2.Distance(myCente,thereCente) < (Width/2f))
+                Vector2 normal = thereCente - myCente;
+
+                if (normal.Length() < Width / 2)
                     return true;
 
                 return false;
@@ -77,23 +79,19 @@ namespace RobsPhysics
         void ResolveCollision(RigidBody A, RigidBody B)
         {
 
-            A.Force = Vector2.Zero;
-            B.Force = Vector2.Zero;
-
             A.Velocity = Vector2.Zero;
             B.Velocity = Vector2.Zero;
 
             // Calculate relative velocity
             Vector2 rv = B.Velocity - A.Velocity;
-            Vector2 normal = B.Position - A.Position;
-            //normal.Normalize();
+            Vector2 normal = B.Position - A.Position;           
 
             // Calculate relative velocity in terms of the normal direction
             float velAlongNormal = Vector2.Dot(rv, normal);
 
-            // Do not resolve if velocities are separating
+            /*// Do not resolve if velocities are separating
             if (velAlongNormal > 0)
-                return;
+                return;*/
 
             // Calculate restitution
             float e = 0.1f;
@@ -117,20 +115,20 @@ namespace RobsPhysics
             foreach (RigidBody rb in objs)
             {
 
+                rb.colliding = false;
+
+                foreach (RigidBody rbo in objs)
+                {
+                    if (rbo != rb && (rb.avoid == null || rb.avoid != rbo) && rb.checkCollision(rbo))
+                    {
+                        rb.colliding = true;
+                        rb.collidingWith = rbo;
+                        ResolveCollision(rb, rbo);
+                    }
+                }
+
                 if (rb.Mass != 0)
                 {
-
-                    rb.colliding = false;
-
-                    foreach (RigidBody rbo in objs)
-                    {
-                        if (rbo != rb && (rb.avoid == null || rb.avoid != rbo) && rb.checkCollision(rbo))
-                        {
-                            rb.colliding = true;
-                            rb.collidingWith = rbo;
-                            ResolveCollision(rb, rbo);
-                        }
-                    }
 
                     Vector2 currentVelocity = rb.Velocity;
 

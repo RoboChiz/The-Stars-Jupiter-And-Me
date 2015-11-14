@@ -44,7 +44,7 @@ namespace ThreeThingGameThree
         private GameClass currentGame;
 
         private bool startZoom;
-        private Vector2 newLocation();
+        private Vector2 newLocation;
         private float deltaX = 0;
         private float deltaY = 0;
         public Game1()
@@ -142,7 +142,6 @@ namespace ThreeThingGameThree
                         }
                         else {
                             startZoom = true;
-                             zProgr = 0;
                             gameStateNow = gameState.options;
                             selector = 0;
                             }
@@ -215,9 +214,9 @@ namespace ThreeThingGameThree
                 this.Exit();
             }
 
-            if (startZoom = true) {
-                
-                cam._pos += newVector2((newLocation.X) / 32,(newLocation.Y/32))
+            if (startZoom == true) {
+
+                cam._pos += new Vector2((newLocation.X) / 32, (newLocation.Y / 32));
             }
 
             base.Update(gameTime);
@@ -228,7 +227,7 @@ namespace ThreeThingGameThree
         /// This is called when the game should draw itself.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
-        protected override void Draw(GameTime gameTime, GraphicsDevice device)
+        protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
@@ -239,7 +238,7 @@ namespace ThreeThingGameThree
                         null,  
                         null,
                         null,
-                        cam.get_transformation(device));
+                        cam.get_transformation(graphics.GraphicsDevice));
             switch (gameStateNow)
             {
                 case gameState.menu: //Draw while in menu
