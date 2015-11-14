@@ -26,8 +26,8 @@ namespace ThreeThingGameThree
 
         //Saved Sprite Variables
         private Texture2D testTexture;   
-        private static Color selectColour = Color.Blue;
-
+        private static Color selectColour = Color.Crimson;
+        private static Color selectColourO = Color.GhostWhite;
         Camera cam;
 
         private Boolean selectPlay = true;
@@ -37,14 +37,15 @@ namespace ThreeThingGameThree
         gameState gameStateNow = gameState.menu;
 
         private Sprite Title, MenuPlanet, Option_Play, Option_Options, Background, Foreground, Omoon; //Menu sprites
-        private Texture2D blankSprite, testBall, testSBall, jupiter, player, heart, noHeart, fuelbackground, fuelBar, backgroundTexture;
+        private Texture2D blankSprite, testBall, testSBall, jupiter, player, heart, noHeart, fuelbackground, fuelBar, backgroundTexture, tOptionIcon, tOptions, tPlay, tTitle;
 
         private Sprite music, sfx, back; //Options sprites
+        private Texture2D tMusic, tSfx, tBack;
 
         private GameClass currentGame;
 
-        private bool startZoom;
-        private Vector2 newLocation;
+        
+        
         private float deltaX = 0;
         private float deltaY = 0;
         public Game1()
@@ -79,18 +80,27 @@ namespace ThreeThingGameThree
             backgroundTexture = Content.Load<Texture2D>("Background");
             blankSprite = Content.Load<Texture2D>("BlankSprite");
             jupiter = Content.Load<Texture2D>("Jupiter");
+            tTitle = Content.Load<Texture2D>("TitleW_alt1");
             testBall = Content.Load<Texture2D>("testBall");
             testSBall = Content.Load<Texture2D>("testSBall");
-            //----
-            Title = new Sprite(blankSprite, new Vector2(scrW / 12, scrH / 24), scrW - 2 * (scrW / 12), scrH / 6);
-            MenuPlanet = new Sprite(jupiter, new Vector2(scrW / 2 - (scrW / 5), scrH / 4), scrH / 2, scrH / 2);
-            Option_Play = new Sprite(testSBall, new Vector2(scrW / 6 - scrW / 16, 3 * scrH / 5), scrW / 8, scrW / 8);
-            Option_Options = new Sprite(testSBall, new Vector2(scrW / 2 + scrW / 4, 3 * scrH / 7), scrW / 8, scrW / 8);
-            Omoon = new Sprite(testSBall, new Vector2((scrW / 4), scrH / 32), scrH - scrH / 4, scrH - scrH / 4);
+            tOptions = Content.Load<Texture2D>("moon_3");
+            tOptionIcon = Content.Load<Texture2D>("Options");
+            tPlay = Content.Load<Texture2D>("Play");
+            tMusic = Content.Load<Texture2D>("Music");
+            tSfx = Content.Load<Texture2D>("SFX");
+            tBack = Content.Load<Texture2D>("Back");
+            
 
-            music = new Sprite(blankSprite, new Vector2(scrW / 2 - 2*(scrW / 15), scrH / 32 + scrH / 6), scrW / 3, scrH / 12);
-            sfx = new Sprite(blankSprite, new Vector2(scrW / 2 - 2*(scrW / 15) , scrH / 32 + scrH / 3), scrW / 3, scrH / 12);
-            back = new Sprite(blankSprite, new Vector2(scrW / 2 - scrW / 11, scrH / 32 + (3 * scrH / 6)), scrW / 4, scrH / 12);
+            //----
+            Title = new Sprite(tTitle, new Vector2(scrW / 12, scrH / 24), scrW - 2 * (scrW / 12), (scrW - 2 * (scrW / 12))/3);
+            MenuPlanet = new Sprite(jupiter, new Vector2(scrW / 2 - (scrW / 5), scrH / 4), scrH / 2, scrH / 2);
+            Option_Play = new Sprite(tPlay, new Vector2(scrW / 6 - scrW / 16, 3 * scrH / 5), scrW / 8, scrW / 8);
+            Option_Options = new Sprite(tOptionIcon, new Vector2(scrW / 2 + scrW / 4, 3 * scrH / 7), scrW / 8, scrW / 8);
+            Omoon = new Sprite(tOptions, new Vector2((scrW / 4), scrH / 32), scrH - scrH / 4, scrH - scrH / 4);
+
+            music = new Sprite(tMusic, new Vector2(scrW / 2 - 2*(scrW / 15), scrH / 32 + scrH / 6), scrW / 3, scrH / 12);
+            sfx = new Sprite(tSfx, new Vector2(scrW / 2 - 2*(scrW / 15) , scrH / 32 + scrH / 3), scrW / 3, scrH / 12);
+            back = new Sprite(tBack, new Vector2(scrW / 2 - scrW / 11, scrH / 32 + (3 * scrH / 6)), scrW / 4, scrH / 12);
 
             Background = new Sprite(backgroundTexture, new Vector2(0, 0), scrW, scrH);
             //Foreground = new Sprite(blankSprite, new Vector2(0, 0), 30, 30);
@@ -110,6 +120,10 @@ namespace ThreeThingGameThree
             NewPlayer.noHeartTexture = noHeart;
             NewPlayer.fuelBackgroundTexture = fuelbackground;
             NewPlayer.fuelBarTexture = fuelBar;
+
+            music.Colour = Color.Red;
+            sfx.Colour = Color.Red;
+            back.Colour = Color.Red;
             
         }
 
@@ -150,7 +164,6 @@ namespace ThreeThingGameThree
                             currentGame.StartGame();
                         }
                         else {
-                            startZoom = true;
                             gameStateNow = gameState.options;
                             selector = 0;
                             }
@@ -223,10 +236,6 @@ namespace ThreeThingGameThree
                 this.Exit();
             }
 
-            if (startZoom == true) {
-
-                cam._pos += new Vector2((newLocation.X) / 32, (newLocation.Y / 32));
-            }
 
             base.Update(gameTime);
         }
@@ -247,8 +256,7 @@ namespace ThreeThingGameThree
 
             switch (gameStateNow)
             {
-                case gameState.menu: //Draw while in menu
-                    Title.DrawNoRotCentre(spriteBatch);
+                case gameState.menu: //Draw while in menu                    
                     if (selectPlay)
                     {
                         Option_Play.Colour = selectColour;
@@ -259,6 +267,7 @@ namespace ThreeThingGameThree
                         Option_Options.Colour = selectColour;
                     }
                     MenuPlanet.DrawNoRotCentre(spriteBatch);
+                    Title.DrawNoRotCentre(spriteBatch);
                     Option_Play.DrawNoRotCentre(spriteBatch);
                     Option_Options.DrawNoRotCentre(spriteBatch);
                     break;
@@ -267,19 +276,19 @@ namespace ThreeThingGameThree
                     Omoon.DrawNoRotCentre(spriteBatch);
                     switch (selector) {
                         case 0:
-                            music.Colour = selectColour;
-                            sfx.Colour = Color.White;
-                            back.Colour = Color.White;
+                            music.Colour = selectColourO;                            
+                            sfx.Colour = Color.Red;
+                            back.Colour = Color.Red;
                             break;
                         case 1:
-                            music.Colour = Color.White;
-                            sfx.Colour = selectColour;
-                            back.Colour = Color.White;
+                            music.Colour = Color.Red;
+                            sfx.Colour = selectColourO;
+                            back.Colour = Color.Red;
                             break;
                         case 2:
-                            music.Colour = Color.White;
-                            sfx.Colour = Color.White;
-                            back.Colour = selectColour;
+                            music.Colour = Color.Red;
+                            sfx.Colour = Color.Red;
+                            back.Colour = selectColourO;
                             break;
                     }
 

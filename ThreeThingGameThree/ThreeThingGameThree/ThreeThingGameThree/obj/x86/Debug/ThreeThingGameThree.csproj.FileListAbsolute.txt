@@ -70,3 +70,42 @@ G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThi
 G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Shop_board.xnb
 G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Sound_on.xnb
 G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\TitleW_alt1.xnb
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\OrangeBall.xnb
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Image1.xnb
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\BlankSprite.xnb
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Jupiter.xnb
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\testBall.xnb
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\testSBall.xnb
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\heart.xnb
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\heart_Empty.xnb
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\fuelBackground.xnb
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\fuelBar.xnb
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Back.xnb
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Background.xnb
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Continue.xnb
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\DMG.xnb
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Gun.xnb
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Icon_Defense.xnb
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\icon_HP.xnb
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Icon_jetpack.xnb
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Icon_jetpack_bar.xnb
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\moon_1.xnb
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\moon_2.xnb
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\moon_3.xnb
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Music.xnb
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Options.xnb
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Paused.xnb
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Play.xnb
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\player.xnb
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Quit.xnb
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Satellite.xnb
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\SFX.xnb
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Shop_board.xnb
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Sound_on.xnb
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\TitleW_alt1.xnb
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\ThreeThingGameThree.exe
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\ThreeThingGameThree.pdb
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\obj\x86\Debug\ThreeThingGameThree.csprojResolveAssemblyReference.cache
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\obj\x86\Debug\ThreeThingGameThree.exe
+\\data.adir.hull.ac.uk\home4\488\488610\ThirdThingGame\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\obj\x86\Debug\ThreeThingGameThree.pdb
