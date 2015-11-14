@@ -270,6 +270,7 @@ namespace ThreeThingGameThree
 
                 Heart.DrawNoRotCentre(spriteBatch);
             }
+
             
             //Draw Jetpack Fuel
             Sprite fuelBackground = new Sprite(fuelBackgroundTexture,new Vector2(10,40),(int)(maxFuel),20);
@@ -289,10 +290,17 @@ namespace ThreeThingGameThree
         public static Texture2D moonTexture;
         public static int radius = 250;
         float health;
+        float maxHealth = 100;
 
         public float Health
         {
             get { return health; }
+            set { health = value; }
+        }
+
+        public float MaxHealth
+        {
+            get { return maxHealth; }
             set { health = value; }
         }
 
