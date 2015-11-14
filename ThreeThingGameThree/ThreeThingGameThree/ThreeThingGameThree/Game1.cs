@@ -41,7 +41,7 @@ namespace ThreeThingGameThree
 
         private Sprite music, sfx, back; //Options sprites
 
-        private Game currentGame;
+        private GameClass currentGame;
 
         private bool startZoom;
         private Vector2 newLocation();
@@ -137,7 +137,7 @@ namespace ThreeThingGameThree
                         if (selectPlay)
                         {
                             gameStateNow = gameState.inGame;
-                            currentGame = new Game(5);//5 = number of enemies to spawn
+                            currentGame = new GameClass(5);//5 = number of enemies to spawn
                             currentGame.StartGame();
                         }
                         else {
