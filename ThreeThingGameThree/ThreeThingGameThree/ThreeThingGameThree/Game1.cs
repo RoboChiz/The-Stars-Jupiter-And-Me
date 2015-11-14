@@ -42,7 +42,7 @@ namespace ThreeThingGameThree
         gameState gameStateNow = gameState.menu;
 
         private Sprite Title, MenuPlanet, Option_Play, Option_Options, Background, Foreground, Omoon, satellite; //Menu sprites
-        private Texture2D blankSprite, testBall, testSBall, jupiter, player, heart, noHeart, fuelbackground, fuelBar, backgroundTexture,gun,cursorTexture, tOptionIcon, tOptions, tPlay, tTitle;
+        private Texture2D blankSprite, testBall, testSBall, jupiter, player, heart, noHeart, fuelbackground, fuelBar, backgroundTexture,gun,cursorTexture,bulletTexture, tOptionIcon, tOptions, tPlay, tTitle;
 
         private Sprite music, sfx, back, mOn, sOn; //Options sprites
         private Texture2D tMusic, tSfx, tBack, tSound;
@@ -129,6 +129,7 @@ namespace ThreeThingGameThree
             fuelBar = Content.Load<Texture2D>("fuelBar");
             gun = Content.Load<Texture2D>("Gun");
             cursorTexture = Content.Load<Texture2D>("pointer");
+            bulletTexture = Content.Load<Texture2D>("OrangeBall");
 
             Moon.moonTexture = tMoon1;
             NewPlayer.playerTexture = player;
@@ -138,6 +139,7 @@ namespace ThreeThingGameThree
             NewPlayer.fuelBarTexture = fuelBar;
             NewPlayer.gunTexture = gun;
             NewPlayer.cursorTexture = cursorTexture;
+            NewPlayer.bulletTexture = bulletTexture;
 
             music.Colour = Color.Red;
             sfx.Colour = Color.Red;

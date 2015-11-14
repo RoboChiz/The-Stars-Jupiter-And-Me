@@ -121,6 +121,7 @@ namespace ThreeThingGameThree
         public static Texture2D fuelBarTexture;
         public static Texture2D gunTexture;
         public static Texture2D cursorTexture;
+        public static Texture2D bulletTexture;
 
         public int maxHealth;
         public int currentHealth;
@@ -139,7 +140,9 @@ namespace ThreeThingGameThree
         private Vector2 gunDir;
 
  		public float gunDamage;
-        public float gunFireRate;	
+        public float gunFireRate;
+        private float gunWait;
+        public List<Bullet> bullets;
 	
 		public int Health
         {
@@ -191,6 +194,7 @@ namespace ThreeThingGameThree
 
             GunDamage = 1f;
             GunROF = 0.3f;
+            bullets = new List<Bullet>();
         }
         
 
@@ -279,6 +283,33 @@ namespace ThreeThingGameThree
 
             gun.FaceDirection(gunDir);
 
+            if (/*GamePad.GetState(PlayerIndex.One).AButton? < 0.15 ||*/ Mouse.GetState().LeftButton == ButtonState.Pressed)
+            { //Thumb stick directed left
+                if (gunWait >= GunROF)
+                {
+                    Bullet nBullet = new Bullet(bulletTexture, gun.Position, gun.width, gun.width, gunDir);
+                    bullets.Add(nBullet);
+                    gunWait = 0f;
+                }
+
+                gunWait += deltaTime;
+            }
+            else
+            {
+                gunWait = GunROF;
+            }
+
+            for (int i = 0; i < bullets.Count; i++)
+            {
+                bullets[i].Update(deltaTime);
+
+                if (Math.Abs(bullets[i].Position.X) > 300 || Math.Abs(bullets[i].Position.Y) > 300)
+                {
+                    bullets.RemoveAt(i);
+                    i -= 1;
+                }
+            }
+
         }
 
         public void PlayerDraw(SpriteBatch spriteBatch, Camera cam, GraphicsDevice device)
@@ -301,6 +332,11 @@ namespace ThreeThingGameThree
             spriteBatch.Draw(spriteTexture, destinationRectangle, null, Color.White, Rotation, spriteOrigin, sp, 0);
 
             gun.Draw(spriteBatch);
+
+            for (int i = 0; i < bullets.Count; i++)
+            {
+                bullets[i].Draw(spriteBatch);
+            }
 
         }
 
@@ -360,7 +396,7 @@ namespace ThreeThingGameThree
     class Bullet : Sprite
     {
         private Vector2 dir;
-        static public float speed = 5f;
+        static public float speed = 150f;
         public Bullet(Texture2D textureVal, Vector2 pos, int widthVal, int heightVal, Vector2 bulletDir)
                 : base(textureVal, pos, widthVal, heightVal)
          {
@@ -370,8 +406,7 @@ namespace ThreeThingGameThree
 
         public void Update(float deltaTime)
         {
-            Position += dir * deltaTime * speed;
-                
+            Position += dir * deltaTime * speed;               
         }
 
     }
