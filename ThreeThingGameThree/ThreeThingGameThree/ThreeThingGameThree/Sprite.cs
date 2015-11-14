@@ -104,15 +104,36 @@ namespace RobsSprite
             colour = Color.White;
         }
 
-        public void FaceDirection(Vector2 dir)
+        public float FaceDirection(Vector2 dir)
         {
-
             rotation = (float)(Math.Atan2(-dir.Y, dir.X) + (85 * (Math.PI / 180)));
+            return rotation;
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(spriteTexture, Position, null, Colour, Rotation, new Vector2(Width / 2f, Height / 2f), 1.0f, SpriteEffects.None, 0f);
+            int spriteWidth = (int)(Width);
+            int spriteHeight = (int)(Height);
+
+            int spriteX = (int)(Position.X);
+            int spriteY = (int)(Position.Y);
+
+            Rectangle destinationRectangle = new Rectangle(spriteX, spriteY, spriteWidth, spriteHeight);
+
+            Vector2 spriteOrigin = new Vector2(spriteTexture.Width / 2f, spriteTexture.Height / 2f);
+
+            spriteBatch.Draw(spriteTexture, destinationRectangle, null, Color.White, Rotation, spriteOrigin, SpriteEffects.None, 0);
+
+        }
+
+        public void DrawNoRot(SpriteBatch spriteBatch)
+        {
+            int spriteWidth = (int)(Width);
+            int spriteHeight = (int)(Height);
+            int spriteX = (int)(Position.X - (spriteWidth / 2f));
+            int spriteY = (int)(Position.Y - (spriteHeight / 2f));
+
+            spriteBatch.Draw(spriteTexture, new Rectangle(spriteX , spriteY, spriteWidth, spriteHeight), Colour);
         }
 
      

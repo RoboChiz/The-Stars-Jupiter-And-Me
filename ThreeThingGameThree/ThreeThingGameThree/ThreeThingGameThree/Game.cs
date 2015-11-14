@@ -38,7 +38,7 @@ namespace ThreeThingGameThree
         public void StartGame()
         {
             moon = new Moon(Moon.moonTexture, new Vector2(0, 0), Moon.radius * 2, Moon.radius * 2);
-            player = new NewPlayer(NewPlayer.playerTexture, new Vector2(0, 0), 5, 5);
+            player = new NewPlayer(NewPlayer.playerTexture, new Vector2(0, 0), 25, 25);
         }
 
         public void StartWave()
@@ -70,13 +70,10 @@ namespace ThreeThingGameThree
 
             }
 
-            player.Update(deltaTime,moon);
+            player.Update(deltaTime,moon,cam);
 
             //Get Camera to follow Player
-            cam.Pos = Vector2.Lerp(cam.Pos, moon.Position, deltaTime * 15f);
-            cam.Zoom = MathHelper.Lerp(cam.Zoom, 4f,deltaTime);
-           // cam.Rotation = player.angleOnMoon;
-
+            cam.Zoom = MathHelper.Lerp(cam.Zoom, 1f,deltaTime);
 
         }
 
@@ -98,59 +95,12 @@ namespace ThreeThingGameThree
 
             player.Draw(spriteBatch);
 
-            moon.Draw(spriteBatch);
+            moon.DrawNoRot(spriteBatch);
 
             spriteBatch.End();
         }
 
 
-    }
-
-    class Player : Sprite
-    {
-        
-        public float currentOrbitHeight = 50;
-        public float angleRadians;
-
-        public float jumpMax;
-        public float jumpCurrent;
-
-        float fireRate;
-        double money;
-
-        public double Money
-        {
-            get { return money; }
-            set { money = value; }
-        }
-
-        public static Texture2D playerTexture;
-
-        public Player(Texture2D textureVal, Vector2 pos, int widthVal, int heightVal)
-                : base(textureVal, pos, widthVal, heightVal)
-        {
-            currentOrbitHeight = 50;
-            angleRadians = (float)(-Math.PI/2.0);
-
-            jumpMax = 15;
-            jumpCurrent = 0;
-        }
-
-        public void Update(float deltaTime, Moon moon)
-        {
-            currentOrbitHeight -= 9.81f * deltaTime;
-
-            if (currentOrbitHeight < 53f)
-            {
-                currentOrbitHeight = 53f;
-                jumpCurrent = jumpMax;
-            }
-
-            float x = moon.Position.X + (currentOrbitHeight * (float)Math.Cos(angleRadians));
-            float y = moon.Position.Y + (currentOrbitHeight * (float)Math.Sin(angleRadians));
-
-            Position = new Vector2(x, y);
-        }
     }
 
     class NewPlayer : Sprite
@@ -165,10 +115,10 @@ namespace ThreeThingGameThree
                 : base(textureVal, pos, widthVal, heightVal)
         {
             angleOnMoon = (float)(-Math.PI / 2.0);
-            distanceFromMoon = 53;
+            distanceFromMoon = Moon.radius + (Width*0.5f);
         }
 
-        public void Update(float deltaTime,Moon moon)
+        public void Update(float deltaTime,Moon moon, Camera cam)
         {
             //Calculate Inputs
             if (/*GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X > 0.15 ||*/ Keyboard.GetState().IsKeyDown(Keys.A) == true || Keyboard.GetState().IsKeyDown(Keys.Left) == true)
@@ -184,9 +134,16 @@ namespace ThreeThingGameThree
             float x = moon.Position.X + (distanceFromMoon * (float)Math.Cos(angleOnMoon));
             float y = moon.Position.Y + (distanceFromMoon * (float)Math.Sin(angleOnMoon));
 
-            Vector2 Test = new Vector2(x, y);
+            Position = new Vector2(x, y);
 
-            FaceDirection(moon.Position - Test);
+            float camHeight = 50;
+            float camX = moon.Position.X + ((distanceFromMoon + camHeight) * (float)Math.Cos(angleOnMoon));
+            float camY = moon.Position.Y + ((distanceFromMoon + camHeight) * (float)Math.Sin(angleOnMoon));
+
+            cam.Pos = Vector2.Lerp(cam.Pos, new Vector2(camX, camY), deltaTime * 2f);
+           
+            Vector2 lookDir = new Vector2((float)Math.Cos(angleOnMoon), -(float)Math.Sin(angleOnMoon));
+            FaceDirection(lookDir);
 
 
         }
@@ -199,7 +156,7 @@ namespace ThreeThingGameThree
                 : base(textureVal, pos, widthVal, heightVal){}
 
         public static Texture2D moonTexture;
-        public static int radius = 50;
+        public static int radius = 250;
         float health;
 
         public float Health
@@ -220,7 +177,7 @@ namespace ThreeThingGameThree
 
         public Camera()
         {
-            _zoom = 1.0f;
+            _zoom = 0.0f;
             _rotation = 0.0f;
             _pos = Vector2.Zero;
         }
