@@ -39,3 +39,4 @@ Content\MidWave.xnb
 Content\MidWave.wma
 Content\Wave_complete.xnb
 Content\Wave_start.xnb
+Content\Blaster_fire.xnb

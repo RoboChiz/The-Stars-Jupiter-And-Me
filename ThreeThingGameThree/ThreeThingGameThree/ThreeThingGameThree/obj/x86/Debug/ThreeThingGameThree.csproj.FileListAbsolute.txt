@@ -45,3 +45,4 @@
 \\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\MidWave.wma
 \\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Wave_complete.xnb
 \\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Wave_start.xnb
+\\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Blaster_fire.xnb

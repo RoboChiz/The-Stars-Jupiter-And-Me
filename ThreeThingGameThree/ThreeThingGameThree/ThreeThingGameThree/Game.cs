@@ -53,7 +53,10 @@ namespace ThreeThingGameThree
             gameState = GameState.Attack;
  			enemies = es.StartWave(enemyAmount, moon);
             MediaPlayer.Stop();
-            MediaPlayer.Play(Game1.actionMusic);
+            if (Game1.musicOn) 
+            {
+                MediaPlayer.Play(Game1.actionMusic);
+            }
         }
 
         public void EndWave()
@@ -61,7 +64,10 @@ namespace ThreeThingGameThree
             gameState = GameState.Rest;
             enemyAmount += 5;
             MediaPlayer.Stop();
-            MediaPlayer.Play(Game1.inbetweenWaveMusic);
+            if (Game1.musicOn)
+            {
+                MediaPlayer.Play(Game1.inbetweenWaveMusic);
+            }
         }
 
         public void Update(GameTime gameTime, GraphicsDevice device)
@@ -447,7 +453,10 @@ namespace ThreeThingGameThree
          {
              dir = Vector2.Normalize(bulletDir);
              FaceDirection(bulletDir);
-             Game1.bulletSound.Play(0.5f, 0f, 0f);
+            if (Game1.sfxOn)
+            {
+                Game1.bulletSound.Play(0.5f, 0f, 0f);
+            }
          }
 
         public void Update(float deltaTime)

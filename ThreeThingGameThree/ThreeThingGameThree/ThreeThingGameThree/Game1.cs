@@ -21,8 +21,8 @@ namespace ThreeThingGameThree
         static GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        private Boolean musicOn = true;
-        private Boolean sfxOn = true;
+        public static Boolean musicOn = true;
+        public static Boolean sfxOn = true;
 
         private float theta = 0;
 
@@ -107,7 +107,7 @@ namespace ThreeThingGameThree
             inbetweenWaveMusic = Content.Load<Song>("Betweenwaves");
             bulletSound = Content.Load<SoundEffect>("Blaster_fire");
 
-            MediaPlayer.Play(actionMusic);
+            MediaPlayer.Play(inbetweenWaveMusic);
 
             //----
             Title = new Sprite(tTitle, new Vector2(scrW / 12, scrH / 24), scrW - 2 * (scrW / 12), (scrW - 2 * (scrW / 12)) / 3);
@@ -230,13 +230,23 @@ namespace ThreeThingGameThree
                     { //Select button pressed
                         if (selector == 0)
                         { //music on/off
-                            if (musicOn) musicOn = false;
-                            else musicOn = true;
+                            if (musicOn)
+                            {
+                                musicOn = false;
+                                MediaPlayer.Stop();
+                            } else {
+                                musicOn = true;
+                                MediaPlayer.Play(inbetweenWaveMusic);
+                            }
+
                         }
                         if (selector == 1) //sfx on/off
                         {
-                            if (sfxOn) sfxOn = false;
-                            else sfxOn = true;
+                            if (sfxOn) {
+                                sfxOn = false;
+                            } else {
+                                sfxOn = true;
+                            }
                         }
                         if (selector == 2) //return to menu
                         {
@@ -341,7 +351,7 @@ namespace ThreeThingGameThree
                             break;
                     }
                     if (musicOn) {
-                        mOn.DrawNoRotCentre(spriteBatch);                        
+                        mOn.DrawNoRotCentre(spriteBatch);                     
                     }
                     if (sfxOn)
                     {                        

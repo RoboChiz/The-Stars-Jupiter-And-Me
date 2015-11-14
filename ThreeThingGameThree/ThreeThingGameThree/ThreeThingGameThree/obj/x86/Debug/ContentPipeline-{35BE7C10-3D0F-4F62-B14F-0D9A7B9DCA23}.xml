@@ -354,6 +354,15 @@
       <Output>\\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Wave_start.xnb</Output>
       <Time>2015-11-14T13:01:05.807098+00:00</Time>
     </Item>
+    <Item>
+      <Source>Blaster_fire.wav</Source>
+      <Name>Blaster_fire</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>\\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Blaster_fire.xnb</Output>
+      <Time>2015-11-14T12:53:53.272047+00:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{35BE7C10-3D0F-4F62-B14F-0D9A7B9DCA23}</ContentProjectGUID>
