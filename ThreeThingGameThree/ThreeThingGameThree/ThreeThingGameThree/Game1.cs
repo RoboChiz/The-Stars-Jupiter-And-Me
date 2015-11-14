@@ -105,6 +105,8 @@ namespace ThreeThingGameThree
             actionMusic = Content.Load<Song>("MidWave");
             inbetweenWaveMusic = Content.Load<Song>("Betweenwaves");
 
+            MediaPlayer.Play(actionMusic);
+
             //----
             Title = new Sprite(tTitle, new Vector2(scrW / 12, scrH / 24), scrW - 2 * (scrW / 12), (scrW - 2 * (scrW / 12)) / 3);
             MenuPlanet = new Sprite(jupiter, new Vector2(scrW / 2 - (scrW / 5), scrH / 4), scrH / 2, scrH / 2);

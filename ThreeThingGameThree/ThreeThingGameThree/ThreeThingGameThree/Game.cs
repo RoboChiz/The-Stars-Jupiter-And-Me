@@ -52,6 +52,7 @@ namespace ThreeThingGameThree
         {
             gameState = GameState.Attack;
  			enemies = es.StartWave(enemyAmount, moon);
+            MediaPlayer.Stop();
             MediaPlayer.Play(Game1.actionMusic);
         }
 

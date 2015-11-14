@@ -31,3 +31,11 @@ Content\SFX.xnb
 Content\Shop_board.xnb
 Content\Sound_on.xnb
 Content\TitleW_alt1.xnb
+Content\pointer.xnb
+Content\fire.xnb
+Content\Betweenwaves.xnb
+Content\Betweenwaves.wma
+Content\MidWave.xnb
+Content\MidWave.wma
+Content\Wave_complete.xnb
+Content\Wave_start.xnb

@@ -37,3 +37,11 @@
 \\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 \\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\obj\x86\Debug\ThreeThingGameThree.exe
 \\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\obj\x86\Debug\ThreeThingGameThree.pdb
+\\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\pointer.xnb
+\\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\fire.xnb
+\\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Betweenwaves.xnb
+\\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\MidWave.xnb
+\\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Betweenwaves.wma
+\\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\MidWave.wma
+\\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Wave_complete.xnb
+\\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Wave_start.xnb

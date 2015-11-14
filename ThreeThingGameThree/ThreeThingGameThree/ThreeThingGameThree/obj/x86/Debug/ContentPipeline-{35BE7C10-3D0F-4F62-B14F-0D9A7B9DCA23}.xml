@@ -134,7 +134,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>\\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Gun.xnb</Output>
-      <Time>2015-11-14T10:59:51.444175+00:00</Time>
+      <Time>2015-11-14T11:41:30.018816+00:00</Time>
     </Item>
     <Item>
       <Source>Icon_Defense.png</Source>
@@ -242,7 +242,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>\\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\player.xnb</Output>
-      <Time>2015-11-14T11:05:34.601771+00:00</Time>
+      <Time>2015-11-14T11:38:38.932016+00:00</Time>
     </Item>
     <Item>
       <Source>Quit.png</Source>
@@ -297,6 +297,62 @@
       <Options>None</Options>
       <Output>\\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\TitleW_alt1.xnb</Output>
       <Time>2015-11-14T10:59:52.48818+00:00</Time>
+    </Item>
+    <Item>
+      <Source>pointer.png</Source>
+      <Name>pointer</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>\\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\pointer.xnb</Output>
+      <Time>2015-11-14T11:35:11.763051+00:00</Time>
+    </Item>
+    <Item>
+      <Source>fire.png</Source>
+      <Name>fire</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>\\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\fire.xnb</Output>
+      <Time>2015-11-14T12:21:01.366863+00:00</Time>
+    </Item>
+    <Item>
+      <Source>Betweenwaves.mp3</Source>
+      <Name>Betweenwaves</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>\\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Betweenwaves.xnb</Output>
+      <Extra>\\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Betweenwaves.wma</Extra>
+      <Time>2015-11-14T12:25:06.8701443+00:00</Time>
+    </Item>
+    <Item>
+      <Source>MidWave.mp3</Source>
+      <Name>MidWave</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>\\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\MidWave.xnb</Output>
+      <Extra>\\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\MidWave.wma</Extra>
+      <Time>2015-11-14T12:36:29.1939399+00:00</Time>
+    </Item>
+    <Item>
+      <Source>Wave_complete.png</Source>
+      <Name>Wave_complete</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>\\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Wave_complete.xnb</Output>
+      <Time>2015-11-14T13:01:05.727059+00:00</Time>
+    </Item>
+    <Item>
+      <Source>Wave_start.png</Source>
+      <Name>Wave_start</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>\\data.adir.hull.ac.uk\home4\487\487444\Three thing game\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Wave_start.xnb</Output>
+      <Time>2015-11-14T13:01:05.807098+00:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
