@@ -21,8 +21,8 @@ namespace ThreeThingGameThree
         static GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        int scrW = 800; //TODO - set to screen resolution
-        int scrH = 600;
+        static public int scrW = 800; //TODO - set to screen resolution
+        static public int scrH = 600;
 
         //Saved Sprite Variables
         private Texture2D testTexture;   
@@ -37,7 +37,7 @@ namespace ThreeThingGameThree
         gameState gameStateNow = gameState.menu;
 
         private Sprite Title, MenuPlanet, Option_Play, Option_Options, Background, Foreground, Omoon; //Menu sprites
-        private Texture2D blankSprite, testBall, testSBall, jupiter, player, heart, noHeart, fuelbackground, fuelBar, backgroundTexture, tOptionIcon, tOptions, tPlay, tTitle;
+        private Texture2D blankSprite, testBall, testSBall, jupiter, player, heart, noHeart, fuelbackground, fuelBar, backgroundTexture,gun, tOptionIcon, tOptions, tPlay, tTitle;
 
         private Sprite music, sfx, back; //Options sprites
         private Texture2D tMusic, tSfx, tBack;
@@ -89,24 +89,24 @@ namespace ThreeThingGameThree
             tMusic = Content.Load<Texture2D>("Music");
             tSfx = Content.Load<Texture2D>("SFX");
             tBack = Content.Load<Texture2D>("Back");
-            tMoon1= Content.Load<Texture2D>("moon_1");
+            tMoon1 = Content.Load<Texture2D>("moon_1");
             tMoon2 = Content.Load<Texture2D>("moon_2");
             tMoon3 = Content.Load<Texture2D>("moon_3");
 
             //----
-            Title = new Sprite(tTitle, new Vector2(scrW / 12, scrH / 24), scrW - 2 * (scrW / 12), (scrW - 2 * (scrW / 12))/3);
+            Title = new Sprite(tTitle, new Vector2(scrW / 12, scrH / 24), scrW - 2 * (scrW / 12), (scrW - 2 * (scrW / 12)) / 3);
             MenuPlanet = new Sprite(jupiter, new Vector2(scrW / 2 - (scrW / 5), scrH / 4), scrH / 2, scrH / 2);
             Option_Play = new Sprite(tPlay, new Vector2(scrW / 6 - scrW / 16, 3 * scrH / 5), scrW / 8, scrW / 8);
             Option_Options = new Sprite(tOptionIcon, new Vector2(scrW / 2 + scrW / 4, 3 * scrH / 7), scrW / 8, scrW / 8);
             Omoon = new Sprite(tOptions, new Vector2((scrW / 4), scrH / 32), scrH - scrH / 4, scrH - scrH / 4);
 
-            music = new Sprite(tMusic, new Vector2(scrW / 2 - 2*(scrW / 15), scrH / 32 + scrH / 6), scrW / 3, scrH / 12);
-            sfx = new Sprite(tSfx, new Vector2(scrW / 2 - 2*(scrW / 15) , scrH / 32 + scrH / 3), scrW / 3, scrH / 12);
+            music = new Sprite(tMusic, new Vector2(scrW / 2 - 2 * (scrW / 15), scrH / 32 + scrH / 6), scrW / 3, scrH / 12);
+            sfx = new Sprite(tSfx, new Vector2(scrW / 2 - 2 * (scrW / 15), scrH / 32 + scrH / 3), scrW / 3, scrH / 12);
             back = new Sprite(tBack, new Vector2(scrW / 2 - scrW / 11, scrH / 32 + (3 * scrH / 6)), scrW / 4, scrH / 12);
 
             Background = new Sprite(backgroundTexture, new Vector2(0, 0), scrW, scrH);
             //Foreground = new Sprite(blankSprite, new Vector2(0, 0), 30, 30);
-            
+
             //Menu assets - end
 
 
@@ -116,6 +116,7 @@ namespace ThreeThingGameThree
             noHeart = Content.Load<Texture2D>("heart_Empty");
             fuelbackground = Content.Load<Texture2D>("fuelbackground");
             fuelBar = Content.Load<Texture2D>("fuelBar");
+            gun = Content.Load<Texture2D>("Gun");
 
             Moon.moonTexture = tMoon1;
             NewPlayer.playerTexture = player;
@@ -123,12 +124,13 @@ namespace ThreeThingGameThree
             NewPlayer.noHeartTexture = noHeart;
             NewPlayer.fuelBackgroundTexture = fuelbackground;
             NewPlayer.fuelBarTexture = fuelBar;
+            NewPlayer.gunTexture = gun;
 
             music.Colour = Color.Red;
             sfx.Colour = Color.Red;
             back.Colour = Color.Red;
-            
         }
+
 
         /// <summary>
         /// UnloadContent will be called once per game and is the place to unload

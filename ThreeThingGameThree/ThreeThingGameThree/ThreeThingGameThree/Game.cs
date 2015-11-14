@@ -73,7 +73,7 @@ namespace ThreeThingGameThree
             player.Update(deltaTime,moon,cam);
 
             //Get Camera to follow Player
-            cam.Zoom = MathHelper.Lerp(cam.Zoom, 1f,deltaTime);
+            cam.Zoom = MathHelper.Lerp(cam.Zoom, 3f,deltaTime);
 
         }
 
@@ -119,6 +119,7 @@ namespace ThreeThingGameThree
         public static Texture2D noHeartTexture;
         public static Texture2D fuelBackgroundTexture;
         public static Texture2D fuelBarTexture;
+        public static Texture2D gunTexture;
 
         public int maxHealth;
         public int currentHealth;
@@ -132,6 +133,7 @@ namespace ThreeThingGameThree
 
         private bool faceRight;
 
+        private Sprite gun;
         private Vector2 gunDir;
 
 
@@ -154,6 +156,7 @@ namespace ThreeThingGameThree
 
             faceRight = false;
 
+            gun = new Sprite(gunTexture, pos, widthVal / 3, widthVal / 3);
             gunDir = new Vector2(1, 0);
         }
 
@@ -209,6 +212,15 @@ namespace ThreeThingGameThree
 
             Position = new Vector2(x, y);
 
+            float angleAdd = 0.05f;
+            if (!faceRight)
+                angleAdd *= -1;
+
+            x = moon.Position.X + (distanceFromMoon * (float)Math.Cos(angleOnMoon + angleAdd));
+            y = moon.Position.Y + (distanceFromMoon * (float)Math.Sin(angleOnMoon + angleAdd));
+
+            gun.Position = new Vector2(x, y);
+
             float camHeight = 50;
             float camX = moon.Position.X + ((distanceFromMoon + camHeight) * (float)Math.Cos(angleOnMoon));
             float camY = moon.Position.Y + ((distanceFromMoon + camHeight) * (float)Math.Sin(angleOnMoon));
@@ -221,6 +233,14 @@ namespace ThreeThingGameThree
             lookDir = new Vector2((float)Math.Cos(angleOnMoon), -(float)Math.Sin(angleOnMoon));
             FaceDirection(lookDir);
 
+            MouseState ms = Mouse.GetState();
+            Vector2 mousePosition = new Vector2(ms.X, ms.Y);
+            mousePosition -= new Vector2(Game1.scrW / 2f, Game1.scrH/2f);
+            mousePosition.Normalize();
+
+            gunDir = Rotatevector(mousePosition,Rotation);
+
+            gun.FaceDirection(gunDir);
 
         }
 
@@ -243,6 +263,11 @@ namespace ThreeThingGameThree
 
             spriteBatch.Draw(spriteTexture, destinationRectangle, null, Color.White, Rotation, spriteOrigin, sp, 0);
 
+            gun.Draw(spriteBatch);
+
+            MouseState ms = Mouse.GetState();
+            Vector2 mousePosition = new Vector2(ms.X, ms.Y);
+            //Draw cursor
         }
 
         public void TakeDamage()
@@ -278,6 +303,17 @@ namespace ThreeThingGameThree
             fuelBackground.DrawNoRotCentre(spriteBatch);
             fuelBar.DrawNoRotCentre(spriteBatch);
 
+        }
+
+        public Vector2 Rotatevector(Vector2 vector,float angle)
+        {
+            float x = vector.X;
+            float y = vector.Y;
+
+            float newX = (float)((x * Math.Cos(angle)) - (Math.Sin(angle)*y));
+            float newY = (float)((y * Math.Cos(angle)) + (Math.Sin(angle) * x));
+
+            return new Vector2(newX,newY);
         }
     }
 
