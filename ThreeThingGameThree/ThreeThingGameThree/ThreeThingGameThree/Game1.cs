@@ -80,9 +80,9 @@ namespace ThreeThingGameThree
             Option_Options = new Sprite(testSBall, new Vector2(scrW / 2 + scrW / 4, 3 * scrH / 7), scrW / 8, scrW / 8);
             Omoon = new Sprite(testSBall, new Vector2((scrW / 4), scrH / 32), scrH - scrH / 4, scrH - scrH / 4);
 
-            music = new Sprite(blankSprite, new Vector2(scrW/2 - scrW/16, scrH/8), scrW/8, scrH/16);
-            sfx = new Sprite(blankSprite, new Vector2(scrW / 2 - scrW / 16, scrH / 4), scrW / 8, scrH / 16);
-            back = new Sprite(blankSprite, new Vector2(scrW / 2 - scrW / 16, 3 * scrH / 4), scrW / 8, scrH / 16);
+            music = new Sprite(blankSprite, new Vector2(scrW / 2 - 2*(scrW / 15), scrH / 32 + scrH / 6), scrW / 3, scrH / 12);
+            sfx = new Sprite(blankSprite, new Vector2(scrW / 2 - 2*(scrW / 15) , scrH / 32 + scrH / 3), scrW / 3, scrH / 12);
+            back = new Sprite(blankSprite, new Vector2(scrW / 2 - scrW / 11, scrH / 32 + (3 * scrH / 6)), scrW / 4, scrH / 12);
 
             //Background = new Sprite(blankSprite, new Vector2(0, 0), 30, 30);
             //Foreground = new Sprite(blankSprite, new Vector2(0, 0), 30, 30);
@@ -150,6 +150,7 @@ namespace ThreeThingGameThree
                         {
                             selector -= 1;
                         }
+                        pressed = true;
                     }
                     if (/*GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.Y < 0.15 ||*/ !pressed &&(Keyboard.GetState().IsKeyDown(Keys.S) == true || Keyboard.GetState().IsKeyDown(Keys.Down) == true))
                     { //Thumb stick directed left
@@ -157,6 +158,7 @@ namespace ThreeThingGameThree
                         {
                             selector += 1;
                         }
+                        pressed = true;
                     }
                     if (/*GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X < 0.15 ||*/!pressed && (Keyboard.GetState().IsKeyDown(Keys.Space) == true || Keyboard.GetState().IsKeyDown(Keys.Enter) == true)) 
                     { //Select button pressed
