@@ -19,7 +19,6 @@ namespace ThreeThingGameThree
         List<Enemy> Enemies = new List<Enemy>();
         Random random = new Random();
 
-
         public List<Enemy> StartWave(int numOfEnemies, Moon moon)
         {
 
@@ -36,15 +35,22 @@ namespace ThreeThingGameThree
 
         public void CircleSpawning(int numOfEnemies, Moon moon)
         {
-            //min 100, max 200
+            for (int i = 0; i < numOfEnemies; i++)
+            {
+                Enemies.Add(new Enemy(Enemies[i].spriteTexture, generateCirclePositioning(moon), Enemies[i].Width, Enemies[i].Height));
+            }
+        }
+
+        public Vector2 generateCirclePositioning(Moon moon)
+        {
             Random random = new Random();
             float angleDegrees = random.Next(0, 360);
             float angleRadians = angleDegrees * (float)Math.PI / 180.0f;
 
-            double x = moon.GetCentre().X + ((double)random.Next(100,200) * Math.Cos(angleRadians));
-            double y = moon.GetCentre().Y + ((double)random.Next(100,200) * Math.Cos(angleRadians));
+            double x = moon.GetCentre().X + ((double)random.Next(100, 200) * Math.Cos(angleRadians));
+            double y = moon.GetCentre().Y + ((double)random.Next(100, 200) * Math.Cos(angleRadians));
 
-
+            return new Vector2((float)x, (float)y);
         }
 
         public Vector2 generatePosition()
