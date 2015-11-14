@@ -136,6 +136,16 @@ namespace RobsSprite
             spriteBatch.Draw(spriteTexture, new Rectangle(spriteX , spriteY, spriteWidth, spriteHeight), Colour);
         }
 
+        public void DrawNoRotCentre(SpriteBatch spriteBatch)
+        {
+            int spriteWidth = (int)(Width);
+            int spriteHeight = (int)(Height);
+            int spriteX = (int)(Position.X);
+            int spriteY = (int)(Position.Y);
+
+            spriteBatch.Draw(spriteTexture, new Rectangle(spriteX, spriteY, spriteWidth, spriteHeight), Colour);
+        }
+
      
 
     }

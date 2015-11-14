@@ -37,7 +37,7 @@ namespace ThreeThingGameThree
         gameState gameStateNow = gameState.menu;
 
         private Sprite Title, MenuPlanet, Option_Play, Option_Options, Background, Foreground, Omoon; //Menu sprites
-        private Texture2D blankSprite, testBall, testSBall, jupiter, player;
+        private Texture2D blankSprite, testBall, testSBall, jupiter, player, heart, noHeart, fuelbackground, fuelBar;
 
         private Sprite music, sfx, back; //Options sprites
 
@@ -98,9 +98,17 @@ namespace ThreeThingGameThree
 
             //Game Assets
             player = Content.Load<Texture2D>("OrangeBall");
+            heart = Content.Load<Texture2D>("heart");
+            noHeart = Content.Load<Texture2D>("heart_Empty");
+            fuelbackground = Content.Load<Texture2D>("fuelbackground");
+            fuelBar = Content.Load<Texture2D>("fuelBar");
+
             Moon.moonTexture = jupiter;
             NewPlayer.playerTexture = player;
-
+            NewPlayer.heartTexture = heart;
+            NewPlayer.noHeartTexture = noHeart;
+            NewPlayer.fuelBackgroundTexture = fuelbackground;
+            NewPlayer.fuelBarTexture = fuelBar;
             
         }
 

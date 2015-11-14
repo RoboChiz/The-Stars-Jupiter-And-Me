@@ -94,9 +94,13 @@ namespace ThreeThingGameThree
             }
 
             player.Draw(spriteBatch);
-
             moon.DrawNoRot(spriteBatch);
 
+            spriteBatch.End();
+
+            //Draw GUI
+            spriteBatch.Begin();
+                player.DrawGUI(spriteBatch);
             spriteBatch.End();
         }
 
@@ -108,28 +112,87 @@ namespace ThreeThingGameThree
 
         public float angleOnMoon; //In Radians
         public float distanceFromMoon;
+        private float minDistanceFromMoon;
 
         public static Texture2D playerTexture;
+        public static Texture2D heartTexture;
+        public static Texture2D noHeartTexture;
+        public static Texture2D fuelBackgroundTexture;
+        public static Texture2D fuelBarTexture;
+
+        public int maxHealth;
+        public int currentHealth;
+
+        public float currentFuel;
+        private float currentAnimatedFuel;
+        public float maxFuel;
+
+        private bool flying;
+        private bool isGrounded;
 
         public NewPlayer(Texture2D textureVal, Vector2 pos, int widthVal, int heightVal)
                 : base(textureVal, pos, widthVal, heightVal)
         {
             angleOnMoon = (float)(-Math.PI / 2.0);
             distanceFromMoon = Moon.radius + (Width*0.5f);
+            minDistanceFromMoon = distanceFromMoon;
+
+            maxHealth = 3;
+            currentHealth = 3;
+
+            maxFuel = 100;
+            currentFuel = maxFuel;
+            currentAnimatedFuel = maxFuel;
+
+            flying = false;
+            isGrounded = true;
         }
 
         public void Update(float deltaTime,Moon moon, Camera cam)
         {
             //Calculate Inputs
+            float moveSpeed = deltaTime;
+            if (!isGrounded)
+                moveSpeed /= 2f;
+
             if (/*GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X > 0.15 ||*/ Keyboard.GetState().IsKeyDown(Keys.A) == true || Keyboard.GetState().IsKeyDown(Keys.Left) == true)
             { //Thumb stick directed right
-                angleOnMoon -= deltaTime;
+                angleOnMoon -= moveSpeed;
             }
             if (/*GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X < 0.15 ||*/ Keyboard.GetState().IsKeyDown(Keys.D) == true || Keyboard.GetState().IsKeyDown(Keys.Right) == true)
             { //Thumb stick directed left
-                angleOnMoon += deltaTime;
+                angleOnMoon += moveSpeed;
             }
-            
+
+            flying = false;
+
+            if (/*GamePad.GetState(PlayerIndex.One).AButton? < 0.15 ||*/ Keyboard.GetState().IsKeyDown(Keys.Space) == true)
+            { //Thumb stick directed left
+                float amount = deltaTime * 300f;
+                Console.WriteLine(amount);
+                if (currentFuel >= 0)
+                {
+                    currentFuel -= amount;
+                    distanceFromMoon += amount;
+                    flying = true;
+                    isGrounded = false;
+                }
+            }
+
+            currentAnimatedFuel = MathHelper.Lerp(currentAnimatedFuel, currentFuel, deltaTime * 10f);
+
+            if (!flying)
+            {
+                distanceFromMoon -= deltaTime * 150f;                
+            }
+
+            if (distanceFromMoon < minDistanceFromMoon)
+            {
+                distanceFromMoon = minDistanceFromMoon;
+                currentFuel = maxFuel;
+                isGrounded = true;
+            }
+
             //Calculate Position
             float x = moon.Position.X + (distanceFromMoon * (float)Math.Cos(angleOnMoon));
             float y = moon.Position.Y + (distanceFromMoon * (float)Math.Sin(angleOnMoon));
@@ -145,6 +208,39 @@ namespace ThreeThingGameThree
             Vector2 lookDir = new Vector2((float)Math.Cos(angleOnMoon), -(float)Math.Sin(angleOnMoon));
             FaceDirection(lookDir);
 
+        }
+
+        public void TakeDamage()
+        {
+            currentHealth -= 1;
+        }
+
+        public void GainHealth()
+        {
+            if(currentHealth < maxHealth)
+                currentHealth += 1;
+        }
+
+        public void DrawGUI(SpriteBatch spriteBatch)
+        {
+            //Draw Hearts
+            for(int i = 0; i < maxHealth; i++)
+            {
+                Sprite Heart;
+
+                if(i <= currentHealth)
+                    Heart = new Sprite(heartTexture, new Vector2(10 + (i*25), 10), 20, 20);
+                else
+                    Heart = new Sprite(noHeartTexture, new Vector2(10 + (i * 25), 10), 20, 20);
+
+                Heart.DrawNoRotCentre(spriteBatch);
+            }
+            
+            //Draw Jetpack Fuel
+            Sprite fuelBackground = new Sprite(fuelBackgroundTexture,new Vector2(10,40),(int)(maxFuel),20);
+            Sprite fuelBar = new Sprite(fuelBarTexture, new Vector2(10, 40), (int)(MathHelper.Clamp(currentAnimatedFuel, 0f, maxFuel)), 20);
+            fuelBackground.DrawNoRotCentre(spriteBatch);
+            fuelBar.DrawNoRotCentre(spriteBatch);
 
         }
     }
