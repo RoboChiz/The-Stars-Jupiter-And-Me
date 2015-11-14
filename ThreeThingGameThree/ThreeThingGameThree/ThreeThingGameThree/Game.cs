@@ -150,6 +150,9 @@ namespace ThreeThingGameThree
                     if (enemies[i].distanceFromMoon <= Moon.radius)
                     {
                         enemyToRemove.Add(i);
+                        if (Game1.sfxOn) {
+                            MediaPlayer.Play(Game1.blast);
+                        }
                         player.currentHealth--;
                         continue;
                     }
