@@ -28,6 +28,8 @@ namespace ThreeThingGameThree
         private Texture2D testTexture;   
         private static Color selectColour = Color.Blue;
 
+        Camera cam;
+
         private Boolean selectPlay = true;
         private Boolean pressed = false;
         private int selector = 0;
@@ -41,8 +43,13 @@ namespace ThreeThingGameThree
 
         private Game currentGame;
 
+        private bool startZoom;
+        private Vector2 newLocation();
+        private float deltaX = 0;
+        private float deltaY = 0;
         public Game1()
         {
+            cam = new Camera();
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
         }
@@ -93,6 +100,8 @@ namespace ThreeThingGameThree
             player = Content.Load<Texture2D>("OrangeBall");
             Moon.moonTexture = jupiter;
             Player.playerTexture = player;
+
+            
         }
 
         /// <summary>
@@ -111,6 +120,7 @@ namespace ThreeThingGameThree
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            
             switch (gameStateNow)
             {
                 case gameState.menu: //Controls while in menu
@@ -131,7 +141,8 @@ namespace ThreeThingGameThree
                             currentGame.StartGame();
                         }
                         else {
-                           //TODO - OPTIONS MENU
+                            startZoom = true;
+                             zProgr = 0;
                             gameStateNow = gameState.options;
                             selector = 0;
                             }
@@ -204,6 +215,11 @@ namespace ThreeThingGameThree
                 this.Exit();
             }
 
+            if (startZoom = true) {
+                
+                cam._pos += newVector2((newLocation.X) / 32,(newLocation.Y/32))
+            }
+
             base.Update(gameTime);
         }
        
@@ -212,12 +228,18 @@ namespace ThreeThingGameThree
         /// This is called when the game should draw itself.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
-        protected override void Draw(GameTime gameTime)
+        protected override void Draw(GameTime gameTime, GraphicsDevice device)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-            spriteBatch.Begin();
+            spriteBatch.Begin(SpriteSortMode.BackToFront,
+                        BlendState.AlphaBlend,
+                        null,
+                        null,  
+                        null,
+                        null,
+                        cam.get_transformation(device));
             switch (gameStateNow)
             {
                 case gameState.menu: //Draw while in menu
