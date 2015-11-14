@@ -51,13 +51,16 @@ namespace ThreeThingGameThree
         public void StartWave()
         {
             gameState = GameState.Attack;
-            enemies = es.StartWave(enemyAmount, moon);
+ 			enemies = es.StartWave(enemyAmount, moon);
+            MediaPlayer.Play(Game1.actionMusic);
         }
 
         public void EndWave()
         {
             gameState = GameState.Rest;
             enemyAmount += 5;
+            MediaPlayer.Stop();
+            MediaPlayer.Play(Game1.inbetweenWaveMusic);
         }
 
         public void Update(GameTime gameTime, GraphicsDevice device)

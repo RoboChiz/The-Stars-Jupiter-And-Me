@@ -46,6 +46,7 @@ namespace ThreeThingGameThree
 
         private Sprite music, sfx, back, mOn, sOn; //Options sprites
         private Texture2D tMusic, tSfx, tBack, tSound;
+        public static Song actionMusic, inbetweenWaveMusic;
 
         private Texture2D tMoon1, tMoon2, tMoon3, tSatellite;
 
@@ -99,6 +100,9 @@ namespace ThreeThingGameThree
             tMoon3 = Content.Load<Texture2D>("moon_3");
             tSatellite = Content.Load<Texture2D>("Satellite");
             tSound = Content.Load<Texture2D>("Sound_on");
+
+            actionMusic = Content.Load<Song>("MidWave");
+            inbetweenWaveMusic = Content.Load<Song>("Betweenwaves");
 
             //----
             Title = new Sprite(tTitle, new Vector2(scrW / 12, scrH / 24), scrW - 2 * (scrW / 12), (scrW - 2 * (scrW / 12)) / 3);
