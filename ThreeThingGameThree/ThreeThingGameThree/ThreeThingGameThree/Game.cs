@@ -130,6 +130,8 @@ namespace ThreeThingGameThree
         private bool flying;
         private bool isGrounded;
 
+        private Vector2 gunDir;
+
         public NewPlayer(Texture2D textureVal, Vector2 pos, int widthVal, int heightVal)
                 : base(textureVal, pos, widthVal, heightVal)
         {
@@ -146,6 +148,8 @@ namespace ThreeThingGameThree
 
             flying = false;
             isGrounded = true;
+
+            gunDir = new Vector2(1, 0);
         }
 
         public void Update(float deltaTime,Moon moon, Camera cam)
@@ -202,10 +206,14 @@ namespace ThreeThingGameThree
             float camX = moon.Position.X + ((distanceFromMoon + camHeight) * (float)Math.Cos(angleOnMoon));
             float camY = moon.Position.Y + ((distanceFromMoon + camHeight) * (float)Math.Sin(angleOnMoon));
 
-            cam.Pos = Vector2.Lerp(cam.Pos, new Vector2(camX, camY), deltaTime * 2f);
+            cam.Pos = Vector2.Lerp(cam.Pos, new Vector2(camX, camY), deltaTime * 6f);
            
-            Vector2 lookDir = new Vector2((float)Math.Cos(angleOnMoon), -(float)Math.Sin(angleOnMoon));
+            Vector2 lookDir = new Vector2(-(float)Math.Cos(angleOnMoon), -(float)Math.Sin(angleOnMoon));
+            cam.Rotation = FaceDirection(lookDir);
+
+            lookDir = new Vector2((float)Math.Cos(angleOnMoon), -(float)Math.Sin(angleOnMoon));
             FaceDirection(lookDir);
+
 
         }
 

@@ -37,7 +37,7 @@ namespace ThreeThingGameThree
         gameState gameStateNow = gameState.menu;
 
         private Sprite Title, MenuPlanet, Option_Play, Option_Options, Background, Foreground, Omoon; //Menu sprites
-        private Texture2D blankSprite, testBall, testSBall, jupiter, player, heart, noHeart, fuelbackground, fuelBar;
+        private Texture2D blankSprite, testBall, testSBall, jupiter, player, heart, noHeart, fuelbackground, fuelBar, backgroundTexture;
 
         private Sprite music, sfx, back; //Options sprites
 
@@ -76,6 +76,7 @@ namespace ThreeThingGameThree
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             //Menu assets - start
+            backgroundTexture = Content.Load<Texture2D>("Background");
             blankSprite = Content.Load<Texture2D>("BlankSprite");
             jupiter = Content.Load<Texture2D>("Jupiter");
             testBall = Content.Load<Texture2D>("testBall");
@@ -91,7 +92,7 @@ namespace ThreeThingGameThree
             sfx = new Sprite(blankSprite, new Vector2(scrW / 2 - 2*(scrW / 15) , scrH / 32 + scrH / 3), scrW / 3, scrH / 12);
             back = new Sprite(blankSprite, new Vector2(scrW / 2 - scrW / 11, scrH / 32 + (3 * scrH / 6)), scrW / 4, scrH / 12);
 
-            //Background = new Sprite(blankSprite, new Vector2(0, 0), 30, 30);
+            Background = new Sprite(backgroundTexture, new Vector2(0, 0), scrW, scrH);
             //Foreground = new Sprite(blankSprite, new Vector2(0, 0), 30, 30);
             //Menu assets - end
 
@@ -241,6 +242,9 @@ namespace ThreeThingGameThree
 
             // TODO: Add your drawing code here
             spriteBatch.Begin();
+
+            Background.DrawNoRotCentre(spriteBatch);
+
             switch (gameStateNow)
             {
                 case gameState.menu: //Draw while in menu

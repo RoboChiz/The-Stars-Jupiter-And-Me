@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\Three Thing Game 3\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\OrangeBall.xnb</Output>
-      <Time>2015-11-14T03:48:24.008654+00:00</Time>
+      <Output>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\OrangeBall.xnb</Output>
+      <Time>2015-11-14T10:41:22.260009+00:00</Time>
     </Item>
     <Item>
       <Source>Image1.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\Three Thing Game 3\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Image1.xnb</Output>
-      <Time>2015-11-14T03:34:55.5154108+00:00</Time>
+      <Output>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Image1.xnb</Output>
+      <Time>2015-11-13T19:56:59.619829+00:00</Time>
     </Item>
     <Item>
       <Source>BlankSprite.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\Three Thing Game 3\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\BlankSprite.xnb</Output>
-      <Time>2015-11-14T03:34:55.5134107+00:00</Time>
+      <Output>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\BlankSprite.xnb</Output>
+      <Time>2015-11-13T19:56:59.531833+00:00</Time>
     </Item>
     <Item>
       <Source>Jupiter.png</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\Three Thing Game 3\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Jupiter.xnb</Output>
-      <Time>2015-11-14T03:34:55.518411+00:00</Time>
+      <Output>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Jupiter.xnb</Output>
+      <Time>2015-11-13T21:51:03.879712+00:00</Time>
     </Item>
     <Item>
       <Source>testBall.png</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\Three Thing Game 3\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\testBall.xnb</Output>
-      <Time>2015-11-14T03:35:09.0811867+00:00</Time>
+      <Output>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\testBall.xnb</Output>
+      <Time>2015-11-13T21:51:03.986717+00:00</Time>
     </Item>
     <Item>
       <Source>testSBall.png</Source>
@@ -52,8 +52,251 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\Three Thing Game 3\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\testSBall.xnb</Output>
-      <Time>2015-11-14T03:35:09.0831868+00:00</Time>
+      <Output>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\testSBall.xnb</Output>
+      <Time>2015-11-13T22:26:08.046518+00:00</Time>
+    </Item>
+    <Item>
+      <Source>heart.png</Source>
+      <Name>heart</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\heart.xnb</Output>
+      <Time>2015-11-14T10:41:13.498966+00:00</Time>
+    </Item>
+    <Item>
+      <Source>heart_Empty.png</Source>
+      <Name>heart_Empty</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\heart_Empty.xnb</Output>
+      <Time>2015-11-14T10:41:13.568966+00:00</Time>
+    </Item>
+    <Item>
+      <Source>fuelBackground.png</Source>
+      <Name>fuelBackground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\fuelBackground.xnb</Output>
+      <Time>2015-11-14T10:41:13.310968+00:00</Time>
+    </Item>
+    <Item>
+      <Source>fuelBar.png</Source>
+      <Name>fuelBar</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\fuelBar.xnb</Output>
+      <Time>2015-11-14T10:41:13.377966+00:00</Time>
+    </Item>
+    <Item>
+      <Source>Back.png</Source>
+      <Name>Back</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Back.xnb</Output>
+      <Time>2015-11-14T10:48:49.259093+00:00</Time>
+    </Item>
+    <Item>
+      <Source>Background.png</Source>
+      <Name>Background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Background.xnb</Output>
+      <Time>2015-11-14T10:52:25.4141+00:00</Time>
+    </Item>
+    <Item>
+      <Source>Continue.png</Source>
+      <Name>Continue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Continue.xnb</Output>
+      <Time>2015-11-14T10:48:49.415091+00:00</Time>
+    </Item>
+    <Item>
+      <Source>DMG.png</Source>
+      <Name>DMG</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\DMG.xnb</Output>
+      <Time>2015-11-14T10:48:49.48709+00:00</Time>
+    </Item>
+    <Item>
+      <Source>Gun.png</Source>
+      <Name>Gun</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Gun.xnb</Output>
+      <Time>2015-11-14T10:48:49.557092+00:00</Time>
+    </Item>
+    <Item>
+      <Source>Icon_Defense.png</Source>
+      <Name>Icon_Defense</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Icon_Defense.xnb</Output>
+      <Time>2015-11-14T10:48:49.626094+00:00</Time>
+    </Item>
+    <Item>
+      <Source>icon_HP.png</Source>
+      <Name>icon_HP</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\icon_HP.xnb</Output>
+      <Time>2015-11-14T10:48:50.810098+00:00</Time>
+    </Item>
+    <Item>
+      <Source>Icon_jetpack.png</Source>
+      <Name>Icon_jetpack</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Icon_jetpack.xnb</Output>
+      <Time>2015-11-14T10:48:49.700091+00:00</Time>
+    </Item>
+    <Item>
+      <Source>Icon_jetpack_bar.png</Source>
+      <Name>Icon_jetpack_bar</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Icon_jetpack_bar.xnb</Output>
+      <Time>2015-11-14T10:48:49.787101+00:00</Time>
+    </Item>
+    <Item>
+      <Source>moon_1.png</Source>
+      <Name>moon_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\moon_1.xnb</Output>
+      <Time>2015-11-14T10:48:50.894106+00:00</Time>
+    </Item>
+    <Item>
+      <Source>moon_2.png</Source>
+      <Name>moon_2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\moon_2.xnb</Output>
+      <Time>2015-11-14T10:48:50.9811+00:00</Time>
+    </Item>
+    <Item>
+      <Source>moon_3.png</Source>
+      <Name>moon_3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\moon_3.xnb</Output>
+      <Time>2015-11-14T10:48:51.061105+00:00</Time>
+    </Item>
+    <Item>
+      <Source>Music.png</Source>
+      <Name>Music</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Music.xnb</Output>
+      <Time>2015-11-14T10:48:49.856094+00:00</Time>
+    </Item>
+    <Item>
+      <Source>Options.png</Source>
+      <Name>Options</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Options.xnb</Output>
+      <Time>2015-11-14T10:48:49.934094+00:00</Time>
+    </Item>
+    <Item>
+      <Source>Paused.png</Source>
+      <Name>Paused</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Paused.xnb</Output>
+      <Time>2015-11-14T10:48:50.009099+00:00</Time>
+    </Item>
+    <Item>
+      <Source>Play.png</Source>
+      <Name>Play</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Play.xnb</Output>
+      <Time>2015-11-14T10:48:50.106096+00:00</Time>
+    </Item>
+    <Item>
+      <Source>player.png</Source>
+      <Name>player</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\player.xnb</Output>
+      <Time>2015-11-14T10:48:51.489105+00:00</Time>
+    </Item>
+    <Item>
+      <Source>Quit.png</Source>
+      <Name>Quit</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Quit.xnb</Output>
+      <Time>2015-11-14T10:48:50.206096+00:00</Time>
+    </Item>
+    <Item>
+      <Source>Satellite.png</Source>
+      <Name>Satellite</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Satellite.xnb</Output>
+      <Time>2015-11-14T10:48:50.380095+00:00</Time>
+    </Item>
+    <Item>
+      <Source>SFX.png</Source>
+      <Name>SFX</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\SFX.xnb</Output>
+      <Time>2015-11-14T10:48:50.296095+00:00</Time>
+    </Item>
+    <Item>
+      <Source>Shop_board.png</Source>
+      <Name>Shop_board</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Shop_board.xnb</Output>
+      <Time>2015-11-14T10:48:50.463103+00:00</Time>
+    </Item>
+    <Item>
+      <Source>Sound_on.png</Source>
+      <Name>Sound_on</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\Sound_on.xnb</Output>
+      <Time>2015-11-14T10:48:50.547095+00:00</Time>
+    </Item>
+    <Item>
+      <Source>TitleW_alt1.png</Source>
+      <Name>TitleW_alt1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\TitleW_alt1.xnb</Output>
+      <Time>2015-11-14T10:48:50.736097+00:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -62,39 +305,39 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>D:\Three Thing Game 3\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThreeContent\</RootDirectory>
-      <LoggerRootDirectory>D:\Three Thing Game 3\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\</LoggerRootDirectory>
-      <IntermediateDirectory>D:\Three Thing Game 3\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>D:\Three Thing Game 3\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThreeContent\</RootDirectory>
+      <LoggerRootDirectory>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\</LoggerRootDirectory>
+      <IntermediateDirectory>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>G:\Three Thing Game\The Stars, Jupiter and Me\trunk\ThreeThingGameThree\ThreeThingGameThree\ThreeThingGameThree\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
-        <Value>2011-09-01T17:22:30+01:00</Value>
+        <Value>2011-09-01T16:22:30+01:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
-        <Value>2011-09-01T17:22:30+01:00</Value>
+        <Value>2011-09-01T16:22:30+01:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
-        <Value>2011-09-01T17:22:30+01:00</Value>
+        <Value>2011-09-01T16:22:30+01:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
-        <Value>2011-09-01T17:22:30+01:00</Value>
+        <Value>2011-09-01T16:22:30+01:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
-        <Value>2011-09-01T17:22:30+01:00</Value>
+        <Value>2011-09-01T16:22:30+01:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
-        <Value>2011-09-01T17:22:30+01:00</Value>
+        <Value>2011-09-01T16:22:30+01:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2015-03-24T12:47:22.3780503+00:00</Value>
+        <Key>C:\WINDOWS\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2015-09-09T09:57:47.0823128+01:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>
