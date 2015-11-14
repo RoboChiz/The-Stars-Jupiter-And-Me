@@ -88,7 +88,7 @@ namespace ThreeThingGameThree
             backgroundTexture = Content.Load<Texture2D>("Background");
             blankSprite = Content.Load<Texture2D>("BlankSprite");
             jupiter = Content.Load<Texture2D>("Jupiter");
-            tTitle = Content.Load<Texture2D>("TitleW_alt1");
+            tTitle = Content.Load<Texture2D>("Title2");
             testBall = Content.Load<Texture2D>("testBall");
             testSBall = Content.Load<Texture2D>("testSBall");
             tOptions = Content.Load<Texture2D>("moon_3");
@@ -376,8 +376,6 @@ namespace ThreeThingGameThree
                 size = (int)(50 * (Math.Sin(angle + 70)));
                 else
                 size = 0;
-            
-            
             satellite.Width = size;
             satellite.Height= size;
         }
