@@ -298,7 +298,7 @@ namespace ThreeThingGameThree
             switch (gameStateNow)
             {
                 case gameState.menu: //Draw while in menu                    
-                    if (selectPlay)
+                    if (!selectPlay)
                     {
                         Option_Play.Colour = selectColour;
                         Option_Options.Colour = Color.White;
