@@ -132,6 +132,7 @@ namespace ThreeThingGameThree
             NewPlayer.fuelBackgroundTexture = fuelbackground;
             NewPlayer.fuelBarTexture = fuelBar;
             NewPlayer.gunTexture = gun;
+            NewPlayer.cursorTexture = cursorTexture;
 
             music.Colour = Color.Red;
             sfx.Colour = Color.Red;
