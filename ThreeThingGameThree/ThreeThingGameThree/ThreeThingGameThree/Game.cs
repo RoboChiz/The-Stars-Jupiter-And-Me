@@ -136,6 +136,18 @@ namespace ThreeThingGameThree
         private Sprite gun;
         private Vector2 gunDir;
 
+        public int Health
+        {
+            get { return currentHealth; }
+            set { currentHealth = value; }
+        }
+
+        public int MaxHealth
+        {
+            get { return maxHealth; }
+            set { maxHealth = value; }
+        }
+
 
         public NewPlayer(Texture2D textureVal, Vector2 pos, int widthVal, int heightVal)
                 : base(textureVal, pos, widthVal, heightVal)
@@ -159,6 +171,7 @@ namespace ThreeThingGameThree
             gun = new Sprite(gunTexture, pos, widthVal / 3, widthVal / 3);
             gunDir = new Vector2(1, 0);
         }
+        
 
         public void Update(float deltaTime,Moon moon, Camera cam)
         {

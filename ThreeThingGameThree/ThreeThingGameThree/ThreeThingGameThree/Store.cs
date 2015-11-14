@@ -15,12 +15,47 @@ namespace ThreeThingGameThree
         }
     }
 
-    class MoonHealthPowerUp : StoreItem
+    /// <summary>
+    /// Increases player health by one
+    /// </summary>
+    class PlayerHealthReplenish : StoreItem
     {
-        public MoonHealthPowerUp (Moon moon, Double money) {}
-
-        public void Activate(Moon moon, Double money, float healthBonus)
+        public PlayerHealthReplenish(NewPlayer player, Double money) 
         {
+            this.Price = 20.0;
+        }
+
+        public void Activate(NewPlayer player, Double money)
+        {
+            int healthBonus = 1;
+            Store.BuyItem(this, money);
+            if ((player.Health < player.MaxHealth))
+            {
+                if (player.Health + healthBonus > player.MaxHealth)
+                {
+                    player.Health = player.MaxHealth;
+                }
+                else
+                {
+                    player.Health += healthBonus;
+                }
+            }
+        }
+    }
+
+    /// <summary>
+    /// Increases the moons health by 
+    /// </summary>
+    class MoonHealthReplenish : StoreItem
+    {
+        public MoonHealthReplenish (Moon moon, Double money) 
+        {
+            this.Price = 20.0;
+        }
+
+        public void Activate(Moon moon, Double money)
+        {
+            float healthBonus = 25;
             Store.BuyItem(this, money);
 
             // Make sure that the moon health is less than the max before adding it.
@@ -56,5 +91,7 @@ namespace ThreeThingGameThree
             }
         }
     }
+
+
 
 }
