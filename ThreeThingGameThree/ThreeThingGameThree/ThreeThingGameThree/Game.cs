@@ -231,6 +231,7 @@ namespace ThreeThingGameThree
                 endWave.Draw(spriteBatch);
             }
 
+                
             spriteBatch.End();
         }
 
@@ -495,6 +496,8 @@ namespace ThreeThingGameThree
                 Heart.DrawNoRotCentre(spriteBatch);
             }
 
+            Sprite Shop = new Sprite(heartTexture, new Vector2(Game1.scrW - 40, 20),20,20);
+            Shop.DrawNoRotCentre(spriteBatch);
             
             //Draw Jetpack Fuel
             Sprite fuelBackground = new Sprite(fuelBackgroundTexture,new Vector2(10,40),(int)(maxFuel),20);
