@@ -21,13 +21,16 @@ namespace ThreeThingGameThree
         static GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        private Boolean musicOn = true;
+        private Boolean sfxOn = true;
+
         static public int scrW = 800; //TODO - set to screen resolution
         static public int scrH = 600;
 
         //Saved Sprite Variables
         private Texture2D testTexture;   
         private static Color selectColour = Color.Crimson;
-        private static Color selectColourO = Color.GhostWhite;
+        private static Color selectColourO = Color.Green;
         Camera cam;
 
         private Boolean selectPlay = true;
@@ -39,8 +42,8 @@ namespace ThreeThingGameThree
         private Sprite Title, MenuPlanet, Option_Play, Option_Options, Background, Foreground, Omoon; //Menu sprites
         private Texture2D blankSprite, testBall, testSBall, jupiter, player, heart, noHeart, fuelbackground, fuelBar, backgroundTexture,gun,cursorTexture, tOptionIcon, tOptions, tPlay, tTitle;
 
-        private Sprite music, sfx, back; //Options sprites
-        private Texture2D tMusic, tSfx, tBack;
+        private Sprite music, sfx, back, mOn, sOn; //Options sprites
+        private Texture2D tMusic, tSfx, tBack, tSound;
 
         private Texture2D tMoon1, tMoon2, tMoon3;
 
@@ -92,6 +95,7 @@ namespace ThreeThingGameThree
             tMoon1 = Content.Load<Texture2D>("moon_1");
             tMoon2 = Content.Load<Texture2D>("moon_2");
             tMoon3 = Content.Load<Texture2D>("moon_3");
+            tSound = Content.Load<Texture2D>("Sound_on");
 
             //----
             Title = new Sprite(tTitle, new Vector2(scrW / 12, scrH / 24), scrW - 2 * (scrW / 12), (scrW - 2 * (scrW / 12)) / 3);
@@ -103,6 +107,8 @@ namespace ThreeThingGameThree
             music = new Sprite(tMusic, new Vector2(scrW / 2 - 2 * (scrW / 15), scrH / 32 + scrH / 6), scrW / 3, scrH / 12);
             sfx = new Sprite(tSfx, new Vector2(scrW / 2 - 2 * (scrW / 15), scrH / 32 + scrH / 3), scrW / 3, scrH / 12);
             back = new Sprite(tBack, new Vector2(scrW / 2 - scrW / 11, scrH / 32 + (3 * scrH / 6)), scrW / 4, scrH / 12);
+            mOn = new Sprite(tSound, new Vector2(scrW / 2 - 2 * (scrW / 15) + (scrW / 3), (scrH / 32 + scrH / 6) + 5), 19, 47);
+            sOn = new Sprite(tSound, new Vector2(scrW / 2 - 2 * (scrW / 15) + (scrW / 3), (scrH / 32 + scrH / 3) + 5), 19, 47);
 
             Background = new Sprite(backgroundTexture, new Vector2(0, 0), scrW, scrH);
             //Foreground = new Sprite(blankSprite, new Vector2(0, 0), 30, 30);
@@ -200,11 +206,15 @@ namespace ThreeThingGameThree
                     }
                     if (/*GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X < 0.15 ||*/!pressed && (Keyboard.GetState().IsKeyDown(Keys.Space) == true || Keyboard.GetState().IsKeyDown(Keys.Enter) == true)) 
                     { //Select button pressed
-                        if (selector == 0) { //music on/off
-                            
+                        if (selector == 0)
+                        { //music on/off
+                            if (musicOn) musicOn = false;
+                            else musicOn = true;
                         }
                         if (selector == 1) //sfx on/off
                         {
+                            if (sfxOn) sfxOn = false;
+                            else sfxOn = true;
                         }
                         if (selector == 2) //return to menu
                         {
@@ -297,7 +307,13 @@ namespace ThreeThingGameThree
                             back.Colour = selectColourO;
                             break;
                     }
-
+                    if (musicOn) {
+                        mOn.DrawNoRotCentre(spriteBatch);                        
+                    }
+                    if (sfxOn)
+                    {                        
+                        sOn.DrawNoRotCentre(spriteBatch);
+                    }
                     music.DrawNoRotCentre(spriteBatch);
                     sfx.DrawNoRotCentre(spriteBatch);
                     back.DrawNoRotCentre(spriteBatch);
