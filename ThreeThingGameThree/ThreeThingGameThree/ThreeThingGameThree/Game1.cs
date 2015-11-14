@@ -296,7 +296,7 @@ namespace ThreeThingGameThree
                     MenuPlanet.DrawNoRotCentre(spriteBatch);
                     Option_Play.DrawNoRotCentre(spriteBatch);
                     Option_Options.DrawNoRotCentre(spriteBatch);
-                    satellite.DrawNoRotCentre(spriteBatch);
+                    satellite.Draw(spriteBatch);
                     Title.DrawNoRotCentre(spriteBatch);
                     
                     break;
@@ -355,8 +355,17 @@ namespace ThreeThingGameThree
 
         private void orbitPlanets()
         {
-            Double angle = theta * (Math.PI / 180);            
-            satellite.Position = MenuPlanet.Position + (new Vector2((float)((350) * Math.Cos(angle)), (float)((140) * Math.Sin(angle))));            
+            Double angle = theta * (Math.PI / 180);
+            int size = 0;
+            satellite.Position = MenuPlanet.Position + (new Vector2((float)((350) * Math.Cos(angle)), (float)((140) * Math.Sin(angle))));
+            if (theta > 0 && theta < 150 || theta > 310 && theta < 360) 
+                size = (int)(50 * (Math.Sin(angle + 70)));
+                else
+                size = 0;
+            
+            
+            satellite.Width = size;
+            satellite.Height= size;
         }
     }
 }
