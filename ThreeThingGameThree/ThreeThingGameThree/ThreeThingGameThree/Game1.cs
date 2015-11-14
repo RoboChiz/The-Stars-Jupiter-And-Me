@@ -24,13 +24,15 @@ namespace ThreeThingGameThree
         private Boolean musicOn = true;
         private Boolean sfxOn = true;
 
+        private int theta = 0;
+
         static public int scrW = 800; //TODO - set to screen resolution
         static public int scrH = 600;
 
         //Saved Sprite Variables
         private Texture2D testTexture;   
-        private static Color selectColour = Color.Crimson;
-        private static Color selectColourO = Color.Green;
+        private static Color selectColour = Color.White * 0.5f;
+        private static Color selectColourO = Color.White * 0.5f;
         Camera cam;
 
         private Boolean selectPlay = true;
@@ -39,13 +41,13 @@ namespace ThreeThingGameThree
         enum gameState{menu, options, inGame, gameOver, paused};
         gameState gameStateNow = gameState.menu;
 
-        private Sprite Title, MenuPlanet, Option_Play, Option_Options, Background, Foreground, Omoon; //Menu sprites
+        private Sprite Title, MenuPlanet, Option_Play, Option_Options, Background, Foreground, Omoon, satellite; //Menu sprites
         private Texture2D blankSprite, testBall, testSBall, jupiter, player, heart, noHeart, fuelbackground, fuelBar, backgroundTexture,gun,cursorTexture, tOptionIcon, tOptions, tPlay, tTitle;
 
         private Sprite music, sfx, back, mOn, sOn; //Options sprites
         private Texture2D tMusic, tSfx, tBack, tSound;
 
-        private Texture2D tMoon1, tMoon2, tMoon3;
+        private Texture2D tMoon1, tMoon2, tMoon3, tSatellite;
 
         private GameClass currentGame;
 
@@ -95,6 +97,7 @@ namespace ThreeThingGameThree
             tMoon1 = Content.Load<Texture2D>("moon_1");
             tMoon2 = Content.Load<Texture2D>("moon_2");
             tMoon3 = Content.Load<Texture2D>("moon_3");
+            tSatellite = Content.Load<Texture2D>("Satellite");
             tSound = Content.Load<Texture2D>("Sound_on");
 
             //----
@@ -109,6 +112,8 @@ namespace ThreeThingGameThree
             back = new Sprite(tBack, new Vector2(scrW / 2 - scrW / 11, scrH / 32 + (3 * scrH / 6)), scrW / 4, scrH / 12);
             mOn = new Sprite(tSound, new Vector2(scrW / 2 - 2 * (scrW / 15) + (scrW / 3), (scrH / 32 + scrH / 6) + 5), 19, 47);
             sOn = new Sprite(tSound, new Vector2(scrW / 2 - 2 * (scrW / 15) + (scrW / 3), (scrH / 32 + scrH / 3) + 5), 19, 47);
+
+            satellite = new Sprite(tSatellite, new Vector2(0,0),0,0);
 
             Background = new Sprite(backgroundTexture, new Vector2(0, 0), scrW, scrH);
             //Foreground = new Sprite(blankSprite, new Vector2(0, 0), 30, 30);
@@ -252,8 +257,11 @@ namespace ThreeThingGameThree
                 
                 this.Exit();
             }
-
-
+            theta += 5;
+            while (theta > 360) {
+                theta -= 360;
+            }
+            orbitPlanets();
             base.Update(gameTime);
         }
        
@@ -287,6 +295,7 @@ namespace ThreeThingGameThree
                     Title.DrawNoRotCentre(spriteBatch);
                     Option_Play.DrawNoRotCentre(spriteBatch);
                     Option_Options.DrawNoRotCentre(spriteBatch);
+                    satellite.DrawNoRotCentre(spriteBatch);
                     break;
 
                 case gameState.options: //Draw while in options menu
@@ -337,23 +346,8 @@ namespace ThreeThingGameThree
 
         private void orbitPlanets()
         {
-            Vector2 planetA = Option_Play.Position;
-            Vector2 planetB = Option_Options.Position;
-
-            Sprite sprite = Option_Play;
-
-            double theta, phi;
-
-            float ax = MenuPlanet.Position.X;
-            float ay = MenuPlanet.Position.Y;
-            float bx = sprite.Position.X;
-            float by = sprite.Position.Y;
-
-            double top = (double)(ax * bx) + (double)(ay * by);
-            double bottom = Math.Pow(ax * ax + (ay * ay), bx * bx + (by * by));
-            theta = Math.Acos(top / bottom);
-
-
+            Double angle = theta * (Math.PI / 180);
+            satellite.Position = MenuPlanet.Position + (new Vector2((float)((jupiter.Width) * Math.Cos(angle)), (float)((jupiter.Width) * Math.Sin(angle))));            
         }
     }
 }
